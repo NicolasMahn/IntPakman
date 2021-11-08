@@ -9,23 +9,16 @@ This chapter describes the necesseray steps, so all of the developers have the s
 * PyCharm
 
 ### Installation
-* In PyCharm
-	* File -> New Project 
-	* Location: Location of your Project
-	* New environment using Virtualenv
-		* Location: keep default path
-		* Base interpreter: search for your python 3.8.8 executable and select it
-	* create
-* open Project
+* clone the git repository
+* open PyCharm
+	* File -> open 
+		* select the git repository
 	* view Terminal in PyCharm -> check if the  virtualenv is acticated 
 		* the line should look like: (Project name) Path 
 	* if the virtualenv is not activated proceed with the following steps:
 		* in the pycharm terminal navigate into the roject package and enter the following command:
 			* <name of the environment>\Scripts\activate (if this doesn't work try <name of the environment>\Scripts\activate.bat)
 		* your terminal line now should look like: (Project name) Path
-
-### Git Integration
-* 
 
 ### Pip usage
 * you can view the list of installed packages via pip list
