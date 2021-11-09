@@ -3,13 +3,13 @@ import csv
 
 
 def read_json(directory):
-    f = open(directory, "r")
+    f = open(directory, 'r', encoding='UTF8')
     data = json.loads(f.read())
     f.close()
     return data
 
 def read_csv(directory):
-    f = open(directory, "r")
+    f = open(directory, 'r', encoding='UTF8')
     file_data = csv.reader(f)
     data = []
     for fd in file_data:
@@ -32,13 +32,15 @@ def write_json(l, directory):
 def write_csv(l, directory):
     f = open(directory, 'w', encoding='UTF8')
     writer = csv.writer(f)
-    writer.writerow(l)
+    for li in l:
+        writer.writerow(li)
     f.close()
 
 def write_s_csv(l, directory):
     f = open(directory, 'w', encoding='UTF8')
     writer = csv.writer(f, delimiter=';')
-    writer.writerow(l)
+    for li in l:
+        writer.writerow(li)
     f.close()
 
 def write(l, directory):
@@ -56,21 +58,46 @@ def main():
               "district",
               "geojson_geometry",
               "distance_from_others"]
-    adresses.append(header);
+    adresses.append(header)
 
     #input directory of map data
     addr_geojson = get_addr('../map_sorter/map_data/furtwangen.geojson')
 
-    id_ = read('../map_sorter/map_data/id.txt')
+    id_ = int(read('../map_sorter/map_data/id.txt'))
 
     for ag in addr_geojson:
 
+        geojson_geometry = ag["geometry"]
+
+        properties = ag["properties"]
+
+        house_number = None
+        street = None
+        post_code = None
+        city = None
+
+        if "addr:housenumber" in properties:
+            house_number = properties["addr:housenumber"]
+        if "addr:street" in properties:
+            street = properties["addr:street"]
+        if "addr:postcode" in properties:
+            post_code = properties["addr:postcode"]
+        if "addr:city" in properties:
+            city = properties["addr:city"]
+
+        adresses.append([id_,
+                         house_number, street, post_code, city,
+                         None, #priority
+                         None, #district
+                         geojson_geometry,
+                         None, #distance_from_others
+                         ])
 
         id_+=1
 
-    write(id_, '../map_sorter/map_data/id.txt')
+    write(str(id_), '../map_sorter/map_data/id.txt')
 
-    write_s_csv(adresses, '../data/adresses.geojson')
+    write_s_csv(adresses, '../data/adresses.csv')
 
 
 
