@@ -29,6 +29,12 @@ def write_csv(l, directory):
     writer.writerow(l)
     f.close()
 
+def write_s_csv(l, directory):
+    f = open(directory, 'w', encoding='UTF8')
+    writer = csv.writer(f, delimiter=';')
+    writer.writerow(l)
+    f.close()
+
 def write(l, directory):
     f = open(directory, 'w', encoding='UTF8')
     f.write(l)
@@ -36,7 +42,29 @@ def write(l, directory):
 
 
 def main():
-    data = read_json('../map_sorter/map_data/furtwangen.geojson')
+
+    adresses = []
+    header = ["id",
+              "house_number", "street", "post_code", "city",
+              "priority",
+              "district",
+              "as_geojson",
+              "distance_from_others"]
+    adresses.append(header);
+
+    addr_geojson = get_addr('../map_sorter/map_data/furtwangen.geojson')
+
+    for ag in addr_geojson:
+
+
+    #add code
+
+    write_s_csv(adresses, '../data/adresses.geojson')
+
+
+
+def get_addr(map):
+    data = read_json(map)
     # print(data.keys())
     features = data["features"]
 
@@ -54,14 +82,13 @@ def main():
         if in_test:
             test_features.append(f)
 
-    test_geojson = {"type": "FeatureCollection",
-                    "features": test_features}
+    #  only needed to generate addr_attributes.geojson file and test.js
+    # test_geojson = {"type": "FeatureCollection",
+    #                 "features": test_features}
+    # write_json(test_geojson, '../map_sorter/map_data/all_addr.geojson')
+    # write("var line = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test.js')
 
-    write_json(test_geojson, '../map_sorter/map_data/all_addr.geojson')
-    write("var line = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test.js')
-
-
-
+    return test_features
 
 
 if __name__ == "__main__":
