@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('data/paketdaten.csv', sep=';')
 
 fig = plt.figure()
-plt.plot(data.id, data.gewicht_in_g)
-plt.show()
+plt.scatter(data.id, data.gewicht_in_g)
+fig.show()
 
 Xtrain, Xtest, ytrain, ytest = train_test_split(data.drop('', inplace=True), )
