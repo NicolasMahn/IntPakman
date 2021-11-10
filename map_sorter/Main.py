@@ -30,17 +30,15 @@ def write_json(l, directory):
     f.write(j)
 
 def write_csv(l, directory):
-    f = open(directory, 'w', encoding='UTF8')
+    f = open(directory, 'w', encoding='UTF8', newline='')
     writer = csv.writer(f)
-    for li in l:
-        writer.writerow(li)
+    writer.writerows(l)
     f.close()
 
 def write_s_csv(l, directory):
-    f = open(directory, 'w', encoding='UTF8')
+    f = open(directory, 'w', encoding='UTF8', newline='')
     writer = csv.writer(f, delimiter=';')
-    for li in l:
-        writer.writerow(li)
+    writer.writerows(l)
     f.close()
 
 def write(l, directory):
@@ -97,6 +95,7 @@ def main():
 
     write(str(id_), '../map_sorter/map_data/id.txt')
 
+    print(adresses)
     write_s_csv(adresses, '../data/adresses.csv')
 
 
