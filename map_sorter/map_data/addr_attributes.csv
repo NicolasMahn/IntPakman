@@ -1,1 +1,1 @@
-addr:street,source:addr,addr:postcode,addr:housename,addr:place,addr:country,building:levels,nohousenumber,addr:city,addr:housenumber
+addr:street,source:addr,addr:postcode,addr:housename,addr:place,addr:country,nohousenumber,addr:city,addr:housenumber

@@ -1,50 +1,11 @@
-import json
-import csv
+
+from util import Cleric
 
 
-def read_json(directory):
-    f = open(directory, 'r', encoding='UTF8')
-    data = json.loads(f.read())
-    f.close()
+def read_map(map):
+    data = Cleric.read_json(map)
+    features = data["features"]
     return data
-
-def read_csv(directory):
-    f = open(directory, 'r', encoding='UTF8')
-    file_data = csv.reader(f)
-    data = []
-    for fd in file_data:
-        data.append(fd)
-    f.close()
-    return data
-
-def read(directory):
-    f = open(directory, 'r', encoding='UTF8')
-    data = f.read()
-    f.close()
-    return data
-
-
-def write_json(l, directory):
-    f = open(directory, 'w', encoding='UTF8')
-    j = json.dumps(l, indent = 4)
-    f.write(j)
-
-def write_csv(l, directory):
-    f = open(directory, 'w', encoding='UTF8', newline='')
-    writer = csv.writer(f)
-    writer.writerows(l)
-    f.close()
-
-def write_s_csv(l, directory):
-    f = open(directory, 'w', encoding='UTF8', newline='')
-    writer = csv.writer(f, delimiter=';')
-    writer.writerows(l)
-    f.close()
-
-def write(l, directory):
-    f = open(directory, 'w', encoding='UTF8')
-    f.write(l)
-    f.close()
 
 
 def main():
@@ -52,16 +13,21 @@ def main():
     adresses = []
     header = ["id",
               "house_number", "street", "post_code", "city",
-              "priority",
+              "sequence",
               "district",
               "geojson_geometry",
               "distance_from_others"]
     adresses.append(header)
 
     #input directory of map data
-    addr_geojson = get_addr('../map_sorter/map_data/furtwangen.geojson')
 
-    id_ = int(read('../map_sorter/map_data/id.txt'))
+    map = read_map('../map_sorter/map_data/furtwangen.geojson')
+
+    addr_geojson = get_addr(map)
+
+    streets_geojson = get_streets(map)
+
+    id_ = int(Cleric.read('../map_sorter/map_data/id.txt'))
 
     for ag in addr_geojson:
 
@@ -93,40 +59,41 @@ def main():
 
         id_+=1
 
-    write(str(id_), '../map_sorter/map_data/id.txt')
+    Cleric.write(str(id_), '../map_sorter/map_data/id.txt')
 
-    print(adresses)
-    write_s_csv(adresses, '../data/adresses.csv')
+    #print(adresses)
+    Cleric.write_semicolon_csv(adresses, '../data/adresses.csv')
+
+
+def get_streets(map):
+    pass #return streets
 
 
 
 def get_addr(map):
-    data = read_json(map)
-    # print(data.keys())
-    features = data["features"]
 
-    addr_attributes = read_csv('../map_sorter/map_data/addr_attributes.csv')[0]
+    addr_attributes = Cleric.read_csv('../map_sorter/map_data/addr_attributes.csv')[0]
     #print(addr_attributes)
 
-    addr_features = []
+    addr = []
 
-    for f in features:
+    for f in map:
         properties = f["properties"].keys()
         addr_exist = False
         for p in properties:
             if p in addr_attributes:
                 addr_exist = True
         if addr_exist:
-            addr_features.append(f)
+            addr.append(f)
 
     #  only needed to generate addr_attributes.geojson file and test.js
 
     # test_geojson = {"type": "FeatureCollection",
-    #                 "features": test_features}
-    # write_json(test_geojson, '../map_sorter/map_data/all_addr.geojson')
-    # write("var line = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test.js')
+    #                 "features": addr_features}
+    # Cleric.write_json(test_geojson, '../map_sorter/map_data/all_addr.geojson')
+    # Cleric.write("var line = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test.js')
 
-    return addr_features
+    return addr
 
 
 if __name__ == "__main__":
