@@ -69,15 +69,8 @@ def get_height():
 
 
 random_data = pd.DataFrame(columns=["Sendungsnummer", "length_cm", "width_cm", "height_cm", "weight_in_g", "fragile", "perishable",
-                                    "house_number", "street", "post_code", "city", "id"])
+                                    "house_number", "street", "post_code", "city"])
 
-'''
-for i in range(0, 20):
-    rand_add = np.random.randint(0, len(adresses))
-    random_data.loc[i] = [(i+1), get_length(), get_width(), get_height(), get_weight(),
-                          np.random.choice([0, 1], 1, p=[0.85, 0.15])[0], np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
-                          adresses.iloc[rand_add,1], adresses.iloc[rand_add,2], adresses.iloc[rand_add,3], adresses.iloc[rand_add,4], rand_add]
-'''
 
 def generate_random_package_data(number, path):
     for i in range(0, number):
@@ -86,7 +79,7 @@ def generate_random_package_data(number, path):
                               np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
                               np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
                               adresses.iloc[rand_add, 1], adresses.iloc[rand_add, 2], adresses.iloc[rand_add, 3],
-                              adresses.iloc[rand_add, 4], rand_add]
+                              adresses.iloc[rand_add, 4]]
     random_data.to_csv(path, index=False)
 
 
