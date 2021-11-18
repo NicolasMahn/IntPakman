@@ -1,501 +1,501 @@
 Sendungsnummer,length_cm,width_cm,height_cm,weight_in_g,fragile,perishable,house_number,street,post_code,city
-1,249,40,85,4810,1,0,64,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-2,30,3,41,1750,0,0,40,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-3,87,72,20,3230,0,0,26,Am Straßberg,78120.0,Furtwangen im Schwarzwald
-4,78,27,48,380,0,0,7,Friedlandweg,78120.0,Furtwangen im Schwarzwald
-5,24,48,9,700,0,0,22,Rabenstraße,78120.0,Furtwangen im Schwarzwald
-6,79,26,21,16030,0,0,5,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
-7,156,6,38,1230,0,0,33,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
-8,12,66,61,2090,0,0,15,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-9,72,155,209,2300,1,0,31,Bregstraße,78120.0,Furtwangen im Schwarzwald
-10,166,126,53,1790,0,1,22,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-11,40,36,81,1860,0,0,23,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-12,94,42,67,1220,0,0,39,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-13,179,11,201,310,0,0,12,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-14,54,187,78,370,0,0,10,Am Niegenhirschwald,78120.0,Furtwangen im Schwarzwald
-15,177,64,20,6300,1,0,31/1,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
-16,87,131,118,1720,0,0,25,Marktplatz,78120.0,Furtwangen im Schwarzwald
-17,285,81,91,1530,0,1,4,Bregstraße,78120.0,Furtwangen im Schwarzwald
-18,22,169,65,1830,0,0,46,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-19,45,117,37,2090,0,0,20,Jahnstraße,78120.0,Furtwangen im Schwarzwald
-20,245,94,86,4350,0,1,4,Birkenweg,78120.0,Furtwangen im Schwarzwald
-21,65,217,27,10320,0,0,24,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-22,19,77,95,1300,1,0,4,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
-23,51,14,90,1650,0,0,12,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
-24,85,130,32,5580,1,0,42/1,Bregstraße,78120.0,Furtwangen im Schwarzwald
-25,130,3,48,2750,0,0,1,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-26,197,98,7,24470,0,1,10,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
-27,56,86,66,26720,0,0,13,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-28,75,75,121,2230,0,0,7,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
-29,170,40,10,1970,1,0,1,Marktplatz,78120.0,Furtwangen im Schwarzwald
-30,205,100,45,120,0,0,29,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
-31,81,93,99,310,0,0,2,Am Kirchberg,78120.0,Furtwangen im Schwarzwald
-32,37,5,83,4500,0,0,23,Katzensteigstraße,,Furtwangen im Schwarzwald
-33,242,30,120,1020,0,0,22,Luisenstraße,78120.0,Furtwangen im Schwarzwald
-34,33,122,63,5430,0,0,2,Goethestraße,78120.0,Furtwangen im Schwarzwald
-35,2,63,102,6120,0,0,22,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
-36,158,121,33,1040,1,0,1,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
-37,68,85,67,1120,0,0,30,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-38,93,144,42,2170,1,0,26,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-39,51,56,67,18360,0,0,6,Grieshaberstraße,78120.0,Furtwangen im Schwarzwald
-40,29,9,100,50,0,0,30,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-41,101,58,44,24030,0,1,9,Buchenweg,78120.0,Furtwangen im Schwarzwald
-42,22,10,61,1540,0,0,25,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-43,93,92,10,29180,0,0,5,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-44,16,119,8,2140,0,0,7,Bühlhofstraße,78120.0,Furtwangen im Schwarzwald
-45,36,60,44,2280,0,0,20,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-46,35,79,139,1900,1,0,14,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
-47,18,118,3,2490,0,0,8,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-48,84,86,89,190,0,0,38,Bregstraße,78120.0,Furtwangen im Schwarzwald
-49,123,84,41,2460,0,0,14,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-50,251,82,72,540,0,0,22,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-51,98,76,128,16790,0,0,24,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
-52,47,79,41,200,0,0,19,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-53,164,56,1,3870,0,0,18,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
-54,94,101,55,1820,0,0,39,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-55,299,114,23,1720,1,0,10/1,Salomon-Siedle-Straße,,Furtwangen im Schwarzwald
-56,134,114,53,4590,0,0,42,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-57,287,146,61,350,0,0,16,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-58,78,61,214,1340,0,0,6,Laulestraße,78120.0,Furtwangen im Schwarzwald
-59,187,75,62,50,0,0,7,Ahornweg,78120.0,Furtwangen im Schwarzwald
-60,78,55,15,470,0,0,18,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
-61,75,68,80,820,0,0,44,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-62,37,149,163,4310,0,0,17,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-63,69,122,58,3000,0,1,14,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
-64,86,138,100,2320,0,0,45/1,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-65,80,68,200,1140,0,0,21,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-66,16,21,170,27520,0,1,7,Buchenweg,78120.0,Furtwangen im Schwarzwald
-67,92,30,50,20100,0,0,12,Am Straßberg,78120.0,Furtwangen im Schwarzwald
-68,93,33,123,870,0,0,14,Goethestraße,78120.0,Furtwangen im Schwarzwald
-69,22,1,72,5900,0,0,27,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-70,82,34,99,3100,0,1,33,Bregstraße,78120.0,Furtwangen im Schwarzwald
-71,149,91,24,1280,0,1,9,Marktplatz,78120.0,Furtwangen im Schwarzwald
-72,6,33,36,10970,0,0,45,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-73,8,217,27,1150,0,0,10,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-74,205,155,91,2650,0,0,36,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-75,40,102,192,8780,0,1,21,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
-76,98,14,42,1690,0,0,8,Obertalstraße,78120.0,Furtwangen im Schwarzwald
-77,52,73,49,8730,0,0,13,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
-78,30,147,19,2120,0,0,3,Ahornweg,78120.0,Furtwangen im Schwarzwald
-79,80,59,20,350,0,0,20,Rabenstraße,78120.0,Furtwangen im Schwarzwald
-80,21,127,16,21820,0,0,30,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
-81,224,35,122,29960,0,0,82,Bregstraße,78120.0,Furtwangen im Schwarzwald
-82,29,250,51,1270,0,0,28,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-83,286,7,7,3220,0,0,43,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-84,67,8,40,980,0,0,7,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-85,81,89,43,1720,0,0,2,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-86,126,122,164,24060,0,0,3,Salomon-Siedle-Straße,78120.0,Furtwangen im Schwarzwald
-87,77,8,69,1130,0,0,12,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
-88,233,10,116,1390,0,0,40,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-89,161,15,15,1880,0,0,32,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-90,62,34,12,1890,0,0,35,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-91,135,175,52,3770,0,0,17,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-92,176,79,67,110,0,0,1,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-93,124,152,23,4010,0,0,45/1,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-94,88,19,118,480,0,0,10,Am Niegenhirschwald,78120.0,Furtwangen im Schwarzwald
-95,107,125,163,1560,0,0,6,Am Hofrain,78120.0,Furtwangen im Schwarzwald
-96,19,80,96,1950,0,0,2,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
-97,56,54,204,210,0,1,6,Am Niegenhirschwald,78120.0,Furtwangen im Schwarzwald
-98,117,156,113,29440,0,0,10,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
-99,1,136,42,1610,0,1,16,Laulestraße,78120.0,Furtwangen im Schwarzwald
-100,211,7,59,4070,0,0,4,Barbaraweg,78120.0,Furtwangen im Schwarzwald
-101,9,46,62,3070,0,0,5a,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-102,13,63,56,870,0,0,16,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-103,138,157,65,650,0,0,19,Luisenstraße,78120.0,Furtwangen im Schwarzwald
-104,248,84,8,23280,0,0,5,Rabenstraße,,Furtwangen im Schwarzwald
-105,79,98,49,10700,0,0,12,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-106,97,46,20,13640,0,1,19,Grieshaberstraße,78120.0,Furtwangen im Schwarzwald
-107,7,126,128,4990,0,0,18,Am Hofrain,78120.0,Furtwangen im Schwarzwald
-108,81,150,155,7050,0,0,6,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
-109,11,56,5,410,0,1,50,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-110,85,95,76,3910,0,0,13,Gartenstraße,78120.0,Furtwangen im Schwarzwald
-111,21,146,40,270,0,0,27,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-112,29,81,40,1350,0,0,9,Marktplatz,78120.0,Furtwangen im Schwarzwald
-113,5,129,45,29810,0,0,14,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
-114,151,90,100,870,0,0,6,Am Kirchberg,78120.0,Furtwangen im Schwarzwald
-115,128,7,93,1150,0,0,6,Rabenstraße,78120.0,Furtwangen im Schwarzwald
-116,63,117,92,3670,0,0,23,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-117,59,14,28,2160,0,0,37,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-118,50,127,132,2330,0,0,10,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-119,90,93,205,22290,0,0,18,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-120,47,228,25,3280,0,0,2,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
-121,238,44,60,1070,1,0,35,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-122,129,63,35,2450,0,0,16,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-123,94,91,58,530,0,1,52,Bregstraße,78120.0,Furtwangen im Schwarzwald
-124,30,84,59,4150,0,0,15,Hebelstraße,78120.0,Furtwangen im Schwarzwald
-125,97,21,53,520,0,0,39,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-126,106,76,131,1740,0,0,6,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
-127,202,105,45,26970,0,1,17,Lochhofstraße,78120.0,Furtwangen im Schwarzwald
-128,30,44,8,1240,0,0,15,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
-129,187,3,130,1710,0,0,39,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-130,100,27,20,1650,0,1,2,Rößleplatz,78120.0,Furtwangen im Schwarzwald
-131,123,128,187,5830,0,0,1/1,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-132,29,150,67,600,1,1,33,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-133,68,32,43,620,0,0,18,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
-134,189,55,1,2860,0,0,19,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
-135,104,18,7,1310,0,0,92,Bregstraße,78120.0,Furtwangen im Schwarzwald
-136,155,45,62,21240,0,0,20,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-137,113,88,19,3760,0,0,29,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-138,66,86,126,22440,0,0,24,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
-139,99,236,182,4660,0,1,23,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-140,22,89,25,1280,0,0,12,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
-141,32,41,108,350,0,0,20,Gartenstraße,78120.0,Furtwangen im Schwarzwald
-142,94,95,55,1520,1,0,15,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
-143,94,27,131,1690,0,1,8,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-144,101,74,55,410,0,0,7,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-145,34,134,35,2400,0,0,48,Bregstraße,78120.0,Furtwangen im Schwarzwald
-146,88,216,44,1770,0,0,16,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
-147,154,125,119,630,0,0,13,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-148,21,237,20,1780,1,0,7,Friedlandweg,78120.0,Furtwangen im Schwarzwald
-149,55,78,41,1690,0,1,22,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-150,16,8,19,1080,0,0,43,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-151,284,106,36,8050,0,0,53/1,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-152,9,149,180,130,0,0,15,Friedlandweg,78120.0,Furtwangen im Schwarzwald
-153,86,9,126,6640,0,0,74,Bregstraße,78120.0,Furtwangen im Schwarzwald
-154,296,127,66,25230,0,0,29,Katzensteigstraße,,Furtwangen im Schwarzwald
-155,99,73,65,4940,0,0,13,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
-156,26,79,108,3010,1,0,13/2,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
-157,43,74,61,2180,1,0,10,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
-158,178,17,7,28300,1,0,17,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-159,94,35,54,2960,0,0,14,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-160,27,68,51,22520,0,0,13/1,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
-161,83,105,73,990,0,0,64,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-162,54,110,26,500,0,0,5,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-163,7,24,40,1260,0,0,14,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-164,177,131,151,25660,0,0,54,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-165,89,116,82,7400,0,0,6,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-166,92,19,60,1900,0,0,3,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
-167,58,200,2,250,0,0,29,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-168,64,50,136,2270,0,1,58,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-169,177,235,89,3460,1,0,17,Gerwigstraße,78120.0,Furtwangen im Schwarzwald
-170,26,10,27,2410,0,0,11,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-171,86,43,187,10530,0,0,8/1,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-172,66,46,45,2070,0,0,7/2,Bahnhofstraße,,Furtwangen im Schwarzwald
-173,120,38,48,1960,0,0,1,In der Wanne,78120.0,Furtwangen im Schwarzwald
-174,6,156,23,25150,0,1,16,Laulestraße,78120.0,Furtwangen im Schwarzwald
-175,18,7,41,2250,0,1,13,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
-176,26,116,134,27900,0,0,26/1,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-177,63,62,108,1620,0,0,1,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-178,74,151,18,10870,0,0,5,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-179,29,90,172,440,0,0,7,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-180,176,156,112,1680,0,0,14,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
-181,293,45,122,1760,0,0,12,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
-182,79,7,44,660,0,0,24,Bregstraße,78120.0,Furtwangen im Schwarzwald
-183,28,20,23,470,0,1,6,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-184,114,29,49,340,0,0,8,Am Hofrain,78120.0,Furtwangen im Schwarzwald
-185,83,98,16,3340,0,0,2,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
-186,74,11,19,1650,0,0,21,Vorderschützenbach,,Furtwangen im Schwarzwald
-187,25,89,23,3420,0,0,4,Barbaraweg,78120.0,Furtwangen im Schwarzwald
-188,72,69,39,90,0,0,69,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-189,90,146,5,50,0,1,21,Wendelhofstraße,,Furtwangen im Schwarzwald
-190,13,1,211,1600,0,0,5,Buchenweg,78120.0,Furtwangen im Schwarzwald
-191,18,170,191,1300,1,0,2b,Hinterschützenbach,,Furtwangen im Schwarzwald
-192,43,80,20,1920,0,0,21,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-193,33,105,111,2290,0,0,23,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
-194,107,139,33,2650,0,0,14,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-195,97,273,103,1340,0,0,25,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-196,226,75,59,28540,0,0,36,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-197,95,6,37,1270,1,1,7,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
-198,42,99,31,30560,0,0,6,Salomon-Siedle-Straße,78120.0,Furtwangen im Schwarzwald
-199,32,40,159,2350,1,1,8,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-200,190,79,66,700,0,0,42,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-201,36,75,52,31430,0,0,49,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-202,211,20,37,26730,0,0,3,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
-203,35,84,59,110,0,0,14,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-204,120,79,57,780,0,0,6,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-205,70,42,29,31420,0,0,18,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
-206,116,7,18,710,0,0,33,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
-207,13,50,23,2100,0,0,37,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-208,86,98,1,3360,0,0,1b,Katzensteigstraße,78120.0,Furtwangen im Schwarzwald
-209,29,73,30,4660,0,0,25,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-210,128,48,42,420,0,0,32,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-211,6,45,98,2470,0,0,20,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-212,112,65,139,1580,0,0,20,Rabenstraße,78120.0,Furtwangen im Schwarzwald
-213,115,97,95,6210,0,0,4,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-214,24,47,128,3700,0,1,4,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
-215,146,223,113,980,0,0,22,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-216,60,143,201,1800,0,0,14,Hebelstraße,78120.0,Furtwangen im Schwarzwald
-217,131,45,180,20260,1,1,7,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-218,75,8,29,15810,0,0,38,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-219,54,54,143,1480,0,0,11,Josef-Zähringer-Straße,78120.0,Furtwangen im Schwarzwald
-220,83,19,189,80,0,0,12,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-221,41,32,10,3930,0,0,4,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
-222,37,162,6,1720,1,0,7/1,Bahnhofstraße,,Furtwangen im Schwarzwald
-223,9,248,51,660,0,1,7,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-224,125,67,78,26460,0,0,10,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
-225,3,71,67,2340,0,0,5,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
-226,67,43,2,310,0,0,14,Laulestraße,78120.0,Furtwangen im Schwarzwald
-227,20,66,148,2010,0,0,6,Colne Straße,78120.0,Furtwangen im Schwarzwald
-228,123,92,13,31430,0,1,9,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-229,60,41,27,15520,0,0,2,Marktplatz,78120.0,Furtwangen im Schwarzwald
-230,38,131,42,3080,1,0,14,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-231,63,47,60,2020,0,0,26,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-232,166,64,36,3100,0,1,15,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
-233,28,129,158,1240,0,0,14,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
-234,29,25,8,2170,0,0,25,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
-235,93,9,48,4210,0,0,71,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-236,64,120,7,3670,0,0,5,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-237,117,99,32,22810,1,0,17,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-238,89,124,26,20250,0,0,2,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-239,133,99,8,1720,0,0,31a,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-240,10,20,113,1280,0,0,29,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-241,30,97,170,4010,0,0,61,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-242,26,72,43,28460,0,0,12,Am Straßberg,78120.0,Furtwangen im Schwarzwald
-243,97,147,137,3450,1,0,20,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-244,37,128,20,1780,0,0,27,Marktplatz,78120.0,Furtwangen im Schwarzwald
-245,67,48,40,23370,0,0,14,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
-246,18,9,11,1050,0,0,10,Grieshaberstraße,78120.0,Furtwangen im Schwarzwald
-247,5,78,50,220,1,0,7,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-248,42,243,123,3790,0,0,27,Bregstraße,78120.0,Furtwangen im Schwarzwald
-249,62,152,27,1500,0,1,11,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-250,76,7,62,330,0,0,1,Grieshaberstraße,78120.0,Furtwangen im Schwarzwald
-251,55,245,22,120,1,0,5,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-252,23,30,32,730,1,1,10,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-253,24,263,17,19970,1,0,15,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-254,71,108,130,23470,0,0,7,Zum Döbele,78120.0,Furtwangen im Schwarzwald
-255,96,60,78,1380,0,0,4,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
-256,20,43,128,630,1,0,32,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-257,70,28,33,13540,0,0,5,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-258,110,49,92,710,0,1,7,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-259,218,245,29,1590,0,0,34,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-260,83,47,50,10730,0,0,24,Bahnhofstraße,,Furtwangen im Schwarzwald
-261,172,249,45,4580,0,0,17,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-262,37,51,53,330,1,0,5,Obertalstraße,78120.0,Furtwangen im Schwarzwald
-263,259,61,83,4740,0,0,27,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
-264,85,2,38,1000,0,1,2,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-265,129,86,94,2080,0,1,6,Grieshaberstraße,78120.0,Furtwangen im Schwarzwald
-266,238,60,30,80,0,0,18,Am Straßberg,78120.0,Furtwangen im Schwarzwald
-267,59,78,138,2850,1,0,20,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
-268,28,95,43,60,0,0,15,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
-269,6,136,123,360,0,0,23,Marktplatz,78120.0,Furtwangen im Schwarzwald
-270,284,51,18,3330,0,0,40,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-271,117,1,44,300,0,0,38,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-272,5,6,204,90,0,0,13,Friedlandweg,78120.0,Furtwangen im Schwarzwald
-273,212,147,1,3500,0,0,2,Bregstraße,78120.0,Furtwangen im Schwarzwald
-274,77,59,42,1000,0,0,10,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
-275,46,123,56,3510,0,0,25,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
-276,131,120,211,6890,0,0,36,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-277,62,142,42,21720,0,0,30,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
-278,104,52,32,170,0,0,28,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
-279,55,2,44,29440,0,0,31,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-280,64,132,7,25740,0,0,20,Jahnstraße,78120.0,Furtwangen im Schwarzwald
-281,65,218,38,780,0,0,30,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-282,75,93,37,560,0,0,33,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-283,83,102,55,4390,0,0,17,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
-284,56,121,128,3810,0,0,22,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-285,107,87,66,360,0,0,8,Wendelhofstraße,78120.0,Furtwangen im Schwarzwald
-286,60,17,4,1620,1,1,26,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-287,75,77,13,320,0,0,17,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
-288,227,120,39,23580,0,0,17,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
-289,198,18,75,4390,0,0,20,Rabenstraße,78120.0,Furtwangen im Schwarzwald
-290,2,93,17,10930,0,0,4,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-291,128,124,57,1410,0,1,28,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
-292,291,28,57,10260,0,0,23,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-293,29,28,198,1340,0,0,28,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-294,53,22,52,31390,1,0,45,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-295,61,54,36,20960,0,0,17,Vorderschützenbach,,Furtwangen im Schwarzwald
-296,65,91,92,1670,0,0,19,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-297,79,90,56,140,0,0,31a,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-298,147,96,86,15690,0,0,3,Marktplatz,78120.0,Furtwangen im Schwarzwald
-299,25,57,116,3370,0,0,15/2,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
-300,234,93,7,27050,0,0,20,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-301,86,96,5,2390,0,1,27,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-302,173,147,4,840,0,0,21,Bregstraße,78120.0,Furtwangen im Schwarzwald
-303,42,79,92,2120,0,0,16,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-304,89,48,169,900,0,0,27,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-305,74,122,40,1780,0,0,18,Jahnstraße,78120.0,Furtwangen im Schwarzwald
-306,62,57,17,260,0,1,11/1,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
-307,29,24,88,1030,0,1,31a,Bregstraße,78120.0,Furtwangen im Schwarzwald
-308,59,90,99,1940,0,0,1,Bregstraße,78120.0,Furtwangen im Schwarzwald
-309,74,20,38,1160,0,0,19,Katzensteigstraße,78120.0,Furtwangen im Schwarzwald
-310,65,56,22,3220,0,0,13,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-311,55,47,65,18480,0,0,24,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
-312,38,18,15,21260,0,1,54,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-313,267,144,16,26720,0,0,8,Birkenweg,78120.0,Furtwangen im Schwarzwald
-314,14,123,65,2530,0,1,13,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-315,80,279,210,23490,0,1,72,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-316,154,147,43,460,0,0,36,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-317,94,270,90,2870,0,0,14,Salomon-Siedle-Straße,78120.0,Furtwangen im Schwarzwald
-318,192,2,44,28280,0,0,39,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-319,285,41,37,1910,0,0,36,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-320,7,8,36,3090,0,0,44/1,Bregstraße,78120.0,Furtwangen im Schwarzwald
-321,297,70,96,990,1,1,11,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-322,223,20,53,1980,0,1,3,Triberger Straße,78120.0,Furtwangen im Schwarzwald
-323,17,56,84,1310,0,0,10,Buchenweg,78120.0,Furtwangen im Schwarzwald
-324,17,156,68,21120,0,0,26,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-325,5,173,40,1020,0,0,1,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
-326,158,94,38,2210,0,0,20,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
-327,89,98,3,16810,0,0,21,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
-328,9,105,20,1580,0,0,14,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-329,75,72,121,2890,0,0,22,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-330,131,78,41,3740,0,0,28,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
-331,58,73,121,1590,0,0,35,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-332,92,20,42,2070,1,0,38,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-333,59,27,106,1000,1,0,77,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-334,123,123,147,4900,0,0,1,Robert-Gerwig-Platz,78120.0,Furtwangen im Schwarzwald
-335,139,3,63,170,1,0,41,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
-336,35,97,44,3550,0,0,15/4,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
-337,127,11,110,8360,0,0,3,Am Staatsberg,78120.0,Furtwangen im Schwarzwald
-338,124,152,44,4050,0,0,18,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-339,58,74,27,2250,0,0,39,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-340,73,52,33,110,0,1,20,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-341,19,78,30,1850,0,0,11,Friedlandweg,78120.0,Furtwangen im Schwarzwald
-342,16,40,17,1650,0,0,23,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
-343,6,17,26,7210,1,0,2,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-344,34,11,9,250,0,0,6,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-345,11,148,120,2130,0,0,16,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-346,69,107,22,2440,0,1,24,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
-347,2,95,175,380,0,0,48,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-348,35,1,44,3280,0,0,12,Katzensteigstraße,78120.0,Furtwangen im Schwarzwald
-349,119,28,76,1700,0,0,23,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-350,33,153,109,1890,0,0,10,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-351,142,26,30,3430,1,0,9,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
-352,68,62,100,3820,0,0,14,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-353,33,78,42,27010,1,0,6,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-354,91,107,188,2780,1,0,42,Bregstraße,78120.0,Furtwangen im Schwarzwald
-355,12,96,41,19050,1,0,16,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
-356,16,6,67,780,0,0,12,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
-357,114,43,16,460,0,0,2,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-358,135,104,23,2350,0,0,9,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-359,99,40,3,70,0,1,10,Buchenweg,78120.0,Furtwangen im Schwarzwald
-360,162,11,19,1270,1,0,30,Rabenstraße,78120.0,Furtwangen im Schwarzwald
-361,47,125,33,1500,0,0,7,Birkenweg,78120.0,Furtwangen im Schwarzwald
-362,9,148,31,1590,0,0,20,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-363,70,139,6,2320,1,0,9,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-364,198,139,17,1010,0,0,4/1,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
-365,42,69,10,970,0,0,60,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-366,63,91,24,930,0,0,1,Raben,78120.0,Furtwangen im Schwarzwald
-367,17,73,104,2470,0,0,11,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-368,24,5,45,1190,0,0,11,Marktplatz,78120.0,Furtwangen im Schwarzwald
-369,292,63,42,3950,0,1,42,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-370,51,93,11,3750,0,0,3,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
-371,113,219,84,1600,0,0,7,Ahornweg,78120.0,Furtwangen im Schwarzwald
-372,116,51,8,14460,0,0,46,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-373,56,137,87,4690,0,0,3,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-374,127,76,11,10470,0,0,6,Am Großhausberg,78120.0,Furtwangen im Schwarzwald
-375,76,149,131,10540,0,0,13,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-376,5,29,4,3720,0,0,19,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-377,46,13,33,9750,0,1,3,In der Wanne,78120.0,Furtwangen im Schwarzwald
-378,44,84,69,2180,1,1,33,Bregstraße,78120.0,Furtwangen im Schwarzwald
-379,76,30,6,2480,0,0,28,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-380,18,34,123,900,0,0,8,Zur Langeck,78120.0,Furtwangen im Schwarzwald
-381,36,57,25,4050,0,1,10,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-382,24,16,4,140,0,0,11,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
-383,96,135,88,490,0,1,40a,Bregstraße,78120.0,Furtwangen im Schwarzwald
-384,58,155,109,1780,0,1,11,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-385,231,18,12,870,0,0,36,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-386,171,16,56,860,0,1,1,Am Hofrain,78120.0,Furtwangen im Schwarzwald
-387,83,121,42,2090,0,0,56,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-388,50,75,55,7990,0,0,55,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-389,50,76,70,830,0,0,6,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-390,48,51,2,10110,0,0,36,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-391,171,137,10,1010,0,0,24,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
-392,36,253,206,4010,0,0,4,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-393,94,89,54,700,0,0,23,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-394,160,71,29,17360,0,0,15,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
-395,88,96,81,1690,1,0,15,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-396,38,17,115,21110,0,0,2,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
-397,16,103,26,2420,1,0,80,Bregstraße,78120.0,Furtwangen im Schwarzwald
-398,208,138,68,730,0,0,27,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-399,126,60,124,240,0,1,1,Vorderschützenbach,78120.0,Furtwangen im Schwarzwald
-400,88,42,71,3430,1,0,18,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-401,8,6,41,27460,0,0,20,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-402,61,65,29,20150,0,0,14,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-403,52,18,85,4610,0,0,30,Rabenstraße,78120.0,Furtwangen im Schwarzwald
-404,54,16,81,2610,0,0,29,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
-405,50,51,51,19390,0,0,14,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-406,32,84,13,28240,1,0,24,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
-407,90,137,27,5140,1,0,21,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-408,2,124,53,2290,1,0,10,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
-409,67,41,72,3370,0,0,27,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-410,48,98,21,270,0,1,35,Bregstraße,78120.0,Furtwangen im Schwarzwald
-411,9,87,5,2040,0,0,2,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-412,9,33,61,1210,1,0,12,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-413,129,91,102,2290,0,0,15,Unterallmendstraße,78120.0,Furtwangen im Schwarzwald
-414,61,30,38,1310,1,0,39,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-415,78,36,94,2220,0,0,31,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
-416,136,248,115,2080,0,0,10,Rabenstraße,78120.0,Furtwangen im Schwarzwald
-417,42,26,6,1860,0,0,21,Vorderschützenbach,,Furtwangen im Schwarzwald
-418,147,52,59,21270,0,0,46,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-419,39,101,63,4270,0,0,36,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-420,279,115,66,1830,0,0,14,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-421,1,78,194,1340,0,1,4,Barbaraweg,78120.0,Furtwangen im Schwarzwald
-422,32,167,39,30640,0,0,26,Baumannstraße,78120.0,Furtwangen im Schwarzwald
-423,4,101,89,3190,1,0,7/1,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
-424,49,188,3,1200,0,0,15/1,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
-425,123,67,125,870,0,0,34,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
-426,83,142,46,700,0,0,34,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-427,69,248,127,50,0,0,3,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
-428,11,30,10,570,0,0,34,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-429,9,85,204,2100,0,0,8,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-430,143,74,49,1990,0,0,62,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-431,93,255,111,480,0,0,4,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
-432,120,100,150,6420,0,1,1/1,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-433,175,44,99,1960,0,0,18,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
-434,41,105,45,19370,0,0,60,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-435,91,77,40,21900,1,0,20,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
-436,15,72,60,1740,0,0,46,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-437,94,97,21,610,1,1,5,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
-438,99,211,215,570,0,1,2,Triberger Straße,78120.0,Furtwangen im Schwarzwald
-439,16,115,47,1090,0,1,5,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
-440,76,30,61,1900,0,0,2,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-441,51,22,16,3370,0,0,7/2,Bahnhofstraße,,Furtwangen im Schwarzwald
-442,149,70,68,1150,1,0,10,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
-443,67,86,26,4920,1,1,20,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
-444,67,117,22,9790,0,0,13,Triberger Straße,78120.0,Furtwangen im Schwarzwald
-445,39,55,42,3010,0,0,8/1,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
-446,82,108,105,2300,0,0,7,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
-447,113,261,53,2490,1,0,41,Neue Heimat,78120.0,Furtwangen im Schwarzwald
-448,137,48,2,930,0,0,71,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-449,26,150,4,1570,0,0,16,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
-450,27,19,10,3150,0,0,37b,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-451,51,48,88,2120,1,1,19,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-452,38,60,28,1970,1,0,33,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
-453,28,67,67,1480,1,0,42,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-454,25,70,92,2330,0,0,6,Laulestraße,78120.0,Furtwangen im Schwarzwald
-455,15,48,32,1560,0,0,3,Am Straßberg,78120.0,Furtwangen im Schwarzwald
-456,96,44,35,1410,0,0,16,Am Straßberg,78120.0,Furtwangen im Schwarzwald
-457,88,59,42,1460,0,0,37d,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-458,120,155,44,3270,0,0,15,Unterallmendstraße,78120.0,Furtwangen im Schwarzwald
-459,74,129,76,650,0,0,27,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
-460,174,199,71,2870,0,1,22,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
-461,83,3,71,790,0,0,13,Am Hofrain,78120.0,Furtwangen im Schwarzwald
-462,55,75,33,25340,0,0,28,Allmendstraße,78120.0,Furtwangen im Schwarzwald
-463,94,268,41,7610,0,0,37a,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-464,122,63,127,700,0,1,32,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
-465,7,10,9,1540,0,0,10,Lochhofstraße,78120.0,Furtwangen im Schwarzwald
-466,124,77,24,2660,1,0,19/1,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
-467,141,35,116,2210,0,0,10,Birkenweg,78120.0,Furtwangen im Schwarzwald
-468,52,25,41,29490,0,0,44,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
-469,217,21,41,2120,0,0,11,Hebelstraße,78120.0,Furtwangen im Schwarzwald
-470,48,75,59,20280,0,0,7,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
-471,152,35,83,4480,0,0,9,Am Hofrain,78120.0,Furtwangen im Schwarzwald
-472,165,56,6,27410,0,0,22,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
-473,48,198,28,12530,1,0,5,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
-474,29,155,54,3690,0,0,7,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-475,111,8,53,24950,0,0,26,Bregstraße,78120.0,Furtwangen im Schwarzwald
-476,4,104,102,480,1,0,40,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-477,165,151,62,22570,0,0,13,Sommerbergstraße,,Furtwangen im Schwarzwald
-478,188,157,29,90,0,0,11,Am Hofrain,78120.0,Furtwangen im Schwarzwald
-479,1,4,13,2330,0,0,26,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
-480,165,48,91,4960,0,0,19,Luisenstraße,78120.0,Furtwangen im Schwarzwald
-481,15,33,53,620,0,0,18,Weiherstraße,78120.0,Furtwangen im Schwarzwald
-482,69,76,163,2770,0,0,29,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-483,48,63,50,820,0,1,6,Buchenweg,78120.0,Furtwangen im Schwarzwald
-484,111,35,132,3530,0,0,6,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
-485,96,84,175,700,0,1,11a,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
-486,84,5,20,4030,0,0,39,Sonnhalde,78120.0,Furtwangen im Schwarzwald
-487,47,133,4,1450,0,0,1,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
-488,184,34,72,570,1,0,6,Am Niegenhirschwald,78120.0,Furtwangen im Schwarzwald
-489,90,33,89,22590,0,0,27,Bregstraße,78120.0,Furtwangen im Schwarzwald
-490,73,104,26,1710,0,0,14,Wendelhofstraße,,Furtwangen im Schwarzwald
-491,33,47,45,200,1,0,11,Berliner Straße,78120.0,Furtwangen im Schwarzwald
-492,49,52,173,29070,0,0,7,Zum Döbele,78120.0,Furtwangen im Schwarzwald
-493,142,70,61,810,0,0,14,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-494,209,41,77,1060,0,0,21,Laulestraße,78120.0,Furtwangen im Schwarzwald
-495,168,88,35,5950,0,1,7/2,Bahnhofstraße,,Furtwangen im Schwarzwald
-496,154,106,20,610,0,1,9,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
-497,248,10,8,460,0,0,58,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
-498,28,148,33,11000,0,0,1,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
-499,143,40,51,18760,0,0,12,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
-500,227,28,109,1870,1,1,11/1,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
+1,114,77,71,3590,0,0,53/1,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+2,3,35,212,2060,0,0,70/1,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+3,216,88,7,970,0,0,17,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+4,147,99,43,670,0,0,32,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+5,53,134,6,520,0,0,17,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+6,30,24,29,9130,0,0,17,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+7,9,44,53,2500,0,0,21,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
+8,254,43,57,90,0,0,11,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+9,102,29,19,3560,0,0,52,Bregstraße,78120.0,Furtwangen im Schwarzwald
+10,97,53,56,560,0,0,10,Am Niegenhirschwald,78120.0,Furtwangen im Schwarzwald
+11,86,85,52,1850,0,0,10,Am Niegenhirschwald,78120.0,Furtwangen im Schwarzwald
+12,26,65,32,24490,0,0,10,Am Niegenhirschwald,78120.0,Furtwangen im Schwarzwald
+13,143,134,72,1860,0,0,1,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+14,153,57,30,26800,0,0,24,Allmendstraße,,Furtwangen im Schwarzwald
+15,56,70,64,20470,0,0,16,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
+16,5,20,140,23460,0,0,20,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+17,67,18,110,2550,0,0,14,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+18,42,14,24,2870,0,0,14,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+19,110,85,19,3080,0,0,53,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+20,1,116,75,1820,0,1,30,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+21,253,9,113,3810,0,1,30,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+22,84,111,71,570,0,0,43,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+23,66,81,43,1680,1,0,13,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+24,137,50,53,1780,0,0,20,Katzensteigstraße,78120.0,Furtwangen im Schwarzwald
+25,89,31,26,19060,0,0,43,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+26,165,28,18,270,0,0,23,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
+27,142,15,6,2350,0,1,23,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
+28,122,124,38,2350,0,0,3,Birkenweg,78120.0,Furtwangen im Schwarzwald
+29,188,144,22,1270,0,0,16,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
+30,94,92,5,4920,0,0,3,Barbaraweg,78120.0,Furtwangen im Schwarzwald
+31,12,146,65,2140,0,0,4,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
+32,155,24,33,520,0,1,5,Rabenstraße,,Furtwangen im Schwarzwald
+33,4,121,43,230,0,0,27,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+34,11,255,120,750,0,1,58,Bregstraße,78120.0,Furtwangen im Schwarzwald
+35,150,117,183,200,0,1,25,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+36,279,53,182,930,0,0,13,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+37,35,96,125,980,0,0,13,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+38,126,64,56,1260,0,0,14,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+39,33,99,26,4480,0,0,14,Josef-Zähringer-Straße,78120.0,Furtwangen im Schwarzwald
+40,14,260,92,6180,0,0,22/1,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+41,106,1,11,1090,0,0,25,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
+42,94,4,53,1910,0,0,20,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
+43,19,10,19,19080,0,0,4,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+44,69,5,56,3070,0,0,23/5,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+45,90,67,6,3800,0,0,6,Friedhofweg,78120.0,Furtwangen im Schwarzwald
+46,11,130,54,4080,0,0,6,Friedhofweg,78120.0,Furtwangen im Schwarzwald
+47,259,97,78,60,0,0,16,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+48,143,60,53,1430,0,0,16,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+49,104,44,78,2500,0,0,2,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
+50,126,72,21,4470,0,0,15,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+51,98,66,61,2180,0,0,13,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+52,173,25,62,1920,0,0,7,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
+53,158,68,10,1740,0,0,10,Hebelstraße,78120.0,Furtwangen im Schwarzwald
+54,98,72,66,19460,1,0,7,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+55,153,68,109,1810,0,0,7,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+56,120,137,142,50,0,1,20,Am Straßberg,78120.0,Furtwangen im Schwarzwald
+57,226,36,2,350,1,0,2,Am Kirchberg,78120.0,Furtwangen im Schwarzwald
+58,86,29,53,2240,0,0,20,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+59,185,106,32,3110,0,0,30,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+60,73,21,122,14720,0,0,66,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+61,70,19,33,130,0,0,1,Raben,78120.0,Furtwangen im Schwarzwald
+62,77,56,22,100,0,0,8,Rößleplatz,78120.0,Furtwangen im Schwarzwald
+63,68,54,45,540,1,0,2,Marktplatz,78120.0,Furtwangen im Schwarzwald
+64,67,114,46,2410,0,1,2,Am Straßberg,78120.0,Furtwangen im Schwarzwald
+65,54,135,65,1520,0,0,38,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+66,125,218,67,2050,1,0,5/1,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+67,3,109,63,1970,0,0,1,Vorderschützenbach,78120.0,Furtwangen im Schwarzwald
+68,41,118,38,2170,0,0,8,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+69,96,69,92,730,0,0,2,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+70,95,1,101,4200,0,0,4,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
+71,57,271,11,80,0,0,5,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+72,42,261,127,2150,0,0,31a,Bregstraße,78120.0,Furtwangen im Schwarzwald
+73,38,69,111,2230,1,0,74,Bregstraße,78120.0,Furtwangen im Schwarzwald
+74,257,156,112,920,0,0,46,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+75,84,19,194,6010,0,1,43,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+76,41,103,11,1790,0,1,18,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+77,74,54,90,1940,0,0,18,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+78,263,48,42,2160,0,0,18,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+79,189,182,101,2350,0,1,24,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+80,156,13,1,450,0,0,24,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+81,88,74,59,19270,0,0,24,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+82,217,107,138,9200,1,1,14,Laulestraße,78120.0,Furtwangen im Schwarzwald
+83,92,236,21,4590,0,0,1,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+84,63,147,6,9320,0,0,43/1,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+85,82,49,65,1430,0,0,3,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+86,11,148,53,4460,0,0,40,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+87,119,85,19,310,0,0,27,Bregstraße,78120.0,Furtwangen im Schwarzwald
+88,2,20,68,1270,0,0,27,Bregstraße,78120.0,Furtwangen im Schwarzwald
+89,69,28,102,2650,0,0,8,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+90,42,140,18,1430,0,1,8,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+91,162,58,69,1750,0,0,8,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+92,102,211,48,23840,0,0,11,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+93,178,63,141,4910,0,1,24,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+94,67,255,36,17900,0,0,19,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+95,84,4,29,2860,1,0,1,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+96,139,83,71,4250,0,0,24,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
+97,2,29,32,28630,0,0,3,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+98,90,14,66,4780,1,0,3,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+99,156,10,155,1130,0,0,3,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+100,85,111,37,1060,1,0,6,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+101,25,23,99,8720,0,0,32,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+102,98,25,124,2230,0,0,7,Bühlhofstraße,78120.0,Furtwangen im Schwarzwald
+103,79,152,25,1320,0,0,20,Gartenstraße,78120.0,Furtwangen im Schwarzwald
+104,22,47,8,16270,0,0,9,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+105,160,209,61,16330,0,0,3,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+106,96,63,112,4900,1,1,15,Bühlhofstraße,78120.0,Furtwangen im Schwarzwald
+107,114,9,59,1160,0,0,15,Bühlhofstraße,78120.0,Furtwangen im Schwarzwald
+108,144,85,60,2430,0,1,15,Bühlhofstraße,78120.0,Furtwangen im Schwarzwald
+109,37,69,122,3790,0,1,16,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+110,70,95,49,3880,0,1,14,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+111,17,120,45,2370,0,0,19,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+112,122,32,19,1840,0,1,19,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+113,134,29,33,21750,0,0,56,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+114,64,30,34,800,0,0,6,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+115,109,79,188,1040,1,0,15,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
+116,33,58,94,27330,0,0,24,Bahnhofstraße,,Furtwangen im Schwarzwald
+117,58,37,93,1250,0,0,24,Bahnhofstraße,,Furtwangen im Schwarzwald
+118,2,22,73,24950,0,0,6,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+119,110,56,99,1150,0,0,29,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+120,295,51,56,840,0,1,29,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+121,170,79,59,4050,0,0,29,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+122,64,66,25,2150,0,0,16,Am Straßberg,78120.0,Furtwangen im Schwarzwald
+123,87,39,102,870,0,1,27,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+124,31,99,50,1830,0,0,27,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+125,166,149,59,1060,0,0,17,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+126,55,72,63,170,0,0,7,Friedlandweg,78120.0,Furtwangen im Schwarzwald
+127,41,89,169,2290,1,0,74,Bregstraße,78120.0,Furtwangen im Schwarzwald
+128,103,129,59,4270,0,1,18,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+129,22,108,25,4290,0,0,18,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+130,71,83,60,3780,0,0,5,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+131,126,103,62,380,0,0,3,Bregstraße,78120.0,Furtwangen im Schwarzwald
+132,79,69,62,2120,0,0,3,Bregstraße,78120.0,Furtwangen im Schwarzwald
+133,298,71,10,2280,0,1,80,Bregstraße,78120.0,Furtwangen im Schwarzwald
+134,63,53,133,1140,0,0,35,Bregstraße,78120.0,Furtwangen im Schwarzwald
+135,135,2,63,2200,1,0,28,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+136,145,66,141,830,0,0,2,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+137,232,149,46,1630,0,0,19,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+138,111,15,10,1810,0,0,10,Gerwigstraße,78120.0,Furtwangen im Schwarzwald
+139,48,43,67,5690,1,0,15,Friedlandweg,78120.0,Furtwangen im Schwarzwald
+140,91,32,31,90,1,0,44,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+141,9,67,17,1220,1,0,11,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+142,62,125,137,1650,0,0,35,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+143,207,72,201,1310,1,0,14,Wendelhofstraße,,Furtwangen im Schwarzwald
+144,37,1,3,20000,0,0,6,Zur Langeck,78120.0,Furtwangen im Schwarzwald
+145,176,179,38,24890,0,0,2,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+146,84,83,68,1750,0,1,32,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
+147,8,40,73,4300,0,0,14,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
+148,214,127,81,1670,0,0,3,Am Hofrain,78120.0,Furtwangen im Schwarzwald
+149,96,119,43,1930,0,0,7,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+150,66,83,24,4440,0,0,22,Gartenstraße,78120.0,Furtwangen im Schwarzwald
+151,71,36,93,6360,0,0,1,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
+152,38,153,36,29780,0,1,12,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+153,7,58,36,19670,0,0,22/1,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+154,75,110,57,2730,0,0,6,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+155,124,10,31,18890,0,0,7,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+156,69,109,66,1440,0,0,7,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+157,1,238,10,730,0,0,7,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+158,168,87,39,2130,0,0,7,Birkenweg,78120.0,Furtwangen im Schwarzwald
+159,46,34,69,60,1,0,9,Gartenstraße,78120.0,Furtwangen im Schwarzwald
+160,48,37,31,27590,0,0,11,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+161,159,1,5,1880,0,0,15,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+162,47,6,22,27400,1,0,1,Am Hofrain,78120.0,Furtwangen im Schwarzwald
+163,70,6,134,810,0,1,9,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+164,46,107,217,700,0,0,1,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
+165,110,62,36,30940,0,0,17,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
+166,170,127,65,1290,0,1,28,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+167,167,116,140,2100,0,0,28,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+168,18,94,26,2110,0,0,78,Bregstraße,78120.0,Furtwangen im Schwarzwald
+169,60,60,177,2920,1,0,27,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+170,108,101,102,3960,0,0,6,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+171,2,29,53,2200,0,1,33,Bregstraße,78120.0,Furtwangen im Schwarzwald
+172,61,213,15,1070,0,0,45,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+173,64,95,136,4170,0,0,45,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+174,46,89,104,9900,0,0,45,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+175,53,44,33,1510,0,1,3,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
+176,168,221,21,520,0,0,90,Bregstraße,78120.0,Furtwangen im Schwarzwald
+177,79,11,118,2980,1,0,8,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+178,139,106,13,510,0,0,8,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+179,168,23,47,1910,1,0,77,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+180,298,46,49,2020,0,1,5,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+181,18,60,10,16450,0,1,1,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+182,66,16,46,650,0,0,15,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+183,104,108,43,6020,1,0,2,Am Hofrain,78120.0,Furtwangen im Schwarzwald
+184,117,209,128,14000,0,1,24,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
+185,12,156,42,2280,0,1,11c,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+186,165,114,2,690,1,1,22,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+187,210,72,43,4820,0,0,22,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+188,60,40,37,1000,1,0,44,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+189,242,25,66,2250,0,0,29,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+190,4,60,50,3210,0,0,30,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
+191,44,18,27,2720,1,0,19,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+192,85,95,92,1600,0,1,1,Birkenweg,78120.0,Furtwangen im Schwarzwald
+193,114,149,122,2140,0,0,5,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+194,64,65,79,640,1,0,24,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
+195,73,58,74,50,0,0,10,Birkenweg,78120.0,Furtwangen im Schwarzwald
+196,202,153,212,7000,0,1,10,Ludwig-Zier-Straße,78120.0,Furtwangen im Schwarzwald
+197,82,57,15,28280,0,0,30,Rabenstraße,78120.0,Furtwangen im Schwarzwald
+198,94,125,177,930,0,0,1,Ahornweg,78120.0,Furtwangen im Schwarzwald
+199,136,16,11,1140,0,0,6,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+200,98,37,171,7430,0,1,4,Vorderschützenbach,78120.0,Furtwangen im Schwarzwald
+201,112,66,61,340,0,0,25/5,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+202,123,175,51,1330,0,0,8/1,Hafnergässle,78120.0,Furtwangen im Schwarzwald
+203,66,20,9,2670,0,0,25,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+204,25,59,8,29610,0,0,25,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+205,44,149,114,2450,0,0,14,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
+206,99,59,45,19260,0,0,8,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+207,12,18,134,1750,0,0,8,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+208,105,64,55,24090,0,0,25,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+209,72,75,211,1460,0,1,7,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+210,79,21,14,1040,1,0,22/1,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+211,57,53,157,1120,0,0,3,Gerwigstraße,78120.0,Furtwangen im Schwarzwald
+212,82,17,118,1350,1,0,3,Gerwigstraße,78120.0,Furtwangen im Schwarzwald
+213,53,174,36,1600,0,1,3,Gerwigstraße,78120.0,Furtwangen im Schwarzwald
+214,84,104,63,2140,0,0,36,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+215,90,94,57,1150,0,0,15/2,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+216,4,26,15,150,0,0,16,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+217,20,20,110,1600,0,1,1,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
+218,77,26,54,1210,0,0,28,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+219,18,51,43,990,1,0,18,Jahnstraße,78120.0,Furtwangen im Schwarzwald
+220,44,254,40,2530,0,0,58,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+221,164,24,27,3150,0,0,31,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+222,99,29,37,2120,0,0,31,Am Wannenweg,78120.0,Furtwangen im Schwarzwald
+223,177,66,53,3280,0,0,19,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+224,75,71,191,780,0,0,20,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+225,179,77,39,3260,0,0,19,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
+226,169,96,125,930,0,0,11,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+227,110,52,218,390,0,1,46,Bregstraße,78120.0,Furtwangen im Schwarzwald
+228,7,48,63,950,0,0,37,Bregstraße,78120.0,Furtwangen im Schwarzwald
+229,22,79,26,740,0,0,14,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+230,86,41,59,90,0,0,34,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
+231,82,122,193,27530,0,0,5,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
+232,57,125,218,1490,0,0,14,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
+233,4,48,68,1010,0,0,13/2,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+234,142,7,40,1380,0,0,34,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+235,43,96,90,3790,0,0,34,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+236,28,38,42,4930,0,0,43,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+237,90,79,51,1650,0,0,11,Bregstraße,78120.0,Furtwangen im Schwarzwald
+238,183,37,69,1300,1,0,14,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
+239,81,146,186,350,1,0,12,Am Straßberg,78120.0,Furtwangen im Schwarzwald
+240,285,99,19,9480,1,0,12,Am Straßberg,78120.0,Furtwangen im Schwarzwald
+241,267,21,201,3530,0,0,19,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+242,205,194,18,2220,0,0,15,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+243,25,155,1,4190,0,0,14,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
+244,143,72,39,1380,0,0,18,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+245,144,93,28,2150,0,0,18,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+246,72,207,44,1080,1,0,2,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+247,30,1,67,1380,0,0,12,Gartenstraße,78120.0,Furtwangen im Schwarzwald
+248,11,41,100,970,0,0,2,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+249,64,124,106,16230,0,0,13,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+250,166,60,11,60,0,0,37b,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+251,173,262,100,1610,0,0,37b,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+252,167,85,100,13520,0,1,13/3,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+253,48,122,14,27260,0,0,36,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+254,69,26,105,550,0,1,14,Dr.-Guttenberg-Straße,78120.0,Furtwangen im Schwarzwald
+255,57,131,9,570,0,0,20,Bregstraße,78120.0,Furtwangen im Schwarzwald
+256,56,133,48,14030,1,0,20,Bregstraße,78120.0,Furtwangen im Schwarzwald
+257,52,67,96,90,0,1,9,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+258,63,43,90,1840,0,0,9,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+259,16,50,100,180,0,0,38,Rabenstraße,78120.0,Furtwangen im Schwarzwald
+260,40,135,30,1250,0,0,38,Rabenstraße,78120.0,Furtwangen im Schwarzwald
+261,82,67,6,1690,0,0,26,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+262,7,103,19,22110,0,0,79,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+263,99,40,61,1300,0,0,25,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+264,148,153,81,2720,0,0,18,Rabenstraße,78120.0,Furtwangen im Schwarzwald
+265,54,248,69,540,0,0,5,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+266,122,146,122,3160,0,0,5,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+267,68,39,6,1580,0,0,1,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+268,67,116,117,2110,0,0,24,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+269,257,56,10,3770,0,0,14,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+270,3,58,47,2420,0,0,29,Bregstraße,78120.0,Furtwangen im Schwarzwald
+271,58,90,63,2570,1,0,56,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+272,78,30,196,1220,0,0,56,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+273,51,19,68,4390,0,0,6,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+274,101,14,50,1560,0,0,20,Katzensteigstraße,78120.0,Furtwangen im Schwarzwald
+275,56,65,79,1250,0,1,22,Gartenstraße,78120.0,Furtwangen im Schwarzwald
+276,29,134,54,270,0,0,5,Lindenstraße,78120.0,Furtwangen im Schwarzwald
+277,38,64,32,2240,0,0,8,Kronenstraße,78120.0,Furtwangen im Schwarzwald
+278,73,18,50,1310,0,0,8,Zur Langeck,78120.0,Furtwangen im Schwarzwald
+279,24,9,101,130,0,0,5,Lochhofstraße,78120.0,Furtwangen im Schwarzwald
+280,161,69,21,1660,1,0,3,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
+281,85,158,1,10180,0,0,37,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+282,29,7,142,1110,0,0,32,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+283,157,76,52,9390,0,0,22,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+284,68,26,23,450,1,1,23,Bühlhofstraße,78120.0,Furtwangen im Schwarzwald
+285,2,45,30,3550,1,0,6,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
+286,40,72,24,1680,0,0,17,Am Hofrain,78120.0,Furtwangen im Schwarzwald
+287,131,44,147,1250,0,0,17,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
+288,174,92,35,23940,0,0,40a,Bregstraße,78120.0,Furtwangen im Schwarzwald
+289,258,38,38,28610,0,1,12,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald
+290,253,73,20,4480,0,0,40,Bregstraße,78120.0,Furtwangen im Schwarzwald
+291,68,188,89,20480,0,0,8,Zum Döbele,78120.0,Furtwangen im Schwarzwald
+292,226,57,44,1070,0,0,13,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
+293,93,127,154,1670,0,0,7,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
+294,261,10,29,1110,1,0,21,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+295,32,72,10,3280,1,1,3,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+296,45,153,4,1270,1,0,24,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
+297,89,73,66,810,0,0,12,Am Straßberg,78120.0,Furtwangen im Schwarzwald
+298,20,230,4,1790,0,0,3,Buchenweg,78120.0,Furtwangen im Schwarzwald
+299,83,55,66,2270,0,0,54,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+300,10,135,86,18450,0,1,15,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
+301,94,246,69,260,0,0,40,Bregstraße,78120.0,Furtwangen im Schwarzwald
+302,27,58,61,470,0,0,59,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+303,20,30,82,2330,0,0,59,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+304,108,122,63,1600,0,0,19,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+305,183,82,158,1000,0,0,5a,Friedhofweg,78120.0,Furtwangen im Schwarzwald
+306,147,3,52,1090,0,0,27,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+307,157,44,65,2360,0,0,15/4,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+308,50,124,38,2250,0,0,15/4,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald
+309,87,25,39,1410,0,1,3,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+310,237,167,64,1950,0,1,27,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+311,1,36,91,4830,0,0,1,Goethestraße,78120.0,Furtwangen im Schwarzwald
+312,143,71,58,2200,1,1,1,Goethestraße,78120.0,Furtwangen im Schwarzwald
+313,25,85,49,23370,0,0,4,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+314,20,259,63,2160,1,0,23,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+315,165,33,47,2090,1,0,17,Laulestraße,78120.0,Furtwangen im Schwarzwald
+316,89,83,64,1630,0,0,20,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+317,71,53,126,390,0,0,18,Goethestraße,78120.0,Furtwangen im Schwarzwald
+318,193,165,57,1390,0,1,90,Bregstraße,78120.0,Furtwangen im Schwarzwald
+319,144,40,3,1020,0,0,13/1,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+320,65,140,5,14280,0,0,3,Friedlandweg,78120.0,Furtwangen im Schwarzwald
+321,23,3,43,11790,0,0,17,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
+322,69,45,8,1680,1,0,14,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+323,237,2,57,27720,0,1,7,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+324,46,58,90,4970,0,0,7/1,Bahnhofstraße,,Furtwangen im Schwarzwald
+325,33,125,93,70,0,0,1,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+326,137,25,33,900,0,0,10,Am Niegenhirschwald,78120.0,Furtwangen im Schwarzwald
+327,57,47,124,210,0,0,40,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+328,93,70,129,1690,1,0,40,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+329,42,158,14,12030,0,0,16,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+330,288,75,87,1810,0,0,16,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+331,50,143,13,460,0,1,21,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+332,69,13,51,800,0,0,39,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+333,7,226,82,29270,0,0,39,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+334,103,31,159,1780,0,0,39,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+335,93,150,40,1580,0,0,14,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
+336,234,22,23,4260,0,0,26,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+337,91,99,60,2670,0,0,41,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+338,256,44,134,1660,0,0,18,Berliner Straße,78120.0,Furtwangen im Schwarzwald
+339,68,76,36,2270,0,0,22a,Katzensteigstraße,,Furtwangen im Schwarzwald
+340,160,81,40,7500,1,0,15,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
+341,75,201,152,1630,0,0,15,Kirnerstraße,78120.0,Furtwangen im Schwarzwald
+342,109,118,89,2090,0,0,10,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+343,137,86,20,29220,0,0,11,Am Hofrain,78120.0,Furtwangen im Schwarzwald
+344,74,102,13,4650,0,0,26,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+345,12,123,53,30780,0,0,3,In der Wanne,78120.0,Furtwangen im Schwarzwald
+346,92,132,86,3530,0,0,29,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+347,55,26,15,1620,0,0,57,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+348,21,68,38,2680,0,0,57,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+349,192,17,12,1210,1,1,1,Vorderschützenbach,78120.0,Furtwangen im Schwarzwald
+350,54,102,10,1490,0,0,1,Vorderschützenbach,78120.0,Furtwangen im Schwarzwald
+351,46,241,97,22730,1,0,8,Ganterhofstraße,78120.0,Furtwangen im Schwarzwald
+352,30,4,4,28020,0,0,26,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+353,46,132,37,1790,1,1,17,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+354,75,58,111,3650,0,0,21,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+355,23,1,75,840,1,0,30,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+356,17,44,49,14340,0,0,22,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
+357,126,63,59,27300,0,0,18,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+358,128,52,52,1770,0,0,6,Am Hofrain,78120.0,Furtwangen im Schwarzwald
+359,156,5,44,3800,0,0,4,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
+360,52,67,40,2400,0,0,36,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+361,27,47,43,2330,0,0,36,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+362,37,155,45,20670,0,1,36,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+363,160,88,58,6290,0,0,42,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+364,4,71,219,1350,0,0,21,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
+365,108,22,47,1080,0,0,6,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+366,8,43,1,2390,0,1,4,Buchenweg,78120.0,Furtwangen im Schwarzwald
+367,162,34,81,30400,1,0,4,Buchenweg,78120.0,Furtwangen im Schwarzwald
+368,173,117,5,1650,1,0,4,Buchenweg,78120.0,Furtwangen im Schwarzwald
+369,148,91,124,7560,0,0,8/1,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald
+370,76,145,65,1570,0,0,33,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+371,77,78,102,1220,0,0,8,Zum Döbele,78120.0,Furtwangen im Schwarzwald
+372,140,110,55,820,1,0,27,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+373,61,30,56,740,1,0,46,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+374,193,61,38,540,0,0,24,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+375,49,24,35,1280,0,0,39,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
+376,130,2,34,2550,0,0,30,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+377,7,112,55,28610,0,0,5,Jahnstraße,78120.0,Furtwangen im Schwarzwald
+378,24,57,203,2120,0,0,22,Bahnhofstraße,78120.0,Furtwangen im Schwarzwald
+379,122,87,50,140,1,0,12,Am Straßberg,78120.0,Furtwangen im Schwarzwald
+380,46,232,13,9350,0,0,3,Lochhofstraße,78120.0,Furtwangen im Schwarzwald
+381,78,72,28,1160,1,0,18,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+382,66,20,81,4210,0,0,3,Viertelhofweg,78120.0,Furtwangen im Schwarzwald
+383,24,256,63,840,1,0,22,Bregstraße,78120.0,Furtwangen im Schwarzwald
+384,157,114,70,25740,0,0,22,Bregstraße,78120.0,Furtwangen im Schwarzwald
+385,11,278,100,1280,1,1,22,Bregstraße,78120.0,Furtwangen im Schwarzwald
+386,84,39,130,2790,0,0,33,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+387,115,56,38,1940,0,1,33,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+388,179,32,48,16720,0,0,8,Birkenweg,78120.0,Furtwangen im Schwarzwald
+389,149,63,3,20870,0,0,20,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
+390,144,92,39,1120,0,0,7,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
+391,59,99,69,170,1,0,9,Unterallmendstraße,78120.0,Furtwangen im Schwarzwald
+392,254,41,61,1110,1,0,34,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+393,87,147,182,1840,0,0,34,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+394,34,42,34,380,0,0,36/1,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+395,34,97,113,990,1,0,5b,Friedhofweg,78120.0,Furtwangen im Schwarzwald
+396,17,215,133,2080,0,0,3,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
+397,92,90,38,800,1,0,3,Alemannenstraße,78120.0,Furtwangen im Schwarzwald
+398,46,108,33,450,0,0,64,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+399,52,86,31,1130,1,1,20,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
+400,266,39,122,28320,0,1,11,Zum Döbele,78120.0,Furtwangen im Schwarzwald
+401,190,24,3,3330,0,1,36,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+402,59,98,24,1260,0,0,5,Birkenweg,78120.0,Furtwangen im Schwarzwald
+403,38,11,31,19700,0,0,2,Am Hofrain,78120.0,Furtwangen im Schwarzwald
+404,101,42,48,24210,0,0,3,Zum Döbele,78120.0,Furtwangen im Schwarzwald
+405,131,101,35,1560,0,0,26,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+406,67,112,69,1940,0,0,39,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+407,23,84,35,2250,0,0,32,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+408,6,130,40,13780,0,0,9,Hans-Thoma-Straße,78120.0,Furtwangen im Schwarzwald
+409,52,71,140,26860,0,1,4,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+410,81,189,117,1340,0,0,6,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+411,56,130,106,3940,0,0,1,Zur Langeck,78120.0,Furtwangen im Schwarzwald
+412,8,79,46,4420,0,1,7/1,Bahnhofstraße,,Furtwangen im Schwarzwald
+413,288,25,112,27910,0,0,11,Buchenweg,78120.0,Furtwangen im Schwarzwald
+414,176,1,197,2090,1,0,11,Buchenweg,78120.0,Furtwangen im Schwarzwald
+415,28,119,34,1250,0,0,19a,Grieshaberstraße,78120.0,Furtwangen im Schwarzwald
+416,95,138,178,900,0,0,18,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+417,224,209,101,4670,1,0,12,Buchenweg,78120.0,Furtwangen im Schwarzwald
+418,58,99,20,1870,0,0,16,Am Straßberg,78120.0,Furtwangen im Schwarzwald
+419,242,130,128,590,0,1,6,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+420,75,18,77,450,0,1,27,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+421,52,9,24,2030,1,0,11,Geschwister-Scholl-Weg,78120.0,Furtwangen im Schwarzwald
+422,87,33,107,2460,0,0,22,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
+423,28,48,3,1630,0,0,8,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+424,50,98,69,1450,0,0,8,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+425,12,49,213,2290,0,1,1,Bühlhofstraße,78120.0,Furtwangen im Schwarzwald
+426,157,21,40,21880,0,0,2a,Neue Heimat,78120.0,Furtwangen im Schwarzwald
+427,131,55,35,1140,1,0,16,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+428,65,218,33,280,0,0,17,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+429,150,136,36,1930,0,0,14,Bregstraße,78120.0,Furtwangen im Schwarzwald
+430,43,71,66,1070,0,1,21,Wendelhofstraße,,Furtwangen im Schwarzwald
+431,82,200,60,29760,1,1,21,Wendelhofstraße,,Furtwangen im Schwarzwald
+432,168,163,12,4640,0,0,6,Gerwigstraße,78120.0,Furtwangen im Schwarzwald
+433,13,70,38,15130,0,0,21,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+434,96,250,79,560,1,0,21,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+435,15,71,51,23980,1,0,60,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+436,100,13,22,1740,1,0,60,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+437,88,33,158,3160,0,0,1,Bühlhofstraße,78120.0,Furtwangen im Schwarzwald
+438,25,234,1,2380,0,1,33,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
+439,127,62,110,2350,0,0,49,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+440,34,164,103,1170,0,0,36,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+441,77,45,123,1240,0,0,7,Lindenstraße,78120.0,Furtwangen im Schwarzwald
+442,224,7,137,4690,1,0,48,Sonnhalde,78120.0,Furtwangen im Schwarzwald
+443,150,99,59,290,0,0,12,Laulestraße,78120.0,Furtwangen im Schwarzwald
+444,67,132,35,1870,1,0,7,Rabenstraße,78120.0,Furtwangen im Schwarzwald
+445,65,59,44,1300,0,0,7,Rabenstraße,78120.0,Furtwangen im Schwarzwald
+446,73,98,6,4390,0,0,18,Auf dem Bühl,78120.0,Furtwangen im Schwarzwald
+447,176,131,147,2460,0,0,27,Katzensteigstraße,,Furtwangen im Schwarzwald
+448,33,84,15,1840,1,0,27,Katzensteigstraße,,Furtwangen im Schwarzwald
+449,131,265,9,2170,0,0,4,Am Großhausberg,78120.0,Furtwangen im Schwarzwald
+450,38,83,90,1090,0,0,7,Zum Döbele,78120.0,Furtwangen im Schwarzwald
+451,81,71,44,1290,0,1,36,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
+452,75,76,39,4920,0,0,11,Hebelstraße,78120.0,Furtwangen im Schwarzwald
+453,68,53,88,22240,0,1,1,Birkenweg,78120.0,Furtwangen im Schwarzwald
+454,67,60,18,2270,0,0,48,Ilbenstraße,78120.0,Furtwangen im Schwarzwald
+455,233,108,128,1170,0,1,27,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+456,177,37,58,570,0,1,27,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+457,99,85,16,2360,1,1,27,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+458,37,53,1,250,1,1,29,Eichendorffstraße,78120.0,Furtwangen im Schwarzwald
+459,7,50,67,15040,0,0,11,Gartenstraße,78120.0,Furtwangen im Schwarzwald
+460,156,61,24,1650,1,0,34,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald
+461,71,236,55,28390,0,0,6,Birkenweg,78120.0,Furtwangen im Schwarzwald
+462,173,40,69,3290,0,0,16,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+463,163,134,155,230,0,0,1,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald
+464,93,83,38,420,0,0,3,Weiherstraße,78120.0,Furtwangen im Schwarzwald
+465,173,66,46,350,0,1,10,Rabenstraße,78120.0,Furtwangen im Schwarzwald
+466,109,85,4,3790,0,0,24,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+467,8,13,69,6840,0,0,5,Geschwister-Scholl-Weg,78120.0,Furtwangen im Schwarzwald
+468,82,38,75,26620,0,0,10,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
+469,289,25,28,1310,1,0,10,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald
+470,127,33,40,350,0,0,11,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+471,149,35,4,2960,0,0,3,Wilhelmstraße,78120.0,Furtwangen im Schwarzwald
+472,78,178,60,1020,0,0,41,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+473,74,195,50,1780,0,1,41,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+474,248,78,5,1170,0,0,41,Kussenhofstraße,78120.0,Furtwangen im Schwarzwald
+475,13,235,126,750,0,0,3,Fohrenstraße,78120.0,Furtwangen im Schwarzwald
+476,61,38,105,1260,0,0,11,Marktplatz,78120.0,Furtwangen im Schwarzwald
+477,88,116,55,4250,0,0,32,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+478,269,109,54,2420,0,0,15,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+479,152,119,5,29980,0,0,15,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+480,75,11,29,1440,1,0,15,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+481,24,265,134,4040,0,0,15,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+482,32,139,104,2000,0,0,14,Eigenheimweg,78120.0,Furtwangen im Schwarzwald
+483,20,131,203,15390,0,1,36,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald
+484,50,157,41,3230,1,1,24,Gartenstraße,78120.0,Furtwangen im Schwarzwald
+485,137,77,34,2200,0,1,41,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald
+486,23,105,124,380,0,0,15,Am Hofrain,78120.0,Furtwangen im Schwarzwald
+487,24,43,66,610,0,0,5a,Friedhofweg,78120.0,Furtwangen im Schwarzwald
+488,15,89,5,1640,0,0,16,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
+489,17,32,178,800,0,0,12,Laulestraße,78120.0,Furtwangen im Schwarzwald
+490,33,194,20,17350,0,0,18,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald
+491,61,136,54,1760,0,0,17,Bismarckstraße,78120.0,Furtwangen im Schwarzwald
+492,130,43,26,5380,1,0,19,Friedrichstraße,78120.0,Furtwangen im Schwarzwald
+493,113,90,29,570,0,0,39,Allmendstraße,78120.0,Furtwangen im Schwarzwald
+494,36,63,38,120,0,0,14,Laulestraße,78120.0,Furtwangen im Schwarzwald
+495,68,70,39,1950,0,1,2,Oberer Wannenweg,78120.0,Furtwangen im Schwarzwald
+496,299,54,28,2000,0,0,17,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+497,22,42,56,1970,1,0,17,Am Bodenwald,78120.0,Furtwangen im Schwarzwald
+498,69,17,96,27790,0,0,2,Baumannstraße,78120.0,Furtwangen im Schwarzwald
+499,14,205,82,28700,0,0,7a,Martin-Blessing-Straße,78120.0,Furtwangen im Schwarzwald
+500,175,112,34,2040,0,0,17,Weiherstraße,78120.0,Furtwangen im Schwarzwald

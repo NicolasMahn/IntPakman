@@ -71,15 +71,28 @@ def get_height():
 random_data = pd.DataFrame(columns=["Sendungsnummer", "length_cm", "width_cm", "height_cm", "weight_in_g", "fragile", "perishable",
                                     "house_number", "street", "post_code", "city"])
 
+old_adress_id = 0
+
 
 def generate_random_package_data(number, path):
     for i in range(0, number):
-        rand_add = np.random.randint(0, len(adresses))
-        random_data.loc[i] = [(i + 1), get_length(), get_width(), get_height(), get_weight(),
-                              np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
-                              np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
-                              adresses.iloc[rand_add, 1], adresses.iloc[rand_add, 2], adresses.iloc[rand_add, 3],
-                              adresses.iloc[rand_add, 4]]
+        rand_double_package = np.random.choice([0, 1], 1, p=[0.85, 0.15])[0]
+        if rand_double_package == 0:
+            rand_add = np.random.randint(0, len(adresses))
+            random_data.loc[i] = [(i + 1), get_length(), get_width(), get_height(), get_weight(),
+                                  np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
+                                  np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
+                                  adresses.iloc[rand_add, 1], adresses.iloc[rand_add, 2], adresses.iloc[rand_add, 3],
+                                  adresses.iloc[rand_add, 4]]
+            old_adress_id = rand_add
+        else:
+            random_data.loc[i] = [(i + 1), get_length(), get_width(), get_height(), get_weight(),
+                                  np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
+                                  np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
+                                  adresses.iloc[old_adress_id, 1], adresses.iloc[old_adress_id, 2],
+                                  adresses.iloc[old_adress_id, 3], adresses.iloc[old_adress_id, 4]]
+
+
     random_data.to_csv(path, index=False)
 
 
