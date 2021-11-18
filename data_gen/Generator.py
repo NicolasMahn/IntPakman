@@ -87,7 +87,7 @@ def generate_random_package_data(number, path):
                               np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
                               adresses.iloc[rand_add, 1], adresses.iloc[rand_add, 2], adresses.iloc[rand_add, 3],
                               adresses.iloc[rand_add, 4], rand_add]
-    random_data.to_csv(path)
+    random_data.to_csv(path, index=False)
 
 
-generate_random_package_data(20, "C:/Users/leonr/Documents/Git/IntPakman/data/random_paketdaten.csv")
+generate_random_package_data(500, "C:/Users/leonr/Desktop/random_paketdaten.csv")
