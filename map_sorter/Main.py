@@ -18,8 +18,8 @@ def main():
               "sequence",
               "district",
               "geojson_geometry",
-              "longitude"
-              "latitude"
+              "longitude",
+              "latitude",
               "distance_from_others"]
     adresses.append(header)
 
@@ -67,7 +67,7 @@ def main():
         adresses.append([id_,
                          house_number, street, post_code, city,
                          None, #priority
-                         None, #district
+                         1, #district
                          geojson_geometry,
                          None, #longitude
                          None, #latitude
@@ -137,7 +137,7 @@ def get_streets(map):
     # test_geojson = {"type": "FeatureCollection",
     #                 "features": test}
     # Cleric.write_json(streets, '../map_sorter/map_data/all_streets.geojson')
-    # Cleric.write("var line = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test3.js')
+    # Cleric.write("var line3 = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test3.js')
 
     return streets
 
