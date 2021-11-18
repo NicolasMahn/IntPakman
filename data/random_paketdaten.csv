@@ -1,4 +1,4 @@
-,Sendungsnummer,length_cm,width_cm,height_cm,weight_in_g,fragile,perishable,house_number,street,post_code,city,id
+Sendungsnummer,length_cm,width_cm,height_cm,weight_in_g,fragile,perishable,house_number,street,post_code,city,id
 0,1,116,41,124,29630,0,0,10,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald,3476
 1,2,74,130,172,1370,0,1,25,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald,3673
 2,3,98,66,16,1420,0,1,25/6,Eigenheimweg,78120.0,Furtwangen im Schwarzwald,6113
