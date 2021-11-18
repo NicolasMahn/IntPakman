@@ -1,0 +1,21 @@
+,Sendungsnummer,length_cm,width_cm,height_cm,weight_in_g,fragile,perishable,house_number,street,post_code,city,id
+0,1,116,41,124,29630,0,0,10,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald,3476
+1,2,74,130,172,1370,0,1,25,Sommerbergstraße,78120.0,Furtwangen im Schwarzwald,3673
+2,3,98,66,16,1420,0,1,25/6,Eigenheimweg,78120.0,Furtwangen im Schwarzwald,6113
+3,4,198,63,68,3020,0,0,28,Erwin-Wehrle-Straße,78120.0,Furtwangen im Schwarzwald,3563
+4,5,208,117,57,600,1,1,11,Stephan-Blattmann-Straße,78120.0,Furtwangen im Schwarzwald,7958
+5,6,136,60,32,2430,0,0,5,Eigenheimweg,78120.0,Furtwangen im Schwarzwald,6873
+6,7,62,76,74,24410,0,0,7,Laulestraße,78120.0,Furtwangen im Schwarzwald,792
+7,8,31,53,41,720,0,0,18,Josef-Dorer-Straße,78120.0,Furtwangen im Schwarzwald,2100
+8,9,266,43,19,1590,0,0,2,Kohlheppstraße,78120.0,Furtwangen im Schwarzwald,2072
+9,10,92,84,52,4270,0,0,12,Hans-Frank-Straße,78120.0,Furtwangen im Schwarzwald,1912
+10,11,178,30,43,870,0,0,15/1,Marktplatz,78120.0,Furtwangen im Schwarzwald,4767
+11,12,95,159,23,1740,0,0,16,Baumannstraße,78120.0,Furtwangen im Schwarzwald,8689
+12,13,50,77,54,3140,0,0,28,Weiherstraße,78120.0,Furtwangen im Schwarzwald,5674
+13,14,68,101,39,31160,0,1,10,Laulestraße,78120.0,Furtwangen im Schwarzwald,5466
+14,15,58,65,20,1490,0,0,15,Fohrenstraße,78120.0,Furtwangen im Schwarzwald,4414
+15,16,26,264,66,2370,1,0,9,Birkenweg,78120.0,Furtwangen im Schwarzwald,5365
+16,17,160,47,86,2040,1,0,62,Bregstraße,78120.0,Furtwangen im Schwarzwald,2251
+17,18,138,14,55,25600,0,0,5,Albert-Schweitzer-Straße,78120.0,Furtwangen im Schwarzwald,7066
+18,19,154,3,187,500,0,0,14,Vogt-Dufner-Straße,78120.0,Furtwangen im Schwarzwald,8818
+19,20,50,146,5,1990,0,0,7,Carl-Diem-Straße,78120.0,Furtwangen im Schwarzwald,12106

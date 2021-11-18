@@ -38,7 +38,7 @@ cleaned_data = data_preparation(input_data)
 print_plot(cleaned_data, 'volume')
 
 model = DecisionTreeClassifier()
-Xtrain, Xtest, ytrain, ytest = train_test_split(cleaned_data.drop(columns='prio'), cleaned_data.prio, test_size=0.2, random_state=42)
+Xtrain, Xtest, ytrain, ytest = train_test_split(cleaned_data.drop(columns=['prio', 'volume']), cleaned_data.prio, test_size=0.2, random_state=42)
 
 model.fit(Xtrain, ytrain)
 pred = model.predict(Xtest)
