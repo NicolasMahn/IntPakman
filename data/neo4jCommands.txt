@@ -1,0 +1,12 @@
+LOAD CSV WITH HEADERS FROM 'file:///adresses_new1.csv' AS a
+CREATE (:Address {house_number:a.house_number,street:a.street,postcode:a.post_code,sequence:a.sequence,district:a.district})
+
+LOAD CSV WITH HEADERS FROM 'file:///random_paketdaten.csv' AS a
+CREATE (:Package {sendungsnummer:a.sendungsnummer,length_cm:a.length_cm,width_cm:a.width_cm,height_cm:a.height_cm,weight_in_g:a.weight_in_g,fragile:a.fragile,perishable:a.perishable,house_number:a.house_number,street:a.street,postcode:a.post_code,city:a.city})
+
+MATCH (p:Package), (a:Address) WHERE p.street = "Berliner Straße" AND a.street = "Berliner Straße" AND p.house_number="17" AND a.house_number="17" 
+CREATE (p)-[r:DELIVERED_TO]->(a)  
+RETURN a,p
+
+MATCH (p:Package)-[:DELIVERED_TO]->(a:Address)
+RETURN a

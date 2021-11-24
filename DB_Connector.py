@@ -1,7 +1,7 @@
 from neo4j import GraphDatabase
 
 
-class HelloWorldExample:
+class DBConnector:
     street = []
     house_number = []
 
@@ -11,21 +11,29 @@ class HelloWorldExample:
     def close(self):
         self.driver.close()
 
-    def print_delivered_adresses(self, message):
+    def neo_transaction(self, address):
         with self.driver.session() as session:
-            greeting = session.write_transaction(self._create_and_return_greeting, message)
-            print(greeting)
+            # Write transactions allow the driver to handle retries and transient errors
+            result = session.write_transaction(
+                self._create_address, address)
 
     @staticmethod
-    def _create_and_return_greeting(tx):
-        result = tx.run("LOAD CSV FROM 'file:///adresses.csv' AS line"
-        +"CREATE(: Artist"
-        +"{name: line[1], year: toInteger(line[2])})", message=message)
+    def _create_address(tx, address):
+        street = address["street"]
+        house_number = address["house_number"]
+        id = address["id"]
+        post_code = address["post_code"]
+        city = address["city"]
+        district = address["district"]
+        geojson_geometry = address["geojson_geometry"]
 
-    return result.single()[0]
-
+        query = "CREATE (adress:Address_Test{id:$id,street:$street,house_number:$house_number,post_code:$post_code," \
+                "city:$city,district:$district,geojson_geometry:$geojson_geometry}) "
+        tx.run(query, street=street, house_number=house_number, id=id, post_code=post_code, district=district,
+               city=city, geojson_geometry=geojson_geometry)
 
 if __name__ == "__main__":
-    greeter = HelloWorldExample("bolt://localhost:7687", "neo4j", "test")
-    greeter.print_delivered_adresses("hello, world")
-    greeter.close()
+    connector = DBConnector("bolt://localhost:7687", "neo4j", "test")
+    connector.neo_transaction(
+        {"street": "Katzensteig", "house_number": "2", "id": "5", "post_code": "78120", "city": "Furtwangen",
+         "district": "1", "geojson_geometry": "test"})
