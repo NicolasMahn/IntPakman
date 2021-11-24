@@ -39,19 +39,19 @@ def main():
 
         properties = ag["properties"]
 
-        house_number = None
-        street = None
-        post_code = None
-        city = None
-
-        if "addr:housenumber" in properties:
+        if "addr:housenumber" and "addr:street" in properties.keys():
             house_number = properties["addr:housenumber"]
-        if "addr:street" in properties:
             street = properties["addr:street"]
-        if "addr:postcode" in properties:
+        else:
+            break
+        if "addr:postcode" in properties.keys():
             post_code = properties["addr:postcode"]
-        if "addr:city" in properties:
+        else:
+            post_code = "78120"
+        if "addr:city" in properties.keys():
             city = properties["addr:city"]
+        else:
+            city = "Furtwangen im Schwarzwald"
 
         center = get_center(geojson_geometry)
 
@@ -61,8 +61,8 @@ def main():
                                             "coordinates": [center["longitude"],
                                                             center["latitude"]]}})
 
-
-        #probable_door = get_door(center, streets[street])
+        print(street)
+        probable_door = get_door(center, streets[street])
 
         adresses.append([id_,
                          house_number, street, post_code, city,
@@ -84,7 +84,16 @@ def main():
 
 
 def get_door(point, street):
-    pass
+
+    street_coordinates = street["geometry"]["coordinates"]
+    print(len(street_coordinates))
+    for i in range(0, len(street_coordinates)-1):
+        #print(i)
+        pass
+
+
+
+    return None
 
 
 #calculates centroid of poligon
@@ -125,13 +134,23 @@ def get_streets(map):
 
     for m in map:
         geometry = m["geometry"]
+        if "MultiPolygon" in geometry["type"]:
+            properties = m["properties"]
+            if "highway" in properties.keys():
+                if "name" in properties.keys():
+                    new_m = {"type": m["type"],
+                             "geometry": {"type": "LineString",
+                                          "coordinates": m["geometry"]["coordinates"]},
+                             "properties": properties}
+                    streets[properties["name"]] = new_m
+
         if "LineString" in geometry["type"]:
             properties = m["properties"]
             if "highway" in properties.keys():
-                if properties["highway"] in street_attributes:
-                    if "name" in properties.keys():
-                        streets[properties["name"]] = m
-                        #test.append(m)
+                #if properties["highway"] in street_attributes:
+                if "name" in properties.keys():
+                    streets[properties["name"]] = m
+                    #test.append(m)
 
     #  only needed to generate all_streets.geojson file and test.js
     # test_geojson = {"type": "FeatureCollection",
@@ -152,9 +171,16 @@ def get_addr(map):
 
     for m in map:
         properties = m["properties"].keys()
+        addr_exist = False
         for p in properties:
             if p in addr_attributes:
-                addr.append(m)
+                addr_exist = True
+            else:
+                addr_exist = False
+                break
+        if addr_exist:
+            addr.append(m)
+
 
     #  only needed to generate all_addr.geojson file and test.js
 
