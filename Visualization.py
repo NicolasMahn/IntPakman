@@ -10,7 +10,7 @@ def data_details(data):
     data.volume.describe()
 
 
-def print_plot(data, column):
+def plot_data_overview(data, column):
     fig = plt.figure()
     plt.scatter(data["Sendungsnummer"], data[column])
     plt.title('Overview of ' + str(column))
