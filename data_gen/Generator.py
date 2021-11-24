@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-adresses = pd.read_csv('C:/Users/leonr/Documents/Git/IntPakman/data/adresses.csv', sep=';', decimal=',')
+adresses = pd.read_csv('C:/Users/leonr/Documents/Git/IntPakman/data/addresses_test.csv', sep=';', decimal=',')
 
 weight_low = np.arange(50, 2500, 10, int)
 weight_middle = np.arange(2500, 5000, 10, int)
@@ -69,7 +69,7 @@ def get_height():
 
 
 random_data = pd.DataFrame(columns=["Sendungsnummer", "length_cm", "width_cm", "height_cm", "weight_in_g", "fragile", "perishable",
-                                    "house_number", "street", "post_code", "city", "date"])
+                                    "house_number", "street", "post_code", "city"])
 
 old_adress_id = 0
 
@@ -96,4 +96,4 @@ def generate_random_package_data(number, path):
     random_data.to_csv(path, index=False)
 
 
-generate_random_package_data(20000, "C:/Users/leonr/Desktop/random_paketdaten2.csv")
+generate_random_package_data(15, "../data/random_paketdaten2.csv")

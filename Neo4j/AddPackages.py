@@ -67,6 +67,6 @@ class AddPackages:
 
 if __name__ == "__main__":
     connector = AddPackages("bolt://localhost:7687", "neo4j", "test")
-    packages = pd.read_csv('data/random_paketdaten2.csv', sep=',')
+    packages = pd.read_csv('../data/random_paketdaten2.csv', sep=',')
     connector.neo_transaction_create(packages)
     connector.neo_transaction_match(packages)
