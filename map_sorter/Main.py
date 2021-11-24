@@ -10,12 +10,13 @@ def read_map(map):
 
 def main():
 
-    adresses = []
+    unique_addresses = set()
+    addresses = []
     header = ["id",
               "house_number", "street", "post_code", "city",
               "district",
               "geojson_geometry"]
-    adresses.append(header)
+    addresses.append(header)
 
     map = input("Please enter full directory to the map in geojson format")
     if map == "":
@@ -57,12 +58,15 @@ def main():
         else:
             city = city_hardcode
 
+        str = f"{house_number}{street}{post_code}{city}"
 
-        adresses.append([id_,
-                         house_number, street, post_code, city,
-                         1, #district
-                         geojson_geometry,
-                         ])
+        if str not in unique_addresses:
+            addresses.append([id_,
+                             house_number, street, post_code, city,
+                             1, #district
+                             geojson_geometry,
+                             ])
+            unique_addresses.add(str)
 
         id_+=1
 
@@ -70,7 +74,7 @@ def main():
     # Cleric.write_json(center_geojson, '../map_sorter/map_data/centers.geojson')
     # Cleric.write("var line2 = "  + str({"type": "FeatureCollection", "features": center_geojson}), '../map_sorter/leaflet_test/test2.js')
 
-    Cleric.write_semicolon_csv(adresses, '../data/adresses.csv')
+    Cleric.write_semicolon_csv(addresses, '../data/adresses.csv')
 
 
 

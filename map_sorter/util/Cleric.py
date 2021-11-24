@@ -8,8 +8,20 @@ def read_json(directory):
     return data
 
 def read_csv(directory):
+    read_comma_csv(directory)
+
+def read_comma_csv(directory):
     f = open(directory, 'r', encoding='UTF8')
     file_data = csv.reader(f)
+    data = []
+    for fd in file_data:
+        data.append(fd)
+    f.close()
+    return data
+
+def read_semicolon_csv(directory):
+    f = open(directory, 'r', encoding='UTF8')
+    file_data = csv.reader(f, delimiter=';')
     data = []
     for fd in file_data:
         data.append(fd)
