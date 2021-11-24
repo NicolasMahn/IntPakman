@@ -27,18 +27,23 @@ def data_details(data):
 
 def print_plot(data, column):
     fig = plt.figure()
-    plt.scatter(data.id, data[column])
+    plt.scatter(data["Sendungsnummer"], data[column])
     plt.title('Overview of ' + str(column))
     fig.show()
 
 
-input_data = pd.read_csv('data/paketdaten.csv', sep=';', decimal=',')
+input_data = pd.read_csv('C:/Users/leonr/Desktop/random_paketdaten2.csv', sep=',', decimal=',')
 print_plot(input_data, 'weight_in_g')
 cleaned_data = data_preparation(input_data)
 print_plot(cleaned_data, 'volume')
 
+
+x_data = cleaned_data.loc[:, ["length_cm", "width_cm", "height_cm", "weight_in_g"]]
+y_data = cleaned_data.loc[:, ["prio"]]
+
+
 model = DecisionTreeClassifier()
-Xtrain, Xtest, ytrain, ytest = train_test_split(cleaned_data.drop(columns='prio'), cleaned_data.prio, test_size=0.2, random_state=42)
+Xtrain, Xtest, ytrain, ytest = train_test_split(x_data, y_data, test_size=0.2, random_state=42)
 
 model.fit(Xtrain, ytrain)
 pred = model.predict(Xtest)
