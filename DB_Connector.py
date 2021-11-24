@@ -27,7 +27,7 @@ class DBConnector:
         district = address["district"]
         geojson_geometry = address["geojson_geometry"]
 
-        query = "CREATE (adress:Address_Test{id:$id,street:$street,house_number:$house_number,post_code:$post_code," \
+        query = "CREATE (adress:Address_Test1{id:$id,street:$street,house_number:$house_number,post_code:$post_code," \
                 "city:$city,district:$district,geojson_geometry:$geojson_geometry}) "
         tx.run(query, street=street, house_number=house_number, id=id, post_code=post_code, district=district,
                city=city, geojson_geometry=geojson_geometry)

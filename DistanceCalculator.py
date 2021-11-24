@@ -44,7 +44,7 @@ class DistanceCalculator:
             results.pop(0)
             distance_list = results
             for y in range(len(distance_list)):
-                distance = calculate_distance(entry[n],distance_list[y]["n"])
+                distance = tx.calculate_distance(entry["n"], distance_list[y]["n"])
                 id_b = distance_list[y]["n"]["id"]
                 query = """MATCH(a:Address_Test),(b:Address_Test) 
                            WHERE a.id = $id_a AND b.id = $id_b

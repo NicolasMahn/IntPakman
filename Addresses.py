@@ -4,6 +4,6 @@ addresses = pd.read_csv('C:/Users/leonr/Documents/Git/IntPakman/data/adresses.cs
 
 addresses.drop(columns=["id", "longitude", "latitude", "distance_from_others"], inplace=True)
 
-new_addresses = addresses.drop_duplicates()
+#new_addresses = addresses.drop_duplicates()
 
-new_addresses.to_csv("C:/Users/leonr/Documents/Git/IntPakman/data/adresses_new1.csv", index=False)
+addresses.to_csv("C:/Users/leonr/Documents/Git/IntPakman/data/adresses_new1.csv", index=False)

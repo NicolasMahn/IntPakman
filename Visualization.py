@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+
 def data_details(data):
     data.info()
     data.weight_in_g.describe()

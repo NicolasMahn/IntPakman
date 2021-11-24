@@ -69,7 +69,7 @@ def get_height():
 
 
 random_data = pd.DataFrame(columns=["Sendungsnummer", "length_cm", "width_cm", "height_cm", "weight_in_g", "fragile", "perishable",
-                                    "house_number", "street", "post_code", "city"])
+                                    "house_number", "street", "post_code", "city", "date"])
 
 old_adress_id = 0
 
