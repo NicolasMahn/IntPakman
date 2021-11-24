@@ -32,7 +32,7 @@ def print_plot(data, column):
     fig.show()
 
 
-input_data = pd.read_csv('C:/Users/leonr/Desktop/random_paketdaten.csv', sep=',', decimal=',')
+input_data = pd.read_csv('C:/Users/leonr/Desktop/random_paketdaten2.csv', sep=',', decimal=',')
 print_plot(input_data, 'weight_in_g')
 cleaned_data = data_preparation(input_data)
 print_plot(cleaned_data, 'volume')
