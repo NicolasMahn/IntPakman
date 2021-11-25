@@ -1,6 +1,7 @@
 from neo4j import GraphDatabase
 import requests, json
 import Neo4j.GetAddessesWithPackages as address_loader
+import Neo4j.GetPostStation as station_loader
 
 
 def calculate_distance(node_a, node_b):
@@ -59,8 +60,28 @@ class DistanceCalculator:
                            [d:DISTANCE_TO {distance:$distance, duration: $duration}]->(a) """
                 tx.run(query, id_a=id_a, id_b=id_b, distance=distance, duration=duration)
 
+    def add_relationship_station(self, results, station):
+        with self.driver.session() as session:
+            session.write_transaction(
+                self._add_distance_station, results, station)
+
+    @staticmethod
+    def _add_distance_station(tx, results, station):
+        id_s = station[0]["s"]["id"]
+        for i in range(len(results)):
+            distance, duration = calculate_distance(station[0]["s"], results[i]["n"])
+            id_a = results[i]["n"]["id"]
+            query = """MATCH(a:Address),(s:PostStation) 
+                           WHERE a.id = $id_a AND s.id = $id_s
+                           CREATE (s)-[r:DISTANCE_TO {distance: $distance, duration: $duration}]->(a)-
+                           [d:DISTANCE_TO {distance:$distance, duration: $duration}]->(s) """
+            tx.run(query, id_a=id_a, id_s=id_s, distance=distance, duration=duration)
+
 
 if __name__ == "__main__":
     connector = DistanceCalculator("bolt://192.52.37.239:7687", "neo4j", "test")
     addresses = address_loader.get_addresses_with_packages()
     connector.add_relationship(addresses)
+    addresses = address_loader.get_addresses_with_packages()
+    station = station_loader.get_post_station()
+    connector.add_relationship_station(addresses, station)

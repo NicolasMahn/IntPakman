@@ -2,6 +2,7 @@ import pickle
 from sklearn.tree import DecisionTreeClassifier
 import pandas as pd
 import Neo4j.GetAddessesWithPackages as loader
+import Neo4j.GetPostStation as ploader
 
 model = DecisionTreeClassifier()
 
@@ -16,5 +17,11 @@ test = {"length_cm":["120"],
 x = pd.DataFrame(test)
 result = model.predict(x)[0]
 
-print(loader.get_addresses_with_packages())
-print(len(loader.get_addresses_with_packages()))
+addresses = loader.get_addresses_with_packages()
+station = ploader.get_post_station()
+print(addresses)
+print(len(addresses))
+print(station)
+
+addresses.append(station)
+print(addresses)
