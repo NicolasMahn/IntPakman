@@ -1,3 +1,5 @@
+import pickle
+
 import numpy as np
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
@@ -32,11 +34,15 @@ y_data = cleaned_data.loc[:, ["prio"]]
 
 
 model = DecisionTreeClassifier()
-Xtrain, Xtest, ytrain, ytest = train_test_split(x_data2, y_data, test_size=0.2, random_state=42)
+Xtrain, Xtest, ytrain, ytest = train_test_split(x_data1, y_data, test_size=0.2, random_state=42)
 
 model.fit(Xtrain, ytrain)
 pred = model.predict(Xtest)
 print(confusion_matrix(ytest, pred))
+
+#save model to file
+path = 'Models/model_Classifier_without_volue'
+pickle.dump(model, open(path, 'wb'))
 
 pred_prob = model.predict_proba(Xtest)
 fpr, tpr, thresholds = roc_curve(ytest, pred_prob[:,1])

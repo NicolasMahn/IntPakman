@@ -33,7 +33,7 @@ class DBConnector:
                city=city, geojson_geometry=geojson_geometry)
 
 if __name__ == "__main__":
-    connector = DBConnector("bolt://localhost:7687", "neo4j", "test")
+    connector = DBConnector("bolt://192.52.37.239:7687", "neo4j", "test")
     connector.neo_transaction(
         {"street": "Katzensteig", "house_number": "2", "id": "5", "post_code": "78120", "city": "Furtwangen",
          "district": "1", "geojson_geometry": "test"})

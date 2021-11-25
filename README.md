@@ -34,3 +34,6 @@ This chapter describes the necesseray steps, so all of the developers have the s
 	* to import a requirements file use:
 		* pip install -r requirements.txt
 	* __the requirements file in git should always be the latest__
+
+### Neo4j
+* http://192.52.37.239:7474/
