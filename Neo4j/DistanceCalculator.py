@@ -56,8 +56,7 @@ class DistanceCalculator:
                 id_b = distance_list[y]["n"]["id"]
                 query = """MATCH(a:Address),(b:Address) 
                            WHERE a.id = $id_a AND b.id = $id_b
-                           CREATE (a)-[r:DISTANCE_TO {distance: $distance, duration: $duration}]->(b)-
-                           [d:DISTANCE_TO {distance:$distance, duration: $duration}]->(a) """
+                           CREATE (a)-[r:DISTANCE_TO {distance: $distance, duration: $duration}]->(b)"""
                 tx.run(query, id_a=id_a, id_b=id_b, distance=distance, duration=duration)
 
     def add_relationship_station(self, results, station):
@@ -73,8 +72,7 @@ class DistanceCalculator:
             id_a = results[i]["n"]["id"]
             query = """MATCH(a:Address),(s:PostStation) 
                            WHERE a.id = $id_a AND s.id = $id_s
-                           CREATE (s)-[r:DISTANCE_TO {distance: $distance, duration: $duration}]->(a)-
-                           [d:DISTANCE_TO {distance:$distance, duration: $duration}]->(s) """
+                           CREATE (s)-[r:DISTANCE_TO {distance: $distance, duration: $duration}]->(a)"""
             tx.run(query, id_a=id_a, id_s=id_s, distance=distance, duration=duration)
 
 

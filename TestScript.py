@@ -19,7 +19,7 @@ test = {"length_cm":["120"],
 x = pd.DataFrame(test)
 result = model.predict(x)[0]
 '''
-
+'''
 distances = dloader.get_distance_station_addresses()
 print(distances)
 print(distances[0])
@@ -39,12 +39,19 @@ distances.extend(daddresses)
 print(distances)
 print(distances[len(distances)-1])
 print(len(distances))
-
+'''
 print('-------------------------------------------------------')
 
 completeList = dloader.get_distance_between_all()
 print(completeList)
 print(len(completeList))
+print(type(completeList[0]))
+
+for item in completeList:
+    if item.get('a1.id') == str(9):
+        print(item)
+    if item.get('a2.id') == str(9):
+        print(item)
 
 '''
 Example of one list element of the result_list
