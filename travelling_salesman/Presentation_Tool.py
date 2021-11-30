@@ -34,20 +34,5 @@ def main():
 
     print(sum)
 
-
-    # # Initialize fitness function object using dist_list
-    # fitness_dists = mlrose.TravellingSales(distances=dist_list)
-    #
-    # problem_fit = mlrose.TSPOpt(length=6, fitness_fn=fitness_dists,
-    #                             maximize=False)
-    #
-    # best_state, best_fitness = mlrose.genetic_alg(problem_fit, pop_size=2, mutation_prob=0.2,
-    #                                               max_attempts=1, max_iters=1, curve=False, random_state=2)
-    # #problem, pop_size = 200, mutation_prob = 0.1, max_attempts = 10,
-    # #max_iters = np.inf, curve = False, random_state = None
-    #
-    # print(best_state)
-    # print(best_fitness)
-
 if __name__ == "__main__":
     main()
