@@ -20,7 +20,6 @@ class GetDistances:
     def _get_distance_station_addresses(tx):
         query = 'MATCH (s:PostStation)-[r:DISTANCE_TO]->(a:Address) RETURN s.id,a.id,r.distance,r.duration'
         result = tx.run(query)
-        print(result)
         values = []
         for record in result:
             values.append(record.data())
@@ -39,7 +38,6 @@ class GetDistances:
     def _get_distance_addresses_addresses(tx):
         query = 'MATCH (a1:Address)-[r:DISTANCE_TO]->(a2:Address) RETURN a1.id,a2.id,r.distance,r.duration'
         result = tx.run(query)
-        print(result)
         values = []
         for record in result:
             values.append(record.data())
