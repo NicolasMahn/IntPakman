@@ -12,22 +12,23 @@ import Visualization as v
 def data_preparation(data):
     data['volume'] = (data.length_cm * data.height_cm * data.width_cm)/1000
     #data.drop(columns='id', inplace=True)
-    data['prio'] = np.where((data.volume > 3000) | (data.weight_in_g > 25000), 1, 0)
+    data['prio'] = np.where((data.volume > 3500) | (data.weight_in_g > 27500), 1, 0)
     #data.loc[(data.volume > 3000) | (data.weight_in_g > 25000), ['prio']] = int(1)
     #data['prio'] = data.[](1 if (data.volume > 3000) | (data.weight_in_g > 25000) else 0)]
 
     return data
 
 
-input_data = pd.read_csv('data/random_paketdaten.csv', sep=',', decimal=',')
+input_data = pd.read_csv('data/random_package_data_train.csv', sep=',', decimal=',')
 v.plot_data_overview(input_data, 'length_cm')
 v.plot_data_overview(input_data, 'width_cm')
 v.plot_data_overview(input_data, 'height_cm')
 v.plot_data_overview(input_data, 'weight_in_g')
 cleaned_data = data_preparation(input_data)
 v.plot_data_overview(cleaned_data, 'volume')
+v.plot_volume_weight_prio(cleaned_data)
 
-
+'''
 x_data1 = cleaned_data.loc[:, ["length_cm", "width_cm", "height_cm", "weight_in_g"]]
 x_data2 = cleaned_data.loc[:, ["length_cm", "width_cm", "height_cm", "weight_in_g", "volume"]]
 y_data = cleaned_data.loc[:, ["prio"]]
@@ -52,3 +53,4 @@ plt.title('ROC-Curve')
 plt.xlabel('False positive rate')
 plt.ylabel('True positive rate')
 plt.show()
+'''
