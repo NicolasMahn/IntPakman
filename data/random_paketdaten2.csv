@@ -1,0 +1,16 @@
+Sendungsnummer,length_cm,width_cm,height_cm,weight_in_g,fragile,perishable,house_number,street,post_code,city
+1,43,117,23,1490,0,0,8,Gerwigstraße,78120,Furtwangen im Schwarzwald
+2,213,59,18,1170,0,1,9,Unterallmendstraße,78120,Furtwangen im Schwarzwald
+3,99,37,27,3920,0,0,17,Wilhelmstraße,78120,Furtwangen im Schwarzwald
+4,79,149,200,70,0,0,7,Unterallmendstraße,78120,Furtwangen im Schwarzwald
+5,79,52,12,13110,0,0,5,Bühlhofstraße,78120,Furtwangen im Schwarzwald
+6,12,149,27,690,0,1,1,Robert-Gerwig-Platz,78120,Furtwangen im Schwarzwald
+7,2,158,96,790,0,0,7,Unterallmendstraße,78120,Furtwangen im Schwarzwald
+8,31,95,49,3750,1,0,2,Bismarckstraße,78120,Furtwangen im Schwarzwald
+9,87,113,20,4510,1,0,2,Bismarckstraße,78120,Furtwangen im Schwarzwald
+10,280,80,90,970,0,0,18,Allmendstraße,78120,Furtwangen im Schwarzwald
+11,97,58,3,2890,0,1,5,Unterallmendstraße,78120,Furtwangen im Schwarzwald
+12,191,115,81,1950,0,0,1,Unterallmendstraße,78120,Furtwangen im Schwarzwald
+13,93,211,52,7870,0,0,2,Lindenstraße,78120,Furtwangen im Schwarzwald
+14,55,92,14,3280,0,0,8,Gerwigstraße,78120,Furtwangen im Schwarzwald
+15,111,61,115,10260,0,0,11,Unterallmendstraße,78120,Furtwangen im Schwarzwald

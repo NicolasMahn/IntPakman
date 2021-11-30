@@ -1,0 +1,22 @@
+id;house_number;street;post_code;city;district;geojson_geometry
+0;11;Bahnhofstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2065548, 48.0493965]}
+1;8;Grieshaberstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2057763, 48.0529674]}
+2;26;Rabenstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2000243, 48.0493761]}
+3;2;Bismarckstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2055882, 48.0517458]}
+4;17;Wilhelmstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2042586, 48.0497431]}
+5;5;Bühlhofstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2014152, 48.0497379]}
+6;3;Hafnergässle;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2045616, 48.0535244]}
+7;1;Robert-Gerwig-Platz;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2075067, 48.05139]}
+8;3;Wilhelmstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2057329, 48.050538]}
+9;2;Lindenstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2070956, 48.0511316]}
+10;9;Bismarckstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2043464, 48.0524088]}
+11;18;Allmendstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2093021, 48.051262]}
+12;1;Unterallmendstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2097363, 48.0509332]}
+13;7;Unterallmendstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2100797, 48.0507223]}
+14;5;Unterallmendstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2099992, 48.0507554]}
+15;3;Unterallmendstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2098423, 48.0508703]}
+16;9;Unterallmendstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2102254, 48.0506623]}
+17;11;Unterallmendstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2103291, 48.0505609]}
+18;13;Unterallmendstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2104269, 48.0505204]}
+19;8;Gerwigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2069638, 48.0511906]}
+20;3;Friedrichstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2054578, 48.0525732]}

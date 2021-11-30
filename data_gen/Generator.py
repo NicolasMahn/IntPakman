@@ -1,11 +1,12 @@
 import pandas as pd
 import numpy as np
 
-adresses = pd.read_csv('C:/Users/leonr/Documents/Git/IntPakman/data/adresses.csv', sep=';', decimal=',')
+adresses = pd.read_csv('C:/Users/leonr/Documents/Git/IntPakman/data/addresses_test.csv', sep=';', decimal=',')
 
 weight_low = np.arange(50, 2500, 10, int)
 weight_middle = np.arange(2500, 5000, 10, int)
-weight_high = np.arange(5000, 31500, 10, int)
+weight_high = np.arange(5000, 20000, 10, int)
+weight_extremely_high = np.arange(20000, 31500, 10, int)
 
 length_low = np.arange(1, 100, 1, int)
 length_middle = np.arange(100, 180, 1 , int)
@@ -22,13 +23,15 @@ height_high = np.arange(140, 220, 1, int)
 
 def get_weight():
     weight = 0
-    x = np.random.choice([1,2,3], 1, p=[0.6, 0.2, 0.2])
+    x = np.random.choice([1, 2, 3, 4], 1, p=[0.6, 0.2, 0.13, 0.07])
     if x == 1:
         weight = np.random.choice(weight_low, 1)[0]
     elif x == 2:
         weight = np.random.choice(weight_middle, 1)[0]
     elif x == 3:
         weight = np.random.choice(weight_high, 1)[0]
+    elif x == 4:
+        weight = np.random.choice(weight_extremely_high, 1)[0]
     return weight
 
 
@@ -96,4 +99,4 @@ def generate_random_package_data(number, path):
     random_data.to_csv(path, index=False)
 
 
-generate_random_package_data(20000, "C:/Users/leonr/Desktop/random_paketdaten2.csv")
+generate_random_package_data(200, "../data/random_package_data_train.csv")

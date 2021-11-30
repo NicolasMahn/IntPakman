@@ -1,3 +1,6 @@
 .idea
 venv
 data/databases/graph.db/
+
+__pycache__/
+Neo4j/__pycache__/
