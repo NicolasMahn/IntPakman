@@ -10,7 +10,7 @@ def main():
                                                                       (4, 5, 4.7)]
 
     # Initialize fitness function object using dist_list and amount of cities/destinations
-    best_state, best_fitness, fitness_curve = Travelling_Salesman.get_optimal_path_and_best_fitness(dist_list, 6, curve=True)
+    best_state, best_fitness, fitness_curve = Travelling_Salesman.get_optimal_path_and_best_fitness(dist_list, 6,maximize=True, curve=True, max_iters=1)
 
     print(best_state)
     print(best_fitness)

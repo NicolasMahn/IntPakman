@@ -14,6 +14,7 @@ def main():
                                                                       (4, 5, 4.7)]
 
     route = [4,0,5,3,2,1]
+    #print(np.sum(route))
     i = 0
     sum = 0
 
