@@ -1,4 +1,5 @@
 import Neo4j.GetDistances as db_loader
+import Neo4j.GetAddessesWithPackages as db_loader_addresses
 import travelling_salesman.Travelling_Salesman as TSP
 import numpy as np
 
@@ -85,4 +86,17 @@ print(best_fitness)
 final_result = change_keys_back(best_state, key_dict_back)
 final_result_list = final_result.tolist()
 route = rearange_route(final_result_list)
-print('The optimal route is: ' + str(route))
+
+print('The optimal route without prio is: ' + str(route))
+
+address_data = db_loader_addresses.get_addresses_with_packages()
+route_addresses = [{'city': 'Furtwangen im Schwarzwald', 'street': 'Robert-Gerwig-Platz', 'geojson_geometry': "{'type': 'Point', 'coordinates': [8.2075067, 48.05139]}", 'district': '1', 'post_code': '78120', 'house_number': '1', 'id': '7'}]
+for item in route:
+    for ad in address_data:
+        if int(ad['n']['id']) == item:
+            address = ad['n']
+            route_addresses.append(address)
+
+
+for item in route_addresses:
+    print(item)
