@@ -48,9 +48,15 @@ print(len(completeList))
 print(type(completeList[0]))
 
 for item in completeList:
-    if item.get('a1.id') == str(9):
+    if item.get('s.id') == str(1):
+        item['s.id'] = str(0)
+print(completeList)
+
+
+for item in completeList:
+    if item.get('a1.id') == str(3):
         print(item)
-    if item.get('a2.id') == str(9):
+    if item.get('a2.id') == str(3):
         print(item)
 
 '''
