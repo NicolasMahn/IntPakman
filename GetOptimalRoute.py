@@ -3,6 +3,7 @@ import travelling_salesman.Travelling_Salesman as TSP
 import numpy as np
 
 data = db_loader.get_distance_between_all()
+
 number_of_knots = 1
 key_dict = {'0': '0'}
 key_dict_back = {'0': '0'}
@@ -22,7 +23,6 @@ def create_key_dict(input, key_dict, key_dict_back):
     counter = 1
     for item in input:
         if 's.id' in item:
-            # key_dict.append({'old_key': int(item.get('a.id')), 'new_key': counter})
             key_dict[item.get('a.id')] = str(counter)
             key_dict_back[str(counter)] = item.get('a.id')
             counter += 1
@@ -62,6 +62,15 @@ def change_keys_back(result, key_dict_back):
     return result
 
 
+def rearange_route(final_result):
+    index = [i for i, x in enumerate(final_result) if x == 0]
+    list_end = final_result[0:index[0]]
+    list_starting_with_zero = final_result[index[0]:len(final_result)]
+    list_starting_with_zero.extend(list_end)
+    route_list = list_starting_with_zero
+    return route_list
+
+
 data, number_of_knots = fix_values_in_list(data, number_of_knots)
 data, key_dict, key_dict_back = create_key_dict(data, key_dict, key_dict_back)
 data_with_changed_keys = change_keys(data, key_dict)
@@ -74,4 +83,6 @@ print(best_state)
 print(best_fitness)
 
 final_result = change_keys_back(best_state, key_dict_back)
-print('The optimal route is: ' + str(final_result))
+final_result_list = final_result.tolist()
+route = rearange_route(final_result_list)
+print('The optimal route is: ' + str(route))
