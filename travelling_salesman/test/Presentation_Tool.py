@@ -32,15 +32,16 @@ def main():
         #print(sum)
         i+=1
 
-    print(sum)
+    #print(sum)
 
-    array = [50.8, 40.5, 47.7, 39.5, 45.4, 47.2]
+    array = [1, 3, 4, 2, 0, 5]
     sum = np.sum(array)
-    temp = sum/array
-    result = temp/np.sum(temp)
+    array = [0 if x == 0 else sum/x for x in array]
+    print(array)
+    result = array/np.sum(array)
     print(result)
-    print(np.random.choice(6, size=2, p=result))
-    print(np.random.choice(36, size=int(36*0.1)))
+#    print(np.random.choice(6, size=2, p=result))
+    #print(np.random.choice(36, size=int(36*0.1)))
 
 
 if __name__ == "__main__":

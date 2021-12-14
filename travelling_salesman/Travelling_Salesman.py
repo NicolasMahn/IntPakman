@@ -1,52 +1,54 @@
 import six
 import sys
+
 sys.modules['sklearn.externals.six'] = six
 import mlrose
 import numpy as np
 
-def get_optimal_path_and_best_fitness(dist_list, destination_amount, pop_size=200, mutation_prob=0.2, max_attempts=100,
-                                      max_iters=np.inf, curve=False, random_state=42, maximize=False):
+POP_SIZE = 200
+MUTATION_PROB = 0.2
+MAX_ATTEMPTS = 100
+MAX_ITERS = np.inf
+RANDOM_STATE = 42
+MAXIMIZE = False
 
-    problem_fit = mlrose.TSPOpt(length=destination_amount,
+
+def get_tsp_result(dist_list: dict, prio_list: dict, state=True, fitness=False, curve=False):
+    """
+    This method starts the evolutionary algorithm which solves the travelling sales person
+    param:dist_list a dict of all distances between all destinations
+    param:prio_list a dict of all priorities of destinations
+    """
+
+    problem_fit = mlrose.TSPOpt(length=len(prio_list),
                                 fitness_fn=mlrose.TravellingSales(distances=dist_list),
-                                maximize=maximize)
+                                priority=prio_list,
+                                maximize=MAXIMIZE)
 
     if curve:
-        best_state, best_fitness, fitness_curve = mlrose.genetic_alg(problem_fit, pop_size=pop_size,
-                                                      mutation_prob=mutation_prob, max_attempts=max_attempts,
-                                                      max_iters=max_iters, curve=True, random_state=random_state)
-        return best_state, best_fitness, fitness_curve
-    else:
-        best_state, best_fitness = mlrose.genetic_alg(problem_fit, pop_size=pop_size, mutation_prob=mutation_prob,
-                                                      max_attempts=max_attempts, max_iters=max_iters, curve=curve,
-                                                      random_state=random_state)
-        return best_state, best_fitness
+        best_state, best_fitness, fitness_curve = mlrose.genetic_alg(problem_fit,
+                                                                     pop_size=POP_SIZE,
+                                                                     mutation_prob=MUTATION_PROB,
+                                                                     max_attempts=MAX_ATTEMPTS,
+                                                                     max_iters=MAX_ITERS, curve=True,
+                                                                     random_state=RANDOM_STATE)
+        if fitness and state:
+            return best_state, best_fitness, fitness_curve
+        elif fitness:
+            return best_fitness, fitness_curve
+        else:
+            return best_state, fitness_curve
 
-def get_optimal_path(dist_list, destination_amount, pop_size=200, mutation_prob=0.2,  max_attempts=100,
-                     max_iters=np.inf, curve=False, random_state=42, maximize=False):
-    if curve:
-        best_state, best_fitness, fitness_curve = get_optimal_path_and_best_fitness(dist_list, destination_amount,
-                                                                                    pop_size, mutation_prob,
-                                                                                    max_attempts, max_iters, curve,
-                                                                                    random_state, maximize)
-        return best_state, fitness_curve
     else:
-        best_state, best_fitness = get_optimal_path_and_best_fitness(dist_list, destination_amount, pop_size,
-                                                                     mutation_prob, max_attempts, max_iters, curve,
-                                                                     random_state, maximize)
-        return best_state
-
-
-def get_optimal_fitness(dist_list, destination_amount, pop_size=200, mutation_prob=0.2, max_attempts=100,
-                        max_iters=np.inf, curve=False, random_state=42, maximize=False):
-    if curve:
-        best_state, best_fitness, fitness_curve = get_optimal_path_and_best_fitness(dist_list, destination_amount,
-                                                                                    pop_size, mutation_prob,
-                                                                                    max_attempts, max_iters, curve,
-                                                                                    random_state, maximize)
-        return best_fitness, fitness_curve
-    else:
-        best_state, best_fitness = get_optimal_path_and_best_fitness(dist_list, destination_amount, pop_size,
-                                                                     mutation_prob, max_attempts, max_iters, curve,
-                                                                     random_state, maximize)
-        return best_fitness
+        best_state, best_fitness = mlrose.genetic_alg(problem_fit,
+                                                      pop_size=POP_SIZE,
+                                                      mutation_prob=MUTATION_PROB,
+                                                      max_attempts=MAX_ATTEMPTS,
+                                                      max_iters=MAX_ITERS,
+                                                      random_state=RANDOM_STATE)
+        if fitness and state:
+            return best_state, best_fitness
+        elif fitness:
+            return best_fitness
+        else:
+            return best_state

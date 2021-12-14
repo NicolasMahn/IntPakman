@@ -78,7 +78,7 @@ data_with_changed_keys = change_keys(data, key_dict)
 final_list = create_final_list(data_with_changed_keys)
 
 # TSP
-best_state, best_fitness = TSP.get_optimal_path_and_best_fitness(final_list, number_of_knots)
+best_state, best_fitness = TSP.get_tsp_result(final_list, prio_list, fitness=True)
 
 print(best_state)
 print(best_fitness)

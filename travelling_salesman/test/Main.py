@@ -11,7 +11,7 @@ def main():
 
     # Initialize fitness function object using dist_list and amount of cities/destinations
     best_state, best_fitness, fitness_curve = Travelling_Salesman.get_optimal_path_and_best_fitness(dist_list, 6,
-                                pop_size=6, maximize=False, curve=True, max_iters=10, random_state=10)
+                                pop_size=6, maximize=False, curve=True, max_iters=10, random_state=3)
 
 
     print(best_state)
