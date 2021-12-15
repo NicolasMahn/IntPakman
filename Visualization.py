@@ -14,7 +14,7 @@ def data_details(data):
     data.volume.describe()
 
 
-def plot_data_overview(data, column):
+def plot_data_overview(data, column, path):
     """
     Plots an overview of all instances in the DataFrame of a specific column and saves a png file of the plot
     :param data: pd DataFrame with package data
@@ -27,10 +27,10 @@ def plot_data_overview(data, column):
     plt.xlabel("Package id")
     plt.ylabel(column)
     fig.show()
-    fig.savefig('data/plots/' + str(column) + '_V2.png')
+    fig.savefig(path + str(column) + '_V2.png')
 
 
-def plot_volume_weight_prio(data):
+def plot_volume_weight_prio(data, path):
     """
     Creates a plot that shows the relation between weight and Volume and the prioritisation
     :param data: pd DataFrame with package data
@@ -58,4 +58,4 @@ def plot_volume_weight_prio(data):
     plt.title("Volume/Weight/Prio")
     plt.legend()
     fig.show()
-    fig.savefig('data/plots/volume_weight_prio_V2.png')
+    fig.savefig(path + 'volume_weight_prio_V2.png')
