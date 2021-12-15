@@ -12,21 +12,26 @@ weight_high = np.arange(5000, 20000, 10, int)
 weight_extremely_high = np.arange(20000, 31500, 10, int)
 
 length_low = np.arange(10, 100, 1, int)
-length_middle = np.arange(100, 180, 1 , int)
+length_middle = np.arange(100, 180, 1, int)
 length_high = np.arange(180, 300, 1, int)
 
 width_low = np.arange(5, 100, 1, int)
-width_middle = np.arange(100, 160, 1 , int)
+width_middle = np.arange(100, 160, 1, int)
 width_high = np.arange(160, 280, 1, int)
 
 height_low = np.arange(1, 70, 1, int)
-height_middle = np.arange(70, 140, 1 , int)
+height_middle = np.arange(70, 140, 1, int)
 height_high = np.arange(140, 220, 1, int)
 
 
 def get_weight():
+    """
+    First chooses between a value (1, 2 or 3) for x, the value of x is responsible for choosing between the
+    different range of values of weight.
+    :return: return the weight
+    """
     weight = 0
-    x = np.random.choice([1, 2, 3, 4], 1, p=[0.6, 0.2, 0.13, 0.07])
+    x = np.random.choice([1, 2, 3, 4], 1, p=[0.6, 0.2, 0.16, 0.04])
     if x == 1:
         weight = np.random.choice(weight_low, 1)[0]
     elif x == 2:
@@ -38,9 +43,25 @@ def get_weight():
     return weight
 
 
-def get_length():
+def get_length(weight):
+    """
+    First randomly chooses a value for x (between 1 and 3), the value of x is responsible for choosing between the
+    different range of values of length. The random choosing of x is different for different values of the weight.
+    :param weight: value between 0 and 3 depending on the weight, for weight = low -> 0, for weight = high -> 3
+    :return: returns the length depending on the value of the weight, length is an int for the metric cm
+    """
     length = 0
-    x = np.random.choice([1,2,3], 1, p=[0.65, 0.25, 0.1])
+    x = 0
+    if weight == 0:
+        x = np.random.choice([1, 2, 3], 1, p=[0.65, 0.25, 0.1])
+    elif weight == 1:
+        x = np.random.choice([1, 2, 3], 1, p=[0.45, 0.5, 0.05])
+    elif weight == 2:
+        x = np.random.choice([1, 2, 3], 1, p=[0.05, 0.85, 0.1])
+    elif weight == 3:
+        x = np.random.choice([1, 2, 3], 1, p=[0.05, 0.45, 0.5])
+
+    # ------------------
     if x == 1:
         length = np.random.choice(length_low, 1)[0]
     elif x == 2:
@@ -50,9 +71,25 @@ def get_length():
     return length
 
 
-def get_width():
+def get_width(weight):
+    """
+    First randomly chooses a value for x (between 1 and 3), the value of x is responsible for choosing between the
+    different range of values of width. The random choosing of x is different for different values of the weight.
+    :param weight: value between 0 and 3 depending on the weight, for weight = low -> 0, for weight = high -> 3
+    :return: returns the width depending on the value of the weight, width is an int for the metric cm
+    """
     width = 0
-    x = np.random.choice([1,2,3], 1, p=[0.65, 0.25, 0.1])
+    x = 0
+    if weight == 0:
+        x = np.random.choice([1, 2, 3], 1, p=[0.65, 0.25, 0.1])
+    elif weight == 1:
+        x = np.random.choice([1, 2, 3], 1, p=[0.45, 0.45, 0.1])
+    elif weight == 2:
+        x = np.random.choice([1, 2, 3], 1, p=[0.05, 0.85, 0.1])
+    elif weight == 3:
+        x = np.random.choice([1, 2, 3], 1, p=[0.05, 0.45, 0.5])
+
+    # ------------------
     if x == 1:
         width = np.random.choice(width_low, 1)[0]
     elif x == 2:
@@ -62,9 +99,25 @@ def get_width():
     return width
 
 
-def get_height():
+def get_height(weight):
+    """
+    First randomly chooses a value for x (between 1 and 3), the value of x is responsible for choosing between the
+    different range of values of height. The random choosing of x is different for different values of the weight.
+    :param weight: value between 0 and 3 depending on the weight, for weight = low -> 0, for weight = high -> 3
+    :return: returns the height depending on the value of the weight, height is an int for the metric cm
+    """
     height = 0
-    x = np.random.choice([1,2,3], 1, p=[0.65, 0.25, 0.1])
+    x = 0
+    if weight == 0:
+        x = np.random.choice([1, 2, 3], 1, p=[0.65, 0.25, 0.1])
+    elif weight == 1:
+        x = np.random.choice([1, 2, 3], 1, p=[0.45, 0.45, 0.1])
+    elif weight == 2:
+        x = np.random.choice([1, 2, 3], 1, p=[0.05, 0.85, 0.1])
+    elif weight == 3:
+        x = np.random.choice([1, 2, 3], 1, p=[0.05, 0.45, 0.5])
+
+    # ------------------
     if x == 1:
         height = np.random.choice(height_low, 1)[0]
     elif x == 2:
@@ -74,50 +127,26 @@ def get_height():
     return height
 
 
-def get_l_w_h(weight):
-    length = 0
-    width = 0
-    height = 0
-    if weight > 2500 and weight < 20000:
-        rand = np.random.choice([0, 1], 1, p=[0.8, 0.2])[0]
-        if rand == 0:
-            middle_heigh = np.random.choice([0, 1], 1, p=[0.8, 0.2])[0]
-            if middle_heigh == 0:
-                length = np.random.choice(length_middle, 1)[0]
-                width = np.random.choice(width_middle, 1)[0]
-                height = np.random.choice(height_middle, 1)[0]
-            elif middle_heigh == 1:
-                length = np.random.choice(length_high, 1)[0]
-                width = np.random.choice(width_high, 1)[0]
-                height = np.random.choice(height_high, 1)[0]
-        if rand == 1:
-            length = get_length()
-            width = get_width()
-            height = get_height()
-    elif weight > 20000:
-        length = np.random.choice(length_high, 1)[0]
-        width = np.random.choice(width_high, 1)[0]
-        height = np.random.choice(height_high, 1)[0]
-    else:
-        length = get_length()
-        width = get_width()
-        height = get_height()
-
-    return length, width, height
-
-
 def get_package_data():
+    """
+    First randomly chooses a weight and then gets the values for length, width and height depending on the value of
+    the weight.
+    :return: the randomly generated attributes weight, length, width and height of a package
+    """
     weight = get_weight()
-    length, width, height = get_l_w_h(weight)
-    volume = (length * width * height)/1000
+    weight_trasformed = 0
+    if weight < 5000:
+        weight_trasformed = 0
+    elif weight >= 5000 and weight < 15000:
+        weight_trasformed = 1
+    elif weight >= 15000 and weight < 25000:
+        weight_trasformed = 2
+    elif weight >= 25000:
+        weight_trasformed = 3
 
-    if weight > 25000:
-        weight_or_volume = np.random.choice([0, 1], 1, p=[0.5, 0.5])[0]
-        if weight_or_volume == 0:
-            weight = weight/np.random.choice([2, 3, ], 1, p=[0.5, 0.5])[0]
-        #elif weight_or_volume == 1:
-        #    length *= np.random.choice([1, 2, 3, 4], 1, p=[0.25, 0.25, 0.25, 0.25])[0]
-        #    width *= np.random.choice([1, 2, 3, 4], 1, p=[0.25, 0.25, 0.25, 0.25])[0]
+    length = get_length(weight_trasformed)
+    width = get_width(weight_trasformed)
+    height = get_height(weight_trasformed)
 
     return weight, length, width, height
 
@@ -127,6 +156,7 @@ def generate_random_package_data(number, date, path):
     Generates a pd DataFrame with package data and saves it in a csv file to the specified path. Considers that some
     addresses receive multiple packages.
     :param number: amount of packages to create in dataset
+    :param date: date for the packages to be created
     :param path: path specifying where to save the csv file
     :return: saves the created DataFrame in a csv file to the specified path
     """

@@ -1,6 +1,7 @@
 import Neo4j.GetDistances as db_loader
 import Neo4j.GetAddessesWithPackages as db_loader_addresses
 import Neo4j.GetPrioStatusPackages as db_loader_prio
+import Neo4j.GetAllPackages as db_loader_packages
 import Travelling_Salesman as TSP
 from collections import Counter
 import numpy as np
@@ -181,11 +182,12 @@ def rearange_route(final_result):
 def process_result(best_state, best_fitness, key_dict_back):
     """
     Gets the result of the tsp algorithm and changes the keys back to the address ids from the DB. Rearranges the route
-    so it always starts at the Post-Station and gets the address information from the DB to match the route address id
-    with the address information from the DB. Prints final route.
+    so it always starts at the Post-Station (0) and gets the address information from the DB to match the route address
+    ids with the address information from the DB. Returns the final route.
     :param best_state:
     :param best_fitness:
-    :param key_dict_back:
+    :param key_dict_back: dict with new id  as key and address id als value / created before for final_list
+    :return: final route starting at the Post-Station, tpye: [0, 1, 3, 2...]
     """
     final_result = change_keys_back(best_state, key_dict_back)
     final_result_list = final_result.tolist()
@@ -196,25 +198,62 @@ def process_result(best_state, best_fitness, key_dict_back):
     address_data = db_loader_addresses.get_addresses_with_packages()
     route_addresses = [{'city': 'Furtwangen im Schwarzwald', 'street': 'Robert-Gerwig-Platz',
                         'geojson_geometry': "{'type': 'Point', 'coordinates': [8.2075067, 48.05139]}", 'district': '1',
-                        'post_code': '78120', 'house_number': '1', 'id': '7'}]
+                        'post_code': '78120', 'house_number': '1', 'id': '0'}]
     for item in route:
         for ad in address_data:
             if int(ad['n']['id']) == item:
                 address = ad['n']
                 route_addresses.append(address)
 
-    for item in route_addresses:
+    return route, route_addresses
+
+
+def match_packages_to_route(route):
+    """
+    Loads package data from db and matches the address and package data equivalent to the order of the route list
+    (input) to the dict.
+    :param route: final route starting at the Post-Station, tpye: [0, 1, 3, 2...]
+    :return: final route information: containing all package and address data in a dict
+    """
+    package_data = db_loader_packages.get_all_packages()
+    final_route_information = [{'city': 'Furtwangen im Schwarzwald', 'street': 'Robert-Gerwig-Platz',
+                        'geojson_geometry': "{'type': 'Point', 'coordinates': [8.2075067, 48.05139]}", 'district': '1',
+                        'post_code': '78120', 'house_number': '1', 'id': '0'}]
+
+    for id in route:
+        for item in package_data:
+            if item['a']['id'] == str(id):
+                element = item['p']
+                element['district'] = item['a']['district']
+                element['a_id'] = item['a']['id']
+                element['geojson_geometry'] = item['a']['geojson_geometry']
+                final_route_information.append(element)
+
+    return final_route_information
+
+
+def get_optimal_route():
+    """
+    Runs the necessary methods to get the optimal route for the packages in the db.
+    :return: prints optimal route with all information about packages and addresses to the console
+    """
+    final_list, key_dict, key_dict_back = get_final_input_list_and_key_dict()
+    #print(final_list)
+    final_prio_list = get_prio_list(key_dict)
+    #print(final_prio_list)
+    # TSP
+    best_state, best_fitness = TSP.get_tsp_result(final_list, final_prio_list, fitness=True)
+
+    print(best_state)
+    print(best_fitness)
+
+    route, route_addresses = process_result(best_state, best_fitness, key_dict_back)
+
+    final_route_information = match_packages_to_route(route)
+
+    for item in final_route_information:
         print(item)
+        print()
 
 
-final_list, key_dict, key_dict_back = get_final_input_list_and_key_dict()
-print(final_list)
-final_prio_list = get_prio_list(key_dict)
-print(final_prio_list)
-# TSP
-best_state, best_fitness = TSP.get_tsp_result(final_list, final_prio_list, fitness=True)
-
-print(best_state)
-print(best_fitness)
-
-process_result(best_state, best_fitness, key_dict_back)
+get_optimal_route()

@@ -4,7 +4,11 @@ import pandas as pd
 import Neo4j.GetAddessesWithPackages as loader
 import Neo4j.GetPostStation as ploader
 import Neo4j.GetDistances as dloader
-import Neo4j.GetPrioStatusPackages as ploader
+import Neo4j.GetAllPackages as ploader
+
+data = ploader.get_all_packages()
+print(data)
+print(data[0]['a']['id'])
 
 '''
 model = DecisionTreeClassifier()

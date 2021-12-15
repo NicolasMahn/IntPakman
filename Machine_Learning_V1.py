@@ -13,7 +13,7 @@ import Visualization as v
 def data_preparation(data):
     data['volume'] = (data.length_cm * data.height_cm * data.width_cm)/1000
     #data.drop(columns='id', inplace=True)
-    data['prio'] = np.where((data.volume > 10000) | (data.weight_in_g > 25000), 1, 0)
+    data['prio'] = np.where((data.volume > 8000) | (data.weight_in_g > 25000), 1, 0)
     #data.loc[(data.volume > 3000) | (data.weight_in_g > 25000), ['prio']] = int(1)
     #data['prio'] = data.[](1 if (data.volume > 3000) | (data.weight_in_g > 25000) else 0)]
 
@@ -24,14 +24,13 @@ input_data = pd.read_csv('data/random_package_data_V2.csv', sep=',')#, decimal='
 
 #Visualization
 v.plot_data_overview(input_data, 'length_cm')
-'''
 v.plot_data_overview(input_data, 'width_cm')
 v.plot_data_overview(input_data, 'height_cm')
 v.plot_data_overview(input_data, 'weight_in_g')
-'''
+
 #Datapreparation
 cleaned_data = data_preparation(input_data)
-#v.plot_data_overview(cleaned_data, 'volume')
+v.plot_data_overview(cleaned_data, 'volume')
 v.plot_volume_weight_prio(cleaned_data)
 
 '''

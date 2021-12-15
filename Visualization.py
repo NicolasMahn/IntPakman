@@ -15,6 +15,12 @@ def data_details(data):
 
 
 def plot_data_overview(data, column):
+    """
+    Plots an overview of all instances in the DataFrame of a specific column and saves a png file of the plot
+    :param data: pd DataFrame with package data
+    :param column: specified column of the DataFrame
+    :return: saves png file of the plot to folder
+    """
     fig = plt.figure()
     plt.scatter(data["Sendungsnummer"], data[column])
     plt.title('Overview of ' + str(column))
@@ -25,6 +31,11 @@ def plot_data_overview(data, column):
 
 
 def plot_volume_weight_prio(data):
+    """
+    Creates a plot that shows the relation between weight and Volume and the prioritisation
+    :param data: pd DataFrame with package data
+    :return: saves png file of the plot to folder
+    """
     fig = plt.figure()
     prio = pd.DataFrame(columns=["Sendungsnummer", "length_cm", "width_cm", "height_cm", "weight_in_g", "fragile", "perishable",
                                     "house_number", "street", "post_code", "city", "volume", "prio"])

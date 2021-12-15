@@ -22,7 +22,7 @@ def get_tsp_result(dist_list: dict, prio_list: dict, state=True, fitness=False, 
 
     problem_fit = mlrose.TSPOpt(length=len(prio_list),
                                 fitness_fn=mlrose.TravellingSales(distances=dist_list),
-                                priority=prio_list,
+                                #priority=prio_list,
                                 maximize=MAXIMIZE)
 
     if curve:
