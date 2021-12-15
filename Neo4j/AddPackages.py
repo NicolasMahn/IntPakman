@@ -51,14 +51,15 @@ class AddPackages:
             house_number = str(packages.loc[i, "house_number"])
             post_code = str(packages.loc[i, "post_code"])
             city = str(packages.loc[i, "city"])
+            date = str(packages.loc[i, "date"])
 
             createQuery = """CREATE (package:Package{sendungsnummer:$sendungsnummer,length_cm:$length_cm,
                             width_cm:$width_cm,height_cm:$height_cm,weight_in_g:$weight_in_g, fragile:$fragile,
                             perishable:$perishable,street:$street,house_number:$house_number,post_code:$post_code,
-                            city:$city,prio:$prio})"""
+                            city:$city,prio:$prio,date:$date})"""
             tx.run(createQuery, sendungsnummer=sendungsnummer, length_cm=length_cm, width_cm=width_cm, height_cm=height_cm,
                    weight_in_g=weight_in_g, fragile=fragile, perishable=perishable, street=street,
-                   house_number=house_number, post_code=post_code, city=city, prio=prio)
+                   house_number=house_number, post_code=post_code, city=city, prio=prio, date=date)
 
 
     @staticmethod

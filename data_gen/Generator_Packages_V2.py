@@ -74,7 +74,55 @@ def get_height():
     return height
 
 
-def generate_random_package_data(number, path):
+def get_l_w_h(weight):
+    length = 0
+    width = 0
+    height = 0
+    if weight > 2500 and weight < 20000:
+        rand = np.random.choice([0, 1], 1, p=[0.8, 0.2])[0]
+        if rand == 0:
+            middle_heigh = np.random.choice([0, 1], 1, p=[0.8, 0.2])[0]
+            if middle_heigh == 0:
+                length = np.random.choice(length_middle, 1)[0]
+                width = np.random.choice(width_middle, 1)[0]
+                height = np.random.choice(height_middle, 1)[0]
+            elif middle_heigh == 1:
+                length = np.random.choice(length_high, 1)[0]
+                width = np.random.choice(width_high, 1)[0]
+                height = np.random.choice(height_high, 1)[0]
+        if rand == 1:
+            length = get_length()
+            width = get_width()
+            height = get_height()
+    elif weight > 20000:
+        length = np.random.choice(length_high, 1)[0]
+        width = np.random.choice(width_high, 1)[0]
+        height = np.random.choice(height_high, 1)[0]
+    else:
+        length = get_length()
+        width = get_width()
+        height = get_height()
+
+    return length, width, height
+
+
+def get_package_data():
+    weight = get_weight()
+    length, width, height = get_l_w_h(weight)
+    volume = (length * width * height)/1000
+
+    if weight > 25000:
+        weight_or_volume = np.random.choice([0, 1], 1, p=[0.5, 0.5])[0]
+        if weight_or_volume == 0:
+            weight = weight/np.random.choice([2, 3, ], 1, p=[0.5, 0.5])[0]
+        #elif weight_or_volume == 1:
+        #    length *= np.random.choice([1, 2, 3, 4], 1, p=[0.25, 0.25, 0.25, 0.25])[0]
+        #    width *= np.random.choice([1, 2, 3, 4], 1, p=[0.25, 0.25, 0.25, 0.25])[0]
+
+    return weight, length, width, height
+
+
+def generate_random_package_data(number, date, path):
     """
     Generates a pd DataFrame with package data and saves it in a csv file to the specified path. Considers that some
     addresses receive multiple packages.
@@ -86,27 +134,28 @@ def generate_random_package_data(number, path):
 
     random_data = pd.DataFrame(
         columns=["Sendungsnummer", "length_cm", "width_cm", "height_cm", "weight_in_g", "fragile", "perishable",
-                 "house_number", "street", "post_code", "city"])
+                 "house_number", "street", "post_code", "city", "date"])
 
     for i in range(0, number):
         rand_double_package = np.random.choice([0, 1], 1, p=[0.85, 0.15])[0]
         if rand_double_package == 0:
             rand_add = np.random.randint(0, len(adresses))
-            random_data.loc[i] = [(i + 1), get_length(), get_width(), get_height(), get_weight(),
+            weight, length, width, height = get_package_data()
+            random_data.loc[i] = [(i + 1), length, width, height, weight,
                                   np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
                                   np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
                                   adresses.iloc[rand_add, 1], adresses.iloc[rand_add, 2], adresses.iloc[rand_add, 3],
-                                  adresses.iloc[rand_add, 4]]
+                                  adresses.iloc[rand_add, 4], date]
             old_adress_id = rand_add
         else:
-            random_data.loc[i] = [(i + 1), get_length(), get_width(), get_height(), get_weight(),
+            weight, length, width, height = get_package_data()
+            random_data.loc[i] = [(i + 1), length, width, height, weight,
                                   np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
                                   np.random.choice([0, 1], 1, p=[0.85, 0.15])[0],
                                   adresses.iloc[old_adress_id, 1], adresses.iloc[old_adress_id, 2],
-                                  adresses.iloc[old_adress_id, 3], adresses.iloc[old_adress_id, 4]]
-
+                                  adresses.iloc[old_adress_id, 3], adresses.iloc[old_adress_id, 4], date]
 
     random_data.to_csv(path, index=False)
 
 
-generate_random_package_data(200, "../data/random_package_data_V2.csv")
+generate_random_package_data(200, "2021-12-15", "../data/random_package_data_V2.csv")

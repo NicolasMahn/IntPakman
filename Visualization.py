@@ -18,8 +18,10 @@ def plot_data_overview(data, column):
     fig = plt.figure()
     plt.scatter(data["Sendungsnummer"], data[column])
     plt.title('Overview of ' + str(column))
+    plt.xlabel("Package id")
+    plt.ylabel(column)
     fig.show()
-    fig.savefig('data/plots/' + str(column) + '.png')
+    fig.savefig('data/plots/' + str(column) + '_V2.png')
 
 
 def plot_volume_weight_prio(data):
@@ -45,4 +47,4 @@ def plot_volume_weight_prio(data):
     plt.title("Volume/Weight/Prio")
     plt.legend()
     fig.show()
-    fig.savefig('data/plots/volume_weight_prio.png')
+    fig.savefig('data/plots/volume_weight_prio_V2.png')
