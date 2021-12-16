@@ -86,19 +86,20 @@ def save_model(model, path):
     pickle.dump(model, open(path, 'wb'))
 
 
-def run_machine_learning(path_data, path_plots, path_model, save_model_bool=False):
+def run_machine_learning(path_data, path_plots, path_model, visualize=False, save_model_bool=False):
     """
     Runs the necessary methods to create a Decision Tree Classifier model of the package data.
     :param path_data: path to the package data
     :param path_plots: path to where the plots should be saved
     :param path_model: path to where the model should be saved
+    :param visualize: Boolean, standard is set to false, if true, runs visualization and save them to the specified path
     :param save_model_bool: Boolean, standard is set to false, if true, saves the model to the specified path
     :return:
     """
     input_data = pd.read_csv(path_data, sep=',')
     cleaned_data = data_preparation(input_data)
-
-    #get_visualizations(cleaned_data, path_plots)
+    if visualize:
+        get_visualizations(cleaned_data, path_plots)
 
     model = train_model(cleaned_data)
     if save_model_bool:
@@ -108,4 +109,4 @@ def run_machine_learning(path_data, path_plots, path_model, save_model_bool=Fals
 data_path = 'data/random_package_data_V2.csv'
 plots_path = 'data/plots/'
 model_path = 'Models/model_Classifier_without_volue_V2'
-run_machine_learning(data_path, plots_path, model_path)
+#run_machine_learning(data_path, plots_path, model_path)

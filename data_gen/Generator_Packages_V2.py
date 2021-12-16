@@ -188,4 +188,4 @@ def generate_random_package_data(number, date, path):
     random_data.to_csv(path, index=False)
 
 
-generate_random_package_data(200, "2021-12-15", "../data/random_package_data_V2.csv")
+#generate_random_package_data(200, "2021-12-15", "../data/random_package_data_V2.csv")

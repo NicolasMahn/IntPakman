@@ -2,7 +2,7 @@ import Neo4j.GetDistances as db_loader
 import Neo4j.GetAddessesWithPackages as db_loader_addresses
 import Neo4j.GetPrioStatusPackages as db_loader_prio
 import Neo4j.GetAllPackages as db_loader_packages
-import Travelling_Salesman as TSP
+import travelling_salesman.Travelling_Salesman as TSP
 from collections import Counter
 import numpy as np
 import pandas as pd
@@ -288,4 +288,4 @@ def get_optimal_route(show_in_browser=True):
         print_to_html(final_route_information)
 
 
-get_optimal_route()
+#get_optimal_route()

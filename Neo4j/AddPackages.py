@@ -4,8 +4,11 @@ import pickle
 from sklearn.tree import DecisionTreeClassifier
 
 model = DecisionTreeClassifier()
-path = '../Models/model_Classifier_without_volue'
-model = pickle.load(open(path, 'rb'))
+
+
+def load_model(model_path, model):
+    model = pickle.load(open(model_path, 'rb'))
+
 
 class AddPackages:
 
@@ -84,8 +87,13 @@ class AddPackages:
                    sendungsnummer=sendungsnummer)
 
 
-if __name__ == "__main__":
+def load_data(path_data):
+    return pd.read_csv(path_data, sep=',')
+
+
+def add_packages_to_db(path_data, path_model):
     connector = AddPackages("bolt://192.52.37.239:7687", "neo4j", "test")
-    packages = pd.read_csv('../data/random_paketdaten2.csv', sep=',')
+    packages = load_data(path_data)
+    load_model(path_model)
     connector.neo_transaction_create(packages)
     connector.neo_transaction_match(packages)
