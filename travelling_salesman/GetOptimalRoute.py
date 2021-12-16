@@ -5,7 +5,8 @@ import Neo4j.GetAllPackages as db_loader_packages
 import Travelling_Salesman as TSP
 from collections import Counter
 import numpy as np
-
+import pandas as pd
+import webbrowser
 
 def fix_values_in_list(input, number_of_knots):
     for item in input:
@@ -217,8 +218,9 @@ def match_packages_to_route(route):
     """
     package_data = db_loader_packages.get_all_packages()
     final_route_information = [{'city': 'Furtwangen im Schwarzwald', 'street': 'Robert-Gerwig-Platz',
-                        'geojson_geometry': "{'type': 'Point', 'coordinates': [8.2075067, 48.05139]}", 'district': '1',
-                        'post_code': '78120', 'house_number': '1', 'id': '0'}]
+                                'geojson_geometry': "{'type': 'Point', 'coordinates': [8.2075067, 48.05139]}",
+                                'district': '1',
+                                'post_code': '78120', 'house_number': '1', 'id': '0'}]
 
     for id in route:
         for item in package_data:
@@ -232,15 +234,41 @@ def match_packages_to_route(route):
     return final_route_information
 
 
-def get_optimal_route():
+def print_to_html(route):
+    """
+    Uses the input information, creates a pd DataFrame and turns it into html to display it in the standard webbrwoser.
+    :param route: final route information: containing all package and address data in a dict
+    :return: opens standard webbrowser and displays table containing the input information
+    """
+    routeDF = pd.DataFrame(
+        columns=["Sendungsnummer", "street", "house_number", "post_code", "city", "district", "length_cm", "width_cm",
+                 "height_cm", "weight_in_g", "fragile", "perishable", "date", "geojson_geometry", "a_id"])
+
+    for i, item in enumerate(route):
+        if i > 0:
+            routeDF.loc[i] = [item["sendungsnummer"], item["street"], item["house_number"], item["post_code"],
+                              item["city"], item["district"], item["length_cm"], item["width_cm"], item["height_cm"],
+                              item["weight_in_g"], item["fragile"], item["perishable"], np.NAN, #item["date"],
+                              item["geojson_geometry"], item["a_id"]]
+        else:
+            routeDF.loc[i] = [np.NAN, item["street"], item["house_number"], item["post_code"], item["city"],
+                              item["district"], np.NAN, np.NAN, np.NAN, np.NAN, np.NAN, np.NAN, np.NAN,
+                              item["geojson_geometry"], np.NAN]
+
+    with open('route.html', 'w') as fo:
+        fo.write(routeDF.to_html())
+    webbrowser.open('route.html')
+
+
+def get_optimal_route(show_in_browser=True):
     """
     Runs the necessary methods to get the optimal route for the packages in the db.
     :return: prints optimal route with all information about packages and addresses to the console
     """
     final_list, key_dict, key_dict_back = get_final_input_list_and_key_dict()
-    #print(final_list)
+    # print(final_list)
     final_prio_list = get_prio_list(key_dict)
-    #print(final_prio_list)
+    # print(final_prio_list)
     # TSP
     best_state, best_fitness = TSP.get_tsp_result(final_list, final_prio_list, fitness=True)
 
@@ -251,9 +279,13 @@ def get_optimal_route():
 
     final_route_information = match_packages_to_route(route)
 
+    '''
     for item in final_route_information:
         print(item)
         print()
+    '''
+    if show_in_browser:
+        print_to_html(final_route_information)
 
 
 get_optimal_route()
