@@ -2,7 +2,7 @@ import six
 import sys
 
 sys.modules['sklearn.externals.six'] = six
-import mlrose
+import mltulip
 import numpy as np
 
 POP_SIZE = 200
@@ -20,18 +20,18 @@ def get_tsp_result(dist_list: dict, prio_list: dict, state=True, fitness=False, 
     param:prio_list a dict of all priorities of destinations
     """
 
-    problem_fit = mlrose.TSPOpt(length=len(prio_list),
-                                fitness_fn=mlrose.TravellingSales(distances=dist_list),
-                                #priority=prio_list,
-                                maximize=MAXIMIZE)
+    problem_fit = opt_probs.TSPOptWithPrio(length=len(prio_list),
+                                           maximize=MAXIMIZE,
+                                           distances=dist_list,
+                                           weights=prio_list)
 
     if curve:
-        best_state, best_fitness, fitness_curve = mlrose.genetic_alg(problem_fit,
-                                                                     pop_size=POP_SIZE,
-                                                                     mutation_prob=MUTATION_PROB,
-                                                                     max_attempts=MAX_ATTEMPTS,
-                                                                     max_iters=MAX_ITERS, curve=True,
-                                                                     random_state=RANDOM_STATE)
+        best_state, best_fitness, fitness_curve = algorythm.genetic_alg(problem_fit,
+                                                                        pop_size=POP_SIZE,
+                                                                        mutation_prob=MUTATION_PROB,
+                                                                        max_attempts=MAX_ATTEMPTS,
+                                                                        max_iters=MAX_ITERS, curve=True,
+                                                                        random_state=RANDOM_STATE)
         if fitness and state:
             return best_state, best_fitness, fitness_curve
         elif fitness:
@@ -40,12 +40,12 @@ def get_tsp_result(dist_list: dict, prio_list: dict, state=True, fitness=False, 
             return best_state, fitness_curve
 
     else:
-        best_state, best_fitness = mlrose.genetic_alg(problem_fit,
-                                                      pop_size=POP_SIZE,
-                                                      mutation_prob=MUTATION_PROB,
-                                                      max_attempts=MAX_ATTEMPTS,
-                                                      max_iters=MAX_ITERS,
-                                                      random_state=RANDOM_STATE)
+        best_state, best_fitness = algorythm.genetic_alg(problem_fit,
+                                                         pop_size=POP_SIZE,
+                                                         mutation_prob=MUTATION_PROB,
+                                                         max_attempts=MAX_ATTEMPTS,
+                                                         max_iters=MAX_ITERS,
+                                                         random_state=RANDOM_STATE)
         if fitness and state:
             return best_state, best_fitness
         elif fitness:
