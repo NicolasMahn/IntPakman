@@ -1,0 +1,73 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0;
+}
+#header{
+background-color: #FFCC00;
+width: 100%;
+border-radius: 10px;
+height: 100px;
+display: table;
+}
+#filters{
+    margin-top: 30px;
+}
+#title{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    letter-spacing: 2px;
+    
+}
+label {
+    display: inline-block;
+    width: 150px;
+    font-size: 20px;
+
+}
+input {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box;
+     padding: 5px 10px;
+     margin-bottom: 10px;
+     height: 40px;
+     width: 200px;
+    }
+    #station,#bezirk{
+    background-color: #C8C8C8;
+    border: 0ch;
+    border-radius: 5px;
+}
+#anzeigen{
+    background-color: #FFCC00;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    width: 200px;
+}
+#wrap-buttons{
+width: 100%;
+padding: 0;
+margin: 0;
+display: grid;
+}
+#liste,#karte{
+     border: 0ch;
+     border-radius: 0px;    
+     height: 70px;
+     font-size: 30px;
+    }
+    #liste{
+        grid-column: 1;
+        background-color: #FFCC00;
+    }
+    #karte{
+        grid-column: 2;
+        background-color: gray;
+}
+
+
+
