@@ -4,8 +4,11 @@ import pickle
 from sklearn.tree import DecisionTreeClassifier
 
 model = DecisionTreeClassifier()
-path = '../Models/model_Classifier_without_volue'
-model = pickle.load(open(path, 'rb'))
+
+
+def load_model(model_path, model):
+    model = pickle.load(open(model_path, 'rb'))
+
 
 class AddPackages:
 
@@ -51,14 +54,15 @@ class AddPackages:
             house_number = str(packages.loc[i, "house_number"])
             post_code = str(packages.loc[i, "post_code"])
             city = str(packages.loc[i, "city"])
+            date = str(packages.loc[i, "date"])
 
             createQuery = """CREATE (package:Package{sendungsnummer:$sendungsnummer,length_cm:$length_cm,
                             width_cm:$width_cm,height_cm:$height_cm,weight_in_g:$weight_in_g, fragile:$fragile,
                             perishable:$perishable,street:$street,house_number:$house_number,post_code:$post_code,
-                            city:$city,prio:$prio})"""
+                            city:$city,prio:$prio,date:$date})"""
             tx.run(createQuery, sendungsnummer=sendungsnummer, length_cm=length_cm, width_cm=width_cm, height_cm=height_cm,
                    weight_in_g=weight_in_g, fragile=fragile, perishable=perishable, street=street,
-                   house_number=house_number, post_code=post_code, city=city, prio=prio)
+                   house_number=house_number, post_code=post_code, city=city, prio=prio, date=date)
 
 
     @staticmethod
@@ -83,8 +87,13 @@ class AddPackages:
                    sendungsnummer=sendungsnummer)
 
 
-if __name__ == "__main__":
+def load_data(path_data):
+    return pd.read_csv(path_data, sep=',')
+
+
+def add_packages_to_db(path_data, path_model):
     connector = AddPackages("bolt://192.52.37.239:7687", "neo4j", "test")
-    packages = pd.read_csv('../data/random_paketdaten2.csv', sep=',')
+    packages = load_data(path_data)
+    load_model(path_model)
     connector.neo_transaction_create(packages)
     connector.neo_transaction_match(packages)

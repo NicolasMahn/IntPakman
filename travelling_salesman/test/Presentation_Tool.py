@@ -13,7 +13,7 @@ def main():
                                                         (3, 4, 6.2),  (3, 5, 4.5),
                                                                       (4, 5, 4.7)]
 
-    route = [4,0,5,3,2,1]
+    route = [0,2,1,4,5,3]
     i = 0
     sum = 0
 
@@ -32,7 +32,17 @@ def main():
         #print(sum)
         i+=1
 
-    print(sum)
+    #print(sum)
+
+    array = [1, 3, 4, 2, 0, 5]
+    sum = np.sum(array)
+    array = [0 if x == 0 else sum/x for x in array]
+    print(array)
+    result = array/np.sum(array)
+    print(result)
+#    print(np.random.choice(6, size=2, p=result))
+    #print(np.random.choice(36, size=int(36*0.1)))
+
 
 if __name__ == "__main__":
     main()

@@ -3,16 +3,19 @@ import numpy as np
 
 adresses = pd.read_csv('C:/Users/leonr/Documents/Git/IntPakman/data/addresses_test.csv', sep=';', decimal=',')
 
+"""
+Declare range of values for the features weight, length, width and height
+"""
 weight_low = np.arange(50, 2500, 10, int)
 weight_middle = np.arange(2500, 5000, 10, int)
 weight_high = np.arange(5000, 20000, 10, int)
 weight_extremely_high = np.arange(20000, 31500, 10, int)
 
-length_low = np.arange(1, 100, 1, int)
+length_low = np.arange(10, 100, 1, int)
 length_middle = np.arange(100, 180, 1 , int)
 length_high = np.arange(180, 300, 1, int)
 
-width_low = np.arange(1, 100, 1, int)
+width_low = np.arange(5, 100, 1, int)
 width_middle = np.arange(100, 160, 1 , int)
 width_high = np.arange(160, 280, 1, int)
 
@@ -71,13 +74,20 @@ def get_height():
     return height
 
 
-random_data = pd.DataFrame(columns=["Sendungsnummer", "length_cm", "width_cm", "height_cm", "weight_in_g", "fragile", "perishable",
-                                    "house_number", "street", "post_code", "city"])
-
-old_adress_id = 0
-
-
 def generate_random_package_data(number, path):
+    """
+    Generates a pd DataFrame with package data and saves it in a csv file to the specified path. Considers that some
+    addresses receive multiple packages.
+    :param number: amount of packages to create in dataset
+    :param path: path specifying where to save the csv file
+    :return: saves the created DataFrame in a csv file to the specified path
+    """
+    old_adress_id = 0
+
+    random_data = pd.DataFrame(
+        columns=["Sendungsnummer", "length_cm", "width_cm", "height_cm", "weight_in_g", "fragile", "perishable",
+                 "house_number", "street", "post_code", "city"])
+
     for i in range(0, number):
         rand_double_package = np.random.choice([0, 1], 1, p=[0.85, 0.15])[0]
         if rand_double_package == 0:
@@ -99,4 +109,4 @@ def generate_random_package_data(number, path):
     random_data.to_csv(path, index=False)
 
 
-generate_random_package_data(200, "../data/random_package_data_train.csv")
+generate_random_package_data(200, "../data/random_package_data_V2.csv")

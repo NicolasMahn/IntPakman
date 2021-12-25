@@ -45,14 +45,15 @@ class GetDistances:
         return values
 
 
-
 def get_distance_station_addresses():
     connector = GetDistances("bolt://192.52.37.239:7687", "neo4j", "test")
     return connector.neo_transaction_station_addresses()
 
+
 def get_distance_addresses_addresses():
     connector = GetDistances("bolt://192.52.37.239:7687", "neo4j", "test")
     return connector.neo_transaction_addresses_addresses()
+
 
 def get_distance_between_all():
     reslut_list = get_distance_station_addresses()
