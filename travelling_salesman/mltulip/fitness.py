@@ -84,12 +84,15 @@ class TravellingSales:
             State array for evaluation. Each integer between 0 and
             (len(state) - 1), inclusive must appear exactly once in the array.
 
+        TODO: Prio imortance!
         Returns
         -------
         fitness: float
             Value of fitness function. Returns :code:`np.inf` if travel between
             two consecutive nodes on the tour is not possible.
         """
+
+        PRIO_IMPORTANCE = 25
 
         if self.is_coords and len(state) != len(self.coords):
             raise Exception("""state must have the same length as coords.""")
@@ -113,15 +116,18 @@ class TravellingSales:
                 node1 = state[i]
                 node2 = state[i + 1]
 
-                fitness += np.linalg.norm(np.array(self.coords[node1])
-                                          - np.array(self.coords[node2]))
+                fitness += np.linalg.norm(np.array(self.coords[node1]) - np.array(self.coords[node2])) - \
+                           ((self.weights[state[i]] * \
+                             (sum(self.dist_list) / (len(self.dist_list) * PRIO_IMPORTANCE)) * \
+                             (len(state) - 1)) / (i + 1))
 
             # Calculate length of final leg
             node1 = state[-1]
             node2 = state[0]
 
-            fitness += np.linalg.norm(np.array(self.coords[node1])
-                                      - np.array(self.coords[node2]))
+            fitness += np.linalg.norm(np.array(self.coords[node1]) - np.array(self.coords[node2])) - \
+                       self.weights[state[i]] * \
+                       (sum(self.dist_list) / (len(self.dist_list) * PRIO_IMPORTANCE))
 
 
         else:
@@ -133,7 +139,9 @@ class TravellingSales:
 
                 if path in self.path_list:
                     fitness += self.dist_list[self.path_list.index(path)] - \
-                               ((self.weights[state[i]] * (len(state)-1)) / (i+1))
+                               ((self.weights[state[i]] * \
+                                 (sum(self.dist_list) / (len(self.dist_list) * PRIO_IMPORTANCE)) * \
+                                 (len(state) - 1)) / (i + 1))
                 else:
                     fitness += np.inf
 
@@ -145,7 +153,8 @@ class TravellingSales:
 
             if path in self.path_list:
                 fitness += self.dist_list[self.path_list.index(path)] - \
-                           self.weights[state[-1]]
+                           self.weights[state[-1]] * \
+                           (sum(self.dist_list) / (len(self.dist_list) * PRIO_IMPORTANCE))
             else:
                 fitness += np.inf
 

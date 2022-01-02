@@ -5,7 +5,7 @@ sys.modules['sklearn.externals.six'] = six
 import mltulip
 import numpy as np
 
-POP_SIZE = 200
+POP_SIZE = 1000
 MUTATION_PROB = 0.2
 MAX_ATTEMPTS = 200
 MAX_ITERS = np.inf
@@ -18,19 +18,15 @@ def get_tsp_result_without_prio(dist_list: list, length: int, state=True, fitnes
     for i in range(length):
         prio_list[i] = 0
 
-    return get_tsp_result(dist_list, prio_list, simple_prio=False, state=state, fitness=fitness, curve=curve, )
+    return get_tsp_result(dist_list, prio_list, state=state, fitness=fitness, curve=curve, )
 
-def get_tsp_result(dist_list: list, prio_list: dict, simple_prio=True, state=True, fitness=False, curve=False):
+def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, curve=False):
     """
     This method starts the evolutionary algorithm which solves the travelling sales person
     param:dist_list a dict of all distances between all destinations
     param:prio_list a dict of all priorities of destinations
     """
 
-    if simple_prio:
-        for i in range(len(prio_list)):
-            if prio_list[i] == 0:
-                prio_list[i] = 0.7
     #print(prio_list)
 
     problem_fit = mltulip.TSPOpt(length=len(prio_list),
