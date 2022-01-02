@@ -2,6 +2,7 @@ import Neo4j.GetDistances as db_loader
 import Neo4j.GetAddessesWithPackages as db_loader_addresses
 import Neo4j.GetPrioStatusPackages as db_loader_prio
 import Neo4j.GetAllPackages as db_loader_packages
+import Neo4j.GetPostStation as db_loader_ps
 import travelling_salesman.Travelling_Salesman as TSP
 from collections import Counter
 import numpy as np
@@ -196,7 +197,7 @@ def rearange_route(final_result):
     return route_list
 
 
-def process_result(best_state, best_fitness, key_dict_back):
+def process_result(best_state, best_fitness, key_dict_back, post_station):
     """
     Gets the result of the tsp algorithm and changes the keys back to the address ids from the DB. Rearranges the route
     so it always starts at the Post-Station (0) and gets the address information from the DB to match the route address
@@ -213,9 +214,7 @@ def process_result(best_state, best_fitness, key_dict_back):
     print('The optimal route is: ' + str(route))
 
     address_data = db_loader_addresses.get_addresses_with_packages()
-    route_addresses = [{'city': 'Furtwangen im Schwarzwald', 'street': 'Robert-Gerwig-Platz',
-                        'geojson_geometry': "{'type': 'Point', 'coordinates': [8.2075067, 48.05139]}", 'district': '1',
-                        'post_code': '78120', 'house_number': '1', 'id': '0'}]
+    route_addresses = [post_station]
     for item in route:
         for ad in address_data:
             if int(ad['n']['id']) == item:
@@ -225,7 +224,7 @@ def process_result(best_state, best_fitness, key_dict_back):
     return route, route_addresses
 
 
-def match_packages_to_route(route):
+def match_packages_to_route(route, post_station):
     """
     Loads package data from db and matches the address and package data equivalent to the order of the route list
     (input) to the dict.
@@ -233,10 +232,7 @@ def match_packages_to_route(route):
     :return: final route information: containing all package and address data in a dict
     """
     package_data = db_loader_packages.get_all_packages()
-    final_route_information = [{'city': 'Furtwangen im Schwarzwald', 'street': 'Robert-Gerwig-Platz',
-                                'geojson_geometry': "{'type': 'Point', 'coordinates': [8.2075067, 48.05139]}",
-                                'district': '1',
-                                'post_code': '78120', 'house_number': '1', 'id': '0'}]
+    final_route_information = [post_station]
 
     for id in route:
         for item in package_data:
@@ -294,8 +290,6 @@ def save_route_in_mongo_db(final_route_information, poststation, district):
     #db = client.routenplaner
     #collection = db['routen']
 
-    print(final_route_information)
-
     #route_df = route_into_pd_dataframe(final_route_information)
     #input_data = route_df.to_json(orient='records', force_ascii=False)
     #input_dict = eval(input_data)
@@ -311,15 +305,19 @@ def save_route_in_mongo_db(final_route_information, poststation, district):
     collection.insert_one(final_dict)
 
 
-def get_optimal_route(show_in_browser=True, prio=True):
+def get_optimal_route(post_station_id: int, district: int, show_in_browser=True, prio=True):
     """
     Runs the necessary methods to get the optimal route for the packages in the db. Saves the result in a MongoDB
     database.
+    :param post_station_id: id of the post station
+    :param district: number of the district
     :param show_in_browser: if set to True, opens default browser and prints a list containing the route information
     :param prio: if set to True, runs the get_optimal_route with prio list, else without
     :return: prints optimal route with all information about packages and addresses to the console
     """
     final_list, key_dict, key_dict_back, number_of_knots = get_final_input_list_and_key_dict()
+    post_station = db_loader_ps.get_post_station()
+    print(post_station[0]['s'])
     # print(final_list)
 
     # TSP without prio
@@ -329,9 +327,9 @@ def get_optimal_route(show_in_browser=True, prio=True):
         print(best_state)
         print(best_fitness)
 
-        route, route_addresses = process_result(best_state, best_fitness, key_dict_back)
+        route, route_addresses = process_result(best_state, best_fitness, key_dict_back, post_station[0]['s'])
 
-        final_route_information = match_packages_to_route(route)
+        final_route_information = match_packages_to_route(route, post_station[0]['s'])
 
     if prio:
         final_prio_list = get_prio_list(key_dict)
@@ -341,11 +339,11 @@ def get_optimal_route(show_in_browser=True, prio=True):
         print(best_state)
         print(best_fitness)
 
-        route, route_addresses = process_result(best_state, best_fitness, key_dict_back)
+        route, route_addresses = process_result(best_state, best_fitness, key_dict_back, post_station[0]['s'])
 
-        final_route_information = match_packages_to_route(route)
+        final_route_information = match_packages_to_route(route, post_station[0]['s'])
 
-        save_route_in_mongo_db(final_route_information, 1, 12)
+        save_route_in_mongo_db(final_route_information, post_station_id, district)
 
     '''
     for item in final_route_information:
@@ -357,5 +355,5 @@ def get_optimal_route(show_in_browser=True, prio=True):
         print_to_html(route_df)
 
 
-get_optimal_route(show_in_browser=False, prio=False)
-get_optimal_route(show_in_browser=False )
+get_optimal_route(1, 2, show_in_browser=False, prio=False)
+get_optimal_route(1, 2, show_in_browser=False )
