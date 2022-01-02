@@ -11,8 +11,7 @@ from scipy.sparse.csgraph import minimum_spanning_tree, depth_first_tree
 from .fitness import TravellingSales
 
 
-
-class TSPOptWithWeights:
+class TSPOpt:
     """Class for defining travelling salesperson optimisation problems with weights.
 
     Parameters
@@ -49,6 +48,11 @@ class TSPOptWithWeights:
 
     def __init__(self, length, fitness_fn=None, maximize=False, coords=None,
                  distances=None, weights=None):
+
+        i = 0
+        while i > length - 1:
+            weights.setdefault(i, 0)
+            i += 1
 
         if (fitness_fn is None) and (coords is None) and (distances is None):
             raise Exception("""At least one of fitness_fn, coords and"""
@@ -118,24 +122,6 @@ class TSPOptWithWeights:
 
         return best
 
-    def best_neighbor(self):
-        """Return the best neighbor of current state.
-
-        Returns
-        -------
-        best: array
-            State vector defining best neighbor.
-        """
-        fitness_list = []
-
-        for neigh in self.neighbors:
-            fitness = self.eval_fitness(neigh)
-            fitness_list.append(fitness)
-
-        best = self.neighbors[np.argmax(fitness_list)]
-
-        return best
-
     def eval_fitness(self, state):
         """Evaluate the fitness of a state vector.
 
@@ -176,185 +162,6 @@ class TSPOptWithWeights:
         else:
             pop_fitness = [0 if x == 0 else sum_fitness / x for x in pop_fitness]
             self.mate_probs = pop_fitness / np.sum(pop_fitness)
-        
-    def eval_node_probs(self):
-        """Update probability density estimates.
-        """
-        if not self.mimic_speed:
-            # Create mutual info matrix
-            mutual_info = np.zeros([self.length, self.length])
-            for i in range(self.length - 1):
-                for j in range(i + 1, self.length):
-                    mutual_info[i, j] = -1 * mutual_info_score(
-                        self.keep_sample[:, i],
-                        self.keep_sample[:, j])
-
-        elif self.mimic_speed:
-            # Set ignore error to ignore dividing by zero
-            np.seterr(divide='ignore', invalid='ignore')
-
-            # get length of the sample which survived from mimic iteration
-            len_sample_kept = self.keep_sample.shape[0]
-            # get the length of the bit sequence / problem size
-            len_prob = self.keep_sample.shape[1]
-
-            # Expand the matrices to so each row corresponds to a row by row
-            # combination of the list of samples
-            permuted_rows = np.repeat(self.keep_sample, self.length)
-            permuted_rows = np.reshape(permuted_rows,
-                                       (len_sample_kept, len_prob * len_prob))
-            duplicated_rows = np.hstack(([self.keep_sample] * len_prob))
-
-            # Compute the mutual information matrix in bulk
-            # This is done by iterating through the list of possible feature
-            # values ((length-1)^2).
-            # For example, a binary string would go through 00 01 10 11, for a
-            # total of 4 iterations.
-
-            # First initialize the mutual info matrix.
-            mutual_info_vectorized = np.zeros([self.length * self.length])
-            # Pre-compute the clusters U and V which gets computed multiple
-            # times in the inner loop.
-            cluster_U = {}
-            cluster_V = {}
-            cluster_U_sum = {}
-            cluster_V_sum = {}
-            for i in range(0, self.length):
-                cluster_U[i] = (duplicated_rows == i)
-                cluster_V[i] = (permuted_rows == i)
-                cluster_U_sum[i] = np.sum(duplicated_rows == i, axis=0)
-                cluster_V_sum[i] = np.sum(permuted_rows == i, axis=0)
-
-            # Compute the mutual information for all sample to
-            # sample combination.
-            # Done for each feature combination i & j ((length-1)^2)
-            for i in range(0, self.length):
-                for j in range(0, self.length):
-                    # |U_i AND V_j|/N Length of cluster matching for feature
-                    # pair i j over sample length N
-                    # This is the first term in the MI computation
-                    MI_first_term = np.sum(cluster_U[i] * cluster_V[j], axis=0)
-                    MI_first_term = np.divide(MI_first_term, len_sample_kept)
-
-                    # compute the second term of the MI matrix
-                    # Length |U_i||V_j|, for the particular feature pair
-                    UV_length = (cluster_U_sum[i] * cluster_V_sum[j])
-                    MI_second_term = np.log(MI_first_term) - \
-                                     np.log(UV_length) + \
-                                     np.log(len_sample_kept)
-
-                    # remove the nans and negative infinity, there shouldn't
-                    # be any
-                    MI_second_term[np.isnan(MI_second_term)] = 0
-                    MI_second_term[np.isneginf(MI_second_term)] = 0
-
-                    # Combine the first and second term
-                    # Add the whole MI matrix for the feature to the previously
-                    # computed values
-                    mutual_info_vectorized = mutual_info_vectorized + \
-                                             MI_first_term * MI_second_term
-
-            # Need to multiply by negative to get the mutual information, and
-            # reshape (Full Matrix)
-            mutual_info_full = -1 * np.reshape(mutual_info_vectorized,
-                                               (self.length, self.length))
-
-            # Only get the upper triangle matrix above the identity row.
-            mutual_info = np.triu(mutual_info_full, k=1)
-            # Possible enhancements, currently we are doing double the
-            # computation required.
-            # Pre set the matrix so the computation is only done for rows that
-            # are needed. To do for the future.
-
-        # Find minimum spanning tree of mutual info matrix
-        mst = minimum_spanning_tree(csr_matrix(mutual_info))
-
-        # Convert minimum spanning tree to depth first tree with node 0 as root
-        dft = depth_first_tree(csr_matrix(mst.toarray()), 0, directed=False)
-        dft = np.round(dft.toarray(), 10)
-
-        # Determine parent of each node
-        parent = np.argmin(dft[:, 1:], axis=0)
-
-        # Get probs
-        probs = np.zeros([self.length, self.length, self.length])
-
-        probs[0, :] = np.histogram(self.keep_sample[:, 0],
-                                   np.arange(self.length + 1),
-                                   density=True)[0]
-
-        for i in range(1, self.length):
-            for j in range(self.length):
-                subset = self.keep_sample[np.where(
-                    self.keep_sample[:, parent[i - 1]] == j)[0]]
-
-                if not len(subset):
-                    probs[i, j] = 1 / self.length
-                else:
-                    probs[i, j] = np.histogram(subset[:, i],
-                                               np.arange(self.length + 1),
-                                               density=True)[0]
-
-        # Update probs and parent
-        self.node_probs = probs
-        self.parent_nodes = parent
-
-    def find_neighbors(self):
-        """Find all neighbors of the current state.
-        """
-        self.neighbors = []
-
-        for node1 in range(self.length - 1):
-            for node2 in range(node1 + 1, self.length):
-                neighbor = np.copy(self.state)
-
-                neighbor[node1] = self.state[node2]
-                neighbor[node2] = self.state[node1]
-                self.neighbors.append(neighbor)
-                
-    def find_sample_order(self):
-        """Determine order in which to generate sample vector elements.
-        """
-        sample_order = []
-        last = [0]
-        parent = np.array(self.parent_nodes)
-
-        while len(sample_order) < self.length:
-            inds = []
-
-            # If last nodes list is empty, select random node than has not
-            # previously been selected
-            if len(last) == 0:
-                inds = [np.random.choice(list(set(np.arange(self.length)) -
-                                              set(sample_order)))]
-            else:
-                for i in last:
-                    inds += list(np.where(parent == i)[0] + 1)
-
-            sample_order += last
-            last = inds
-
-        self.sample_order = sample_order
-    
-    def find_top_pct(self, keep_pct):
-        """Select samples with fitness in the top keep_pct percentile.
-
-        Parameters
-        ----------
-        keep_pct: float
-            Proportion of samples to keep.
-        """
-        if (keep_pct < 0) or (keep_pct > 1):
-            raise Exception("""keep_pct must be between 0 and 1.""")
-
-        # Determine threshold
-        theta = np.percentile(self.pop_fitness, 100 * (1 - keep_pct))
-
-        # Determine samples for keeping
-        keep_inds = np.where(self.pop_fitness >= theta)[0]
-
-        # Determine sample for keeping
-        self.keep_sample = self.population[keep_inds]
 
     def get_fitness(self):
         """ Return the fitness of the current state vector.
@@ -451,64 +258,6 @@ class TSPOptWithWeights:
 
         return state
 
-    def random_mimic(self):
-        """Generate single MIMIC sample from probability density.
-
-        Returns
-        -------
-        state: array
-            State vector of MIMIC random sample.
-        """
-        remaining = list(np.arange(self.length))
-        state = np.zeros(self.length, dtype=np.int8)
-        sample_order = self.sample_order[1:]
-        node_probs = np.copy(self.node_probs)
-
-        # Get value of first element in new sample
-        state[0] = np.random.choice(self.length, p=node_probs[0, 0])
-        remaining.remove(state[0])
-        node_probs[:, :, state[0]] = 0
-
-        # Get sample order
-        self.find_sample_order()
-        sample_order = self.sample_order[1:]
-
-        # Set values of remaining elements of state
-        for i in sample_order:
-            par_ind = self.parent_nodes[i - 1]
-            par_value = state[par_ind]
-            probs = node_probs[i, par_value]
-
-            if np.sum(probs) == 0:
-                next_node = np.random.choice(remaining)
-
-            else:
-                adj_probs = self.adjust_probs(probs)
-                next_node = np.random.choice(self.length, p=adj_probs)
-
-            state[i] = next_node
-            remaining.remove(next_node)
-            node_probs[:, :, next_node] = 0
-
-        return state
-
-    def random_neighbor(self):
-        """Return random neighbor of current state vector.
-
-        Returns
-        -------
-        neighbor: array
-            State vector of random neighbor.
-        """
-        neighbor = np.copy(self.state)
-        node1, node2 = np.random.choice(np.arange(self.length),
-                                        size=2, replace=False)
-
-        neighbor[node1] = self.state[node2]
-        neighbor[node2] = self.state[node1]
-
-        return neighbor
-    
     def random_pop(self, pop_size):
         """Create a population of random state vectors.
 
@@ -590,44 +339,12 @@ class TSPOptWithWeights:
                 child[mutate[i]] = temp[mutate_perm[i]]
 
         return child
-    
+
     def reset(self):
         """Set the current state vector to a random value and get its fitness.
         """
         self.state = self.random()
         self.fitness = self.eval_fitness(self.state)
-
-    def sample_pop(self, sample_size):
-        """Generate new sample from probability density.
-
-        Parameters
-        ----------
-        sample_size: int
-            Size of sample to be generated.
-
-        Returns
-        -------
-        new_sample: array
-            Numpy array containing new sample.
-        """
-        if sample_size <= 0:
-            raise Exception("""sample_size must be a positive integer.""")
-        elif not isinstance(sample_size, int):
-            if sample_size.is_integer():
-                sample_size = int(sample_size)
-            else:
-                raise Exception("""sample_size must be a positive integer.""")
-
-        self.find_sample_order()
-        new_sample = []
-
-        for _ in range(sample_size):
-            state = self.random_mimic()
-            new_sample.append(state)
-
-        new_sample = np.array(new_sample)
-
-        return new_sample
 
     def set_population(self, new_population):
         """ Change the current population to a specified new population and get

@@ -13,20 +13,20 @@ RANDOM_STATE = 42
 MAXIMIZE = False
 
 
-def get_tsp_result(dist_list: dict, prio_list: dict, state=True, fitness=False, curve=False):
+def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, curve=False):
     """
     This method starts the evolutionary algorithm which solves the travelling sales person
     param:dist_list a dict of all distances between all destinations
     param:prio_list a dict of all priorities of destinations
     """
 
-    problem_fit = opt_probs.TSPOptWithPrio(length=len(prio_list),
-                                           maximize=MAXIMIZE,
-                                           distances=dist_list,
-                                           weights=prio_list)
+    problem_fit = mltulip.TSPOpt(length=len(prio_list),
+                                   maximize=MAXIMIZE,
+                                   distances=dist_list,
+                                   weights=prio_list)
 
     if curve:
-        best_state, best_fitness, fitness_curve = algorythm.genetic_alg(problem_fit,
+        best_state, best_fitness, fitness_curve = mltulip.genetic_alg(problem_fit,
                                                                         pop_size=POP_SIZE,
                                                                         mutation_prob=MUTATION_PROB,
                                                                         max_attempts=MAX_ATTEMPTS,

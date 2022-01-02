@@ -7,7 +7,6 @@
 
 
 import numpy as np
-from .decay import GeomDecay
 
 
 

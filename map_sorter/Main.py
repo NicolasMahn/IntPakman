@@ -18,15 +18,15 @@ def main():
               "geojson_geometry"]
     addresses.append(header)
 
-    map = input("Please enter full directory to the map in geojson format")
+    map = input("Please enter full directory to the map in geojson format\n")
     if map == "":
         map = '../map_sorter/map_data/furtwangen.geojson'
     map = read_map(map)
 
-    city_hardcode = input("What is the city of your map?")
+    city_hardcode = input("What is the city of your map?\n")
     if city_hardcode == "":
         city_hardcode = "Furtwangen im Schwarzwald"
-    postcode_hardcode = input("What is the post code of your map?")
+    postcode_hardcode = input("What is the post code of your map?\n")
     if postcode_hardcode == "":
         postcode_hardcode = "78120"
 
@@ -44,7 +44,7 @@ def main():
             house_number = properties["addr:housenumber"]
         else:
             continue
-        if  "addr:street" in properties.keys():
+        if "addr:street" in properties.keys():
             street = properties["addr:street"]
         else:
             continue
@@ -148,8 +148,8 @@ def main():
 
 def get_addr(map):
 
-    addr_attributes = Cleric.read_csv('../map_sorter/map_data/addr_attributes.csv')[0]
-    #print(addr_attributes)
+    addr_attributes = Cleric.read_csv('../map_sorter/map_data/addr_attributes.csv')
+    print(addr_attributes)
 
     addr = []
 
