@@ -1,6 +1,12 @@
 from pymongo import MongoClient
 import pymongo
+import Neo4j.GetDistances as db
 
+data = db.get_distance_between_all()
+
+print(data)
+
+'''
 client = MongoClient("mongodb+srv://intpakman:veryhard@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority")
 db = client.routenplaner
 collection = db['routen']
@@ -26,3 +32,4 @@ collection.insert_many([item_1])
 
 for item in collection.find():
     print(item)
+'''

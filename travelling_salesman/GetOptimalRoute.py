@@ -1,4 +1,4 @@
-import Neo4j.GetDistances as db_loader
+import Neo4j.GetDistances as db_loader_distances
 import Neo4j.GetAddessesWithPackages as db_loader_addresses
 import Neo4j.GetPrioStatusPackages as db_loader_prio
 import Neo4j.GetAllPackages as db_loader_packages
@@ -91,7 +91,7 @@ def get_final_input_list_and_key_dict():
     :return: list that contains list-elements with data like this: [[knot 1, knot 2, distance]], returns key_dict and
     key_dict_back
     """
-    data = db_loader.get_distance_between_all()
+    data = db_loader_distances.get_distance_between_all()
 
     number_of_knots = 1
     key_dict = {'0': '0'}
@@ -259,7 +259,7 @@ def print_to_html(df):
 def route_into_pd_dataframe(route):
     """
     Uses the input information, creates a pd DataFrame and returns it.
-    :param route: final route information: containing all package and address data in a dict
+    :param route: containing all package and address data in a dict
     :return: pd DataFrame containing the route information.
     """
     routeDF = pd.DataFrame(
@@ -277,6 +277,54 @@ def route_into_pd_dataframe(route):
                               item["district"], "", "", "", "", "", "", "", item["geojson_geometry"], ""]
 
     return routeDF
+
+
+def evaluate_route(route):
+    """
+    Calculates the distance and the duration of the route and returns them.
+    :param route: containing all package and address data in a dict
+    :return: total_distance and total_duration as int
+    """
+    distance_data = db_loader_distances.get_distance_between_all()
+    total_distance = 0
+    total_duration = 0
+    first = True
+    second = False
+    last_element = {}
+
+    for element in route:
+        if not first:
+            if second:
+                for item in distance_data:
+                    if 's.id' in item:
+                        if item.get("a.id") == element["a_id"]:
+                            total_distance += int(item.get("r.distance"))
+                            total_duration += int(item.get("r.duration"))
+                second = False
+
+            else:
+                for item in distance_data:
+                    if item.get("a1.id") == last_element["a_id"] and item.get("a2.id") == element["a_id"]:
+                        total_distance += int(item.get("r.distance"))
+                        total_duration += int(item.get("r.duration"))
+                    elif item.get("a2.id") == last_element["a_id"] and item.get("a1.id") == element["a_id"]:
+                        total_distance += int(item.get("r.distance"))
+                        total_duration += int(item.get("r.duration"))
+
+        if first:
+            first = False
+            second = True
+        last_element = element
+
+    # for the distance and duration back to the post station
+    for item in distance_data:
+        if 's.id' in item:
+            if item.get("a.id") == last_element["a_id"]:
+                total_distance += int(item.get("r.distance"))
+                total_duration += int(item.get("r.duration"))
+
+    print('Total distance: ' + str(total_distance) + ' meter')
+    print('Total duration: ' + str(total_duration) + ' min')
 
 
 def save_route_in_mongo_db(final_route_information, poststation, district):
@@ -305,7 +353,7 @@ def save_route_in_mongo_db(final_route_information, poststation, district):
     collection.insert_one(final_dict)
 
 
-def get_optimal_route(post_station_id: int, district: int, show_in_browser=True, prio=True):
+def get_optimal_route(post_station_id: int, district: int, show_in_browser=True, prio=True, evaluate=False):
     """
     Runs the necessary methods to get the optimal route for the packages in the db. Saves the result in a MongoDB
     database.
@@ -319,6 +367,7 @@ def get_optimal_route(post_station_id: int, district: int, show_in_browser=True,
     post_station = db_loader_ps.get_post_station()
     print(post_station[0]['s'])
     # print(final_list)
+    final_route_information = np.NAN
 
     # TSP without prio
     if not prio:
@@ -345,15 +394,13 @@ def get_optimal_route(post_station_id: int, district: int, show_in_browser=True,
 
         save_route_in_mongo_db(final_route_information, post_station_id, district)
 
-    '''
-    for item in final_route_information:
-        print(item)
-        print()
-    '''
+    if evaluate:
+        evaluate_route(final_route_information)
+
     if show_in_browser:
         route_df = route_into_pd_dataframe(final_route_information)
         print_to_html(route_df)
 
 
-get_optimal_route(1, 2, show_in_browser=False, prio=False)
-get_optimal_route(1, 2, show_in_browser=False )
+get_optimal_route(1, 2, show_in_browser=False, prio=False, evaluate=True)
+get_optimal_route(1, 2, show_in_browser=False, evaluate=True)
