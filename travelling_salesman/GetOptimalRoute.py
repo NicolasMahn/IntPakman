@@ -7,6 +7,8 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 import webbrowser
+from pymongo import MongoClient
+import pymongo as mongo
 
 def fix_values_in_list(input, number_of_knots):
     for item in input:
@@ -97,7 +99,7 @@ def get_final_input_list_and_key_dict():
     data, key_dict, key_dict_back = create_key_dict(data, key_dict, key_dict_back)
     data_with_changed_keys = change_keys(data, key_dict)
     final_list = create_final_list(data_with_changed_keys)
-    return final_list, key_dict, key_dict_back
+    return final_list, key_dict, key_dict_back, number_of_knots
 
 
 def change_keys_prio(input, key_dict):
@@ -151,6 +153,19 @@ def create_final_prio_list(input):
     return final_prio_list
 
 
+def create_final_prio_dict(input):
+    """
+    Gets the preprocessed list of dict-elements and returns list of list elements
+    :param input: data from DB with changed keys and removed duplicates
+    :return: dict containing list-elements like: {knot: prio, knot: prio}
+    """
+    final_prio_dict = {0: 0}
+    for item in input:
+        final_prio_dict[int(item["a.id"])] = int(item["p.prio"])
+
+    return final_prio_dict
+
+
 def get_prio_list(key_dict):
     """
     Gets data from DB and executes data preparation steps needed to transform input into readable prio list for tsp.
@@ -161,8 +176,8 @@ def get_prio_list(key_dict):
 
     data_with_changed_keys = change_keys_prio(data, key_dict)
     data_cleand_from_duplicates = clean_data_from_duplicate_addresses(data_with_changed_keys)
-    final_prio_list = create_final_prio_list(data_cleand_from_duplicates)
-    return final_prio_list
+    final_prio_dict = create_final_prio_dict(data_cleand_from_duplicates)
+    return final_prio_dict
 
 
 def rearange_route(final_result):
@@ -191,8 +206,8 @@ def process_result(best_state, best_fitness, key_dict_back):
     :return: final route starting at the Post-Station, tpye: [0, 1, 3, 2...]
     """
     final_result = change_keys_back(best_state, key_dict_back)
-    final_result_list = final_result.tolist()
-    route = rearange_route(final_result_list)
+    route = final_result.tolist()
+    # route = rearange_route(final_result_list)
 
     print('The optimal route without prio is: ' + str(route))
 
@@ -260,24 +275,47 @@ def print_to_html(route):
     webbrowser.open('route.html')
 
 
-def get_optimal_route(show_in_browser=True):
+def save_route_in_mongo_db(route):
+    print()
+    client = MongoClient("mongodb+srv://intpakman:veryhard@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority")
+    db = client.routenplaner
+    collection = db['routen']
+    for item in collection.find():
+        print(item)
+
+
+def get_optimal_route(show_in_browser=True, prio=True):
     """
     Runs the necessary methods to get the optimal route for the packages in the db.
+    :param show_in_browser: if set to True, opens default browser and prints a list containing the route information
+    :param prio: if set to True, runs the get_optimal_route with prio list, else without
     :return: prints optimal route with all information about packages and addresses to the console
     """
-    final_list, key_dict, key_dict_back = get_final_input_list_and_key_dict()
+    final_list, key_dict, key_dict_back, number_of_knots = get_final_input_list_and_key_dict()
     # print(final_list)
-    final_prio_list = get_prio_list(key_dict)
-    # print(final_prio_list)
-    # TSP
-    best_state, best_fitness = TSP.get_tsp_result(final_list, final_prio_list, fitness=True)
 
-    print(best_state)
-    print(best_fitness)
+    # TSP without prio
+    if not prio:
+        best_state, best_fitness = TSP.get_tsp_result_without_prio(final_list, number_of_knots, fitness=True)
+        print('TSP without prio:')
+        print(best_state)
+        print(best_fitness)
 
-    route, route_addresses = process_result(best_state, best_fitness, key_dict_back)
+        route, route_addresses = process_result(best_state, best_fitness, key_dict_back)
 
-    final_route_information = match_packages_to_route(route)
+        final_route_information = match_packages_to_route(route)
+
+    if prio:
+        final_prio_list = get_prio_list(key_dict)
+        print(final_prio_list)
+        best_state, best_fitness = TSP.get_tsp_result(final_list, final_prio_list, fitness=True)
+        print('TSP with prio:')
+        print(best_state)
+        print(best_fitness)
+
+        route, route_addresses = process_result(best_state, best_fitness, key_dict_back)
+
+        final_route_information = match_packages_to_route(route)
 
     '''
     for item in final_route_information:
@@ -288,4 +326,4 @@ def get_optimal_route(show_in_browser=True):
         print_to_html(final_route_information)
 
 
-#get_optimal_route()
+get_optimal_route(show_in_browser=False)
