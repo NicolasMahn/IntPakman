@@ -31,6 +31,7 @@ def get_tsp_result(dist_list: list, prio_list: dict, simple_prio=True, state=Tru
         for i in range(len(prio_list)):
             if prio_list[i] == 0:
                 prio_list[i] = 0.7
+    #print(prio_list)
 
     problem_fit = mltulip.TSPOpt(length=len(prio_list),
                                    maximize=MAXIMIZE,

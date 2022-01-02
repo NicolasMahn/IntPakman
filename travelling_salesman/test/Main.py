@@ -9,8 +9,8 @@ def main():
     prio_list = {0: 0,
                  1: 0,
                  2: 0,
-                 3: 0,
-                 4: 1,
+                 3: 5,
+                 4: 0,
                  5: 0}
 
     # Create list of distances between pairs of cities/destinations
@@ -24,7 +24,7 @@ def main():
     best_state = Travelling_Salesman.get_tsp_result_without_prio(dist_list, 6)
     print(best_state)
 
-    best_state, best_fitness, fitness_curve = Travelling_Salesman.get_tsp_result(dist_list, prio_list,
+    best_state, best_fitness, fitness_curve = Travelling_Salesman.get_tsp_result(dist_list, prio_list, simple_prio=True,
                                                                                  fitness=True, curve=True)
 
     print(best_state)
