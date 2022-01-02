@@ -209,7 +209,7 @@ def process_result(best_state, best_fitness, key_dict_back):
     route = final_result.tolist()
     # route = rearange_route(final_result_list)
 
-    print('The optimal route without prio is: ' + str(route))
+    print('The optimal route is: ' + str(route))
 
     address_data = db_loader_addresses.get_addresses_with_packages()
     route_addresses = [{'city': 'Furtwangen im Schwarzwald', 'street': 'Robert-Gerwig-Platz',
