@@ -132,9 +132,9 @@ class TravellingSales:
                 path = (min(node1, node2), max(node1, node2))
 
                 if path in self.path_list:
-                    fitness += self.dist_list[self.path_list.index(path)] * \
-                               ((self.weights[state[i+1]] * (len(state)-1)) / (i+1))
-                    print(str(state[i+1]) + "  " + str((self.weights[state[i+1]] * (len(state)-1)) / (i + 2)) + "    " + str(fitness))
+                    fitness += self.dist_list[self.path_list.index(path)] - \
+                               ((self.weights[state[i]] * (len(state)-1)) / (i+1))
+                    print(str(state[i]) + "  " + str((self.weights[state[i]] * len(state)) / (i + 1)) + "    " + str(fitness))
                 else:
                     fitness += np.inf
 
@@ -145,9 +145,9 @@ class TravellingSales:
             path = (min(node1, node2), max(node1, node2))
 
             if path in self.path_list:
-                fitness += self.dist_list[self.path_list.index(path)] * \
-                           ((self.weights[state[i]] * (len(state)-1)) / (i+1))
-                print(str(state[i]) + "  " + str((self.weights[state[i]] * (len(state)-1)) / (i + 1)) + "    " + str(fitness))
+                fitness += self.dist_list[self.path_list.index(path)] - \
+                           self.weights[state[-1]]
+                print(str(state[-1]) + "  " + str(self.weights[state[-1]]) + "    " + str(fitness))
                 print("\n")
             else:
                 fitness += np.inf
