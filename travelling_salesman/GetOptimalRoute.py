@@ -9,6 +9,7 @@ import pandas as pd
 import webbrowser
 from pymongo import MongoClient
 import pymongo as mongo
+from datetime import date
 
 def fix_values_in_list(input, number_of_knots):
     for item in input:
@@ -249,11 +250,21 @@ def match_packages_to_route(route):
     return final_route_information
 
 
-def print_to_html(route):
+def print_to_html(df):
     """
-    Uses the input information, creates a pd DataFrame and turns it into html to display it in the standard webbrwoser.
+    Uses the input df to create a html table. Opens default browser and displays the html table.
+    :param df: pd DataFrame containing the route information
+    """
+    with open('route.html', 'w') as fo:
+        fo.write(df.to_html())
+    webbrowser.open('route.html')
+
+
+def route_into_pd_dataframe(route):
+    """
+    Uses the input information, creates a pd DataFrame and returns it.
     :param route: final route information: containing all package and address data in a dict
-    :return: opens standard webbrowser and displays table containing the input information
+    :return: pd DataFrame containing the route information.
     """
     routeDF = pd.DataFrame(
         columns=["Sendungsnummer", "street", "house_number", "post_code", "city", "district", "length_cm", "width_cm",
@@ -263,25 +274,41 @@ def print_to_html(route):
         if i > 0:
             routeDF.loc[i] = [item["sendungsnummer"], item["street"], item["house_number"], item["post_code"],
                               item["city"], item["district"], item["length_cm"], item["width_cm"], item["height_cm"],
-                              item["weight_in_g"], item["fragile"], item["perishable"], np.NAN, #item["date"],
+                              item["weight_in_g"], item["fragile"], item["perishable"], "", #item["date"],
                               item["geojson_geometry"], item["a_id"]]
         else:
-            routeDF.loc[i] = [np.NAN, item["street"], item["house_number"], item["post_code"], item["city"],
-                              item["district"], np.NAN, np.NAN, np.NAN, np.NAN, np.NAN, np.NAN, np.NAN,
-                              item["geojson_geometry"], np.NAN]
+            routeDF.loc[i] = ["", item["street"], item["house_number"], item["post_code"], item["city"],
+                              item["district"], "", "", "", "", "", "", "", item["geojson_geometry"], ""]
 
-    with open('route.html', 'w') as fo:
-        fo.write(routeDF.to_html())
-    webbrowser.open('route.html')
+    return routeDF
 
 
-def save_route_in_mongo_db(route):
-    print()
-    client = MongoClient("mongodb+srv://intpakman:veryhard@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority")
-    db = client.routenplaner
-    collection = db['routen']
-    for item in collection.find():
-        print(item)
+def save_route_in_mongo_db(final_route_information, poststation, district):
+    """
+    Creates dict with key informationa and adds final_route_information as data. Saves the dict into a MongoDB database.
+    :param final_route_information:  containing all package and address data
+    :param poststation: poststation id
+    :param district: district identifier
+    """
+    #client = MongoClient("mongodb+srv://intpakman:veryhard@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority")
+    #db = client.routenplaner
+    #collection = db['routen']
+
+    print(final_route_information)
+
+    #route_df = route_into_pd_dataframe(final_route_information)
+    #input_data = route_df.to_json(orient='records', force_ascii=False)
+    #input_dict = eval(input_data)
+    final_dict = {"post_station": poststation,
+                  "district": district,
+                  "date": str(date.today()),
+                  "route_data": final_route_information}
+
+    client = MongoClient(
+        "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false")
+    db = client.IntPakMan
+    collection = db['route']
+    collection.insert_one(final_dict)
 
 
 def get_optimal_route(show_in_browser=True, prio=True):
@@ -317,13 +344,16 @@ def get_optimal_route(show_in_browser=True, prio=True):
 
         final_route_information = match_packages_to_route(route)
 
+        save_route_in_mongo_db(final_route_information, 1, 12)
+
     '''
     for item in final_route_information:
         print(item)
         print()
     '''
     if show_in_browser:
-        print_to_html(final_route_information)
+        route_df = route_into_pd_dataframe(final_route_information)
+        print_to_html(route_df)
 
 
 get_optimal_route(show_in_browser=False)
