@@ -207,7 +207,7 @@ def process_result(best_state, best_fitness, key_dict_back):
     :return: final route starting at the Post-Station, tpye: [0, 1, 3, 2...]
     """
     final_result = change_keys_back(best_state, key_dict_back)
-    route = final_result.tolist()
+    route = final_result#.tolist()
     # route = rearange_route(final_result_list)
 
     print('The optimal route is: ' + str(route))
@@ -356,4 +356,5 @@ def get_optimal_route(show_in_browser=True, prio=True):
         print_to_html(route_df)
 
 
-get_optimal_route(show_in_browser=False)
+get_optimal_route(show_in_browser=False, prio=False)
+get_optimal_route(show_in_browser=False )
