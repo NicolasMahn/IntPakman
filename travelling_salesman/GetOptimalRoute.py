@@ -313,7 +313,8 @@ def save_route_in_mongo_db(final_route_information, poststation, district):
 
 def get_optimal_route(show_in_browser=True, prio=True):
     """
-    Runs the necessary methods to get the optimal route for the packages in the db.
+    Runs the necessary methods to get the optimal route for the packages in the db. Saves the result in a MongoDB
+    database.
     :param show_in_browser: if set to True, opens default browser and prints a list containing the route information
     :param prio: if set to True, runs the get_optimal_route with prio list, else without
     :return: prints optimal route with all information about packages and addresses to the console
