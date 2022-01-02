@@ -7,18 +7,30 @@ import numpy as np
 
 POP_SIZE = 200
 MUTATION_PROB = 0.2
-MAX_ATTEMPTS = 100
+MAX_ATTEMPTS = 200
 MAX_ITERS = np.inf
 RANDOM_STATE = 42
 MAXIMIZE = False
 
+def get_tsp_result_without_prio(dist_list: list, length: int, state=True, fitness=False, curve=False):
 
-def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, curve=False):
+    prio_list = dict()
+    for i in range(length):
+        prio_list[i] = 0
+
+    return get_tsp_result(dist_list, prio_list, simple_prio=False, state=state, fitness=fitness, curve=curve, )
+
+def get_tsp_result(dist_list: list, prio_list: dict, simple_prio=True, state=True, fitness=False, curve=False):
     """
     This method starts the evolutionary algorithm which solves the travelling sales person
     param:dist_list a dict of all distances between all destinations
     param:prio_list a dict of all priorities of destinations
     """
+
+    if simple_prio:
+        for i in range(len(prio_list)):
+            if prio_list[i] == 0:
+                prio_list[i] = 0.7
 
     problem_fit = mltulip.TSPOpt(length=len(prio_list),
                                    maximize=MAXIMIZE,
@@ -40,7 +52,7 @@ def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, 
             return best_state, fitness_curve
 
     else:
-        best_state, best_fitness = algorythm.genetic_alg(problem_fit,
+        best_state, best_fitness = mltulip.genetic_alg(problem_fit,
                                                          pop_size=POP_SIZE,
                                                          mutation_prob=MUTATION_PROB,
                                                          max_attempts=MAX_ATTEMPTS,

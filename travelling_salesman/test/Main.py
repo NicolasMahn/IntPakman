@@ -6,12 +6,12 @@ import Travelling_Salesman
 
 
 def main():
-    prio_list = {0: 0.5,
-                 1: 0.5,
-                 2: 0.5,
-                 3: 1,
-                 4: 0.5,
-                 5: 0.5}
+    prio_list = {0: 0,
+                 1: 0,
+                 2: 0,
+                 3: 0,
+                 4: 1,
+                 5: 0}
 
     # Create list of distances between pairs of cities/destinations
     dist_list = [(0, 1, 8.1), (0, 2, 6.0), (0, 3, 8.5), (0, 4, 13.1), (0, 5, 12.9),
@@ -21,6 +21,9 @@ def main():
                  (4, 5, 4.7)]
 
     # Initialize fitness function object using dist_list and amount of cities/destinations
+    best_state = Travelling_Salesman.get_tsp_result_without_prio(dist_list, 6)
+    print(best_state)
+
     best_state, best_fitness, fitness_curve = Travelling_Salesman.get_tsp_result(dist_list, prio_list,
                                                                                  fitness=True, curve=True)
 

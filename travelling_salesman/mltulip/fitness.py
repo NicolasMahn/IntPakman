@@ -134,7 +134,6 @@ class TravellingSales:
                 if path in self.path_list:
                     fitness += self.dist_list[self.path_list.index(path)] - \
                                ((self.weights[state[i]] * (len(state)-1)) / (i+1))
-                    print(str(state[i]) + "  " + str((self.weights[state[i]] * len(state)) / (i + 1)) + "    " + str(fitness))
                 else:
                     fitness += np.inf
 
@@ -147,9 +146,10 @@ class TravellingSales:
             if path in self.path_list:
                 fitness += self.dist_list[self.path_list.index(path)] - \
                            self.weights[state[-1]]
-                print(str(state[-1]) + "  " + str(self.weights[state[-1]]) + "    " + str(fitness))
-                print("\n")
             else:
                 fitness += np.inf
 
-        return fitness
+        if (fitness > 0):
+            return fitness
+        else:
+            return 0

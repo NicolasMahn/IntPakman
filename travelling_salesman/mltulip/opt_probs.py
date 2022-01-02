@@ -247,14 +247,17 @@ class TSPOpt:
         return self.state
 
     def random(self):
-        """Return a random state vector.
+        """Return a random state vector starting with 0.
 
         Returns
         -------
         state: array
             Randomly generated state vector.
         """
-        state = np.random.permutation(self.length)
+
+        state = [-1]
+        state.extend(np.random.permutation(self.length-1))
+        state = list(np.asarray(state) + 1)
 
         return state
 
@@ -328,7 +331,7 @@ class TSPOpt:
             child = np.copy(parent_2)
 
         # Mutate child
-        rand = np.random.uniform(size=self.length)
+        rand = np.random.uniform(size=self.length-1)
         mutate = np.where(rand < mutation_prob)[0]
 
         if len(mutate) > 0:
@@ -336,7 +339,7 @@ class TSPOpt:
             temp = np.copy(child)
 
             for i in range(len(mutate)):
-                child[mutate[i]] = temp[mutate_perm[i]]
+                child[mutate[i]+1] = temp[mutate_perm[i]+1]
 
         return child
 
