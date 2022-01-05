@@ -4,13 +4,35 @@ import pandas as pd
 import Neo4j.GetAddessesWithPackages as loader
 import Neo4j.GetPostStation as ploader
 import Neo4j.GetDistances as dloader
+
 import Neo4j.GetAllPackages as ploader
 
+
+def load_model(model_path, model):
+    print('in method try loading model')
+    model = pickle.load(open(model_path, 'rb'))
+    return model
+
+
+
+model = DecisionTreeClassifier()
+path_model = 'Models/model_Classifier_without_volue_V2'
+model = load_model(path_model, model)
+
+test = {"length_cm":["120"],
+        "width_cm":["98"],
+        "height_cm":["50"],
+        "weight_in_g":["2500"]
+}
+x = pd.DataFrame(test)
+result = model.predict(x)[0]
+print(result)
+
+'''
 data = ploader.get_all_packages()
 print(data)
 print(data[0]['a']['id'])
 
-'''
 model = DecisionTreeClassifier()
 
 path = 'Models/model_Classifier_without_volue'

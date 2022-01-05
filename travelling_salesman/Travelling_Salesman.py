@@ -1,9 +1,10 @@
 import six
 import sys
 
-sys.modules['sklearn.externals.six'] = six
-import mltulip
+from travelling_salesman import mltulip
 import numpy as np
+
+sys.modules['sklearn.externals.six'] = six
 
 POP_SIZE = 1000
 MUTATION_PROB = 0.2
