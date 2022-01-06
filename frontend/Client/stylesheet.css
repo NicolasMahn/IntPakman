@@ -68,6 +68,15 @@ display: grid;
         grid-column: 2;
         background-color: gray;
 }
+tr:nth-child(odd){
+    background-color: beige;
+}
+tr:nth-child(even){
+    background-color: aliceblue;
+}
+td,th{
+    padding: 10px;
+}
 
 
 

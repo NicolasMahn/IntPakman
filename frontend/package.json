@@ -1,0 +1,24 @@
+{
+  "name": "intpakman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/mongodb": "^3.5.34",
+    "mongodb": "^3.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NicolasMahn/IntPakman.git"
+  },
+  "author": "maximilian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasMahn/IntPakman/issues"
+  },
+  "homepage": "https://github.com/NicolasMahn/IntPakman#readme"
+}
