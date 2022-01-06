@@ -274,7 +274,7 @@ def route_into_pd_dataframe(route):
                               item["geojson_geometry"], item["a_id"]]
         else:
             routeDF.loc[i] = ["", item["street"], item["house_number"], item["post_code"], item["city"],
-                              item["district"], "", "", "", "", "", "", "", item["geojson_geometry"], ""]
+                              "", "", "", "", "", "", "", "", item["geojson_geometry"], ""]
 
     return routeDF
 
@@ -334,10 +334,6 @@ def save_route_in_mongo_db(final_route_information, poststation, district):
     :param poststation: poststation id
     :param district: district identifier
     """
-    #client = MongoClient("mongodb+srv://intpakman:veryhard@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority")
-    #db = client.routenplaner
-    #collection = db['routen']
-
     #route_df = route_into_pd_dataframe(final_route_information)
     #input_data = route_df.to_json(orient='records', force_ascii=False)
     #input_dict = eval(input_data)
@@ -346,17 +342,25 @@ def save_route_in_mongo_db(final_route_information, poststation, district):
                   "date": str(date.today()),
                   "route_data": final_route_information}
 
+    # to test on local MongoDB instance
+    #client = MongoClient(
+    #    "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false")
+    #db = client.IntPakMan
+    #collection = db['route']
+
     client = MongoClient(
-        "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false")
-    db = client.IntPakMan
-    collection = db['route']
+        "mongodb+srv://intpakman:veryhard@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority")
+    db = client.routenplaner
+    collection = db['routen']
     collection.insert_one(final_dict)
+    print('[LOG]: Successfully stored route information in DB')
 
 
-def get_optimal_route(post_station_id: int, district: int, show_in_browser=True, prio=True, evaluate=False):
+def get_optimal_route(post_station_id: int, district: int, show_in_browser=False, prio=True, evaluate=False):
     """
     Runs the necessary methods to get the optimal route for the packages in the db. Saves the result in a MongoDB
     database.
+    :param evaluate:
     :param post_station_id: id of the post station
     :param district: number of the district
     :param show_in_browser: if set to True, opens default browser and prints a list containing the route information
@@ -402,5 +406,5 @@ def get_optimal_route(post_station_id: int, district: int, show_in_browser=True,
         print_to_html(route_df)
 
 
-get_optimal_route(1, 2, show_in_browser=False, prio=False, evaluate=True)
-get_optimal_route(1, 2, show_in_browser=False, evaluate=True)
+#get_optimal_route(1, 1, show_in_browser=False, prio=False, evaluate=True)
+#get_optimal_route(1, 1, show_in_browser=False, evaluate=True)

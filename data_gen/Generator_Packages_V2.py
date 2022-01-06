@@ -26,7 +26,7 @@ height_high = np.arange(140, 220, 1, int)
 
 def get_weight():
     """
-    First chooses between a value (1, 2 or 3) for x, the value of x is responsible for choosing between the
+    First chooses between a value (1, 2, 3 or 4) for x, the value of x is responsible for choosing between the
     different range of values of weight.
     :return: return the weight
     """
