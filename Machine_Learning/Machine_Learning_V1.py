@@ -2,12 +2,11 @@ import pickle
 
 import numpy as np
 import pandas as pd
-import sklearn.tree
-from sklearn.tree import DecisionTreeClassifier, export_text
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, roc_curve
 import matplotlib.pyplot as plt
-import Visualization as v
+from Machine_Learning import Visualization as v
 
 
 def data_preparation(data):
@@ -106,7 +105,7 @@ def run_machine_learning(path_data, path_plots, path_model, visualize=False, sav
         save_model(model, path_model)
 
 
-data_path = 'data/random_package_data_V2.csv'
-plots_path = 'data/plots/'
-model_path = 'Models/model_Classifier_without_volue_V2'
+data_path = '../data/random_package_data_V2.csv'
+plots_path = '../data/plots/'
+model_path = '../Models/model_Classifier_without_volue_V2'
 #run_machine_learning(data_path, plots_path, model_path)
