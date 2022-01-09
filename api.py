@@ -13,13 +13,13 @@ async def execute_trigger(post_station_id, district):
 '''
 
 
-@app.route('/compute-route/', methods=['GET', 'POST'])
+@app.route('/compute-route', methods=['GET', 'POST'])
 def trigger_route_computation():
     if 'post_station_id' and 'district' in request.args:
         #asyncio.set_event_loop(asyncio.new_event_loop())
         #loop = asyncio.get_event_loop()
         #loop.run_until_complete(execute_trigger(int(request.args.get('post_station_id')), int(request.args.get('district'))))
-        get_route.get_optimal_route(int(request.args.get('post_station_id')), int(request.args.get('district')), show_in_browser=True)
+        get_route.get_optimal_route(int(request.args.get('post_station_id')), int(request.args.get('district')), evaluate=True)
         return 'Success'
     else:
         return 'Error: Please check the parameter if the naming is correct and all parameters are committed!'
