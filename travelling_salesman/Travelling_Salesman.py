@@ -19,7 +19,7 @@ def get_tsp_result_without_prio(dist_list: list, length: int, state=True, fitnes
     for i in range(length):
         prio_list[i] = 0
 
-    return get_tsp_result(dist_list, prio_list, state=state, fitness=fitness, curve=curve, )
+    return get_tsp_result(dist_list, prio_list, state=state, fitness=fitness, curve=curve)
 
 def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, curve=False):
     """
