@@ -19,6 +19,8 @@ def fix_values_in_list(input, number_of_knots):
             number_of_knots += 1
         if item.get('r.distance') == str(0):  # distance is not allowed to be 0
             item['r.distance'] = str(1)
+        if item.get('r.duration') == str(0):  # distance is not allowed to be 0
+            item['r.duration'] = str(1)
     return input, number_of_knots
 
 
@@ -58,7 +60,7 @@ def change_keys(input, key_dict):
     return input
 
 
-def create_final_list(input):
+def create_final_list_distance(input):
     """
     Gets the preprocessed list of dict-elements and returns list of list elements
     :param input: data from DB with changed keys
@@ -79,13 +81,33 @@ def create_final_list(input):
     return final_list
 
 
+def create_final_list_duration(input):
+    """
+    Gets the preprocessed list of dict-elements and returns list of list elements
+    :param input: data from DB with changed keys
+    :return: list containing list-elements like: [[knot1, knot 2, duration]]
+    """
+    final_list = []
+    for item in input:
+        if 's.id' in item:
+            element = [int(item.get('s.id')),
+                       int(item.get('a.id')),
+                       int(item.get('r.duration'))]
+            final_list.append(element)
+        else:
+            element = [int(item.get('a1.id')),
+                       int(item.get('a2.id')),
+                       int(item.get('r.duration'))]
+            final_list.append(element)
+    return final_list
+
 def change_keys_back(result, key_dict_back):
     for i in range(len(result)):
         result[i] = str(key_dict_back.get(str(result[i])))
     return result
 
 
-def get_final_input_list_and_key_dict():
+def get_final_input_list_and_key_dict(distance: bool):
     """
     Gets data from DB and executes data preparation steps needed to transform input into readable list for tsp.
     :return: list that contains list-elements with data like this: [[knot 1, knot 2, distance]], returns key_dict and
@@ -100,7 +122,10 @@ def get_final_input_list_and_key_dict():
     data, number_of_knots = fix_values_in_list(data, number_of_knots)
     data, key_dict, key_dict_back = create_key_dict(data, key_dict, key_dict_back)
     data_with_changed_keys = change_keys(data, key_dict)
-    final_list = create_final_list(data_with_changed_keys)
+    if distance:
+        final_list = create_final_list_distance(data_with_changed_keys)
+    else:
+        final_list = create_final_list_duration(data_with_changed_keys)
     return final_list, key_dict, key_dict_back, number_of_knots
 
 
@@ -356,18 +381,18 @@ def save_route_in_mongo_db(final_route_information, poststation, district):
     print('[LOG]: Successfully stored route information in DB')
 
 
-def get_optimal_route(post_station_id: int, district: int, show_in_browser=False, prio=True, evaluate=False):
+def get_optimal_route(post_station_id: int, district: int, distance=True, prio=True, evaluate=False):
     """
     Runs the necessary methods to get the optimal route for the packages in the db. Saves the result in a MongoDB
     database.
-    :param evaluate:
+    :param distance: if true uses distance for tsp, if false uses duration for tsp
+    :param evaluate: if true runs evaluation on computed route, if false not
     :param post_station_id: id of the post station
     :param district: number of the district
-    :param show_in_browser: if set to True, opens default browser and prints a list containing the route information
     :param prio: if set to True, runs the get_optimal_route with prio list, else without
     :return: prints optimal route with all information about packages and addresses to the console
     """
-    final_list, key_dict, key_dict_back, number_of_knots = get_final_input_list_and_key_dict()
+    final_list, key_dict, key_dict_back, number_of_knots = get_final_input_list_and_key_dict(distance)
     post_station = db_loader_ps.get_post_station()
     print(post_station[0]['s'])
     # print(final_list)
@@ -376,7 +401,7 @@ def get_optimal_route(post_station_id: int, district: int, show_in_browser=False
     # TSP without prio
     if not prio:
         best_state, best_fitness = TSP.get_tsp_result_without_prio(final_list, number_of_knots, fitness=True)
-        print('TSP without prio:')
+        print('TSP without prio and distance = ' + str(distance) + ' :')
         print(best_state)
         print(best_fitness)
 
@@ -388,7 +413,7 @@ def get_optimal_route(post_station_id: int, district: int, show_in_browser=False
         final_prio_list = get_prio_list(key_dict)
         print(final_prio_list)
         best_state, best_fitness = TSP.get_tsp_result(final_list, final_prio_list, fitness=True)
-        print('TSP with prio:')
+        print('TSP with prio and distance = ' + str(distance) + ' :')
         print(best_state)
         print(best_fitness)
 
@@ -400,10 +425,6 @@ def get_optimal_route(post_station_id: int, district: int, show_in_browser=False
 
     if evaluate:
         evaluate_route(final_route_information)
-
-    if show_in_browser:
-        route_df = route_into_pd_dataframe(final_route_information)
-        print_to_html(route_df)
 
 
 #get_optimal_route(1, 1, show_in_browser=False, prio=False, evaluate=True)

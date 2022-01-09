@@ -8,6 +8,10 @@ import Neo4j.GetDistances as dloader
 import Neo4j.GetAllPackages as ploader
 
 
+data = dloader.get_distance_between_all()
+print(data)
+
+'''
 def load_model(model_path, model):
     print('in method try loading model')
     model = pickle.load(open(model_path, 'rb'))
@@ -28,7 +32,7 @@ x = pd.DataFrame(test)
 result = model.predict(x)[0]
 print(result)
 
-'''
+
 data = ploader.get_all_packages()
 print(data)
 print(data[0]['a']['id'])
