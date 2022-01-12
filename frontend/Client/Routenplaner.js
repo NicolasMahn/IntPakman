@@ -48,10 +48,13 @@ var Routenplaner;
                 table.appendChild(tr);
                 for (let key in element) {
                     if (key === "street") {
+                        let sendungsnummer = document.createElement('td');
                         let strasse = document.createElement('td');
                         let hausnummer = document.createElement('td');
+                        sendungsnummer.textContent = Object(element)["sendungsnummer"];
                         strasse.textContent = Object(element)["street"];
                         hausnummer.textContent = Object(element)["house_number"];
+                        tr.appendChild(sendungsnummer);
                         tr.appendChild(strasse);
                         tr.appendChild(hausnummer);
                     }
@@ -64,12 +67,15 @@ var Routenplaner;
         let tr = document.createElement("tr");
         let th = document.createElement('th');
         let th2 = document.createElement('th');
-        th.textContent = "Straße";
-        th2.textContent = "Hausnummer";
+        let th3 = document.createElement('th');
+        th.textContent = "Sendungsnummer";
+        th2.textContent = "Straße";
+        th3.textContent = "Hausnummer";
         table.appendChild(thead);
         thead.appendChild(tr);
         tr.appendChild(th);
         tr.appendChild(th2);
+        tr.appendChild(th3);
     }
 })(Routenplaner || (Routenplaner = {}));
 //# sourceMappingURL=Routenplaner.js.map

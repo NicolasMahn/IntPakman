@@ -39,11 +39,15 @@ namespace Routenplaner {
                 table.appendChild(tr);
                 for (let key in element) {
                     if (key === "street") {
+                        
+                        let sendungsnummer: HTMLTableCellElement = <HTMLTableCellElement>document.createElement('td');
                         let strasse: HTMLTableCellElement = <HTMLTableCellElement>document.createElement('td');
                         let hausnummer: HTMLTableCellElement = <HTMLTableCellElement>document.createElement('td');
                         
+                        sendungsnummer.textContent = Object(element)["sendungsnummer"];
                         strasse.textContent = Object(element)["street"];
                         hausnummer.textContent = Object(element)["house_number"];
+                        tr.appendChild(sendungsnummer);
                         tr.appendChild(strasse);
                         tr.appendChild(hausnummer);
                     }
@@ -59,13 +63,17 @@ namespace Routenplaner {
         let tr: HTMLElement = <HTMLElement>document.createElement("tr");
         let th: HTMLTableCellElement = <HTMLTableCellElement>document.createElement('th');
         let th2: HTMLTableCellElement = <HTMLTableCellElement>document.createElement('th');
-        th.textContent="Straße";
-        th2.textContent="Hausnummer";
+        let th3: HTMLTableCellElement = <HTMLTableCellElement>document.createElement('th');
+        th.textContent = "Sendungsnummer";
+        th2.textContent="Straße";
+        th3.textContent="Hausnummer";
 
         table.appendChild(thead);
         thead.appendChild(tr);
+    
         tr.appendChild(th);
         tr.appendChild(th2);
+        tr.appendChild(th3);
 
     }
 }
