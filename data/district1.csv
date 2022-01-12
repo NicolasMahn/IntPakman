@@ -1,0 +1,48 @@
+id;house_number;street;post_code;city;district;geojson_geometry;post_station_id
+50;10;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2011585, 48.0572193]};1
+52;11;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2010383, 48.0572883]};1
+54;12;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2008775, 48.0574242]};1
+56;13;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2007243, 48.0575535]};1
+59;14;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2006289, 48.0577063]};1
+60;15;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2005008, 48.0578742]};1
+62;16;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2001918, 48.0578221]};1
+63;17;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2004305, 48.0580538]};1
+64;18;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.1998402, 48.0581982]};1
+65;18a;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.1993781, 48.0585154]};1
+78;5;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2017676, 48.0569476]};1
+80;6;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2016708, 48.0569904]};1
+271;17;Luisenstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2021775, 48.0586911]};1
+323;64;Bismarckstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2031634, 48.0564105]};1
+324;62;Bismarckstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'Point', 'coordinates': [8.2031366, 48.0563119]};1
+607;22a;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1953752, 48.0649797], [8.1955339, 48.0650076], [8.1955865, 48.064874], [8.1954277, 48.0648461], [8.1953752, 48.0649797]]};1
+609;22/3;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1954169, 48.0652923], [8.1955005, 48.0651751], [8.1953348, 48.0651223], [8.1952512, 48.0652396], [8.1954169, 48.0652923]]};1
+613;26a;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1944416, 48.0652811], [8.1946505, 48.0652811], [8.1946505, 48.0650997], [8.1944416, 48.0650997], [8.1944416, 48.0652811]]};1
+614;24;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1964177, 48.0653929], [8.1965279, 48.0652621], [8.1963732, 48.0652038], [8.1962629, 48.0653346], [8.1964177, 48.0653929]]};1
+616;29;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1931029, 48.0646782], [8.1931865, 48.0645498], [8.1929943, 48.064494], [8.1929108, 48.0646224], [8.1931029, 48.0646782]]};1
+618;26;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1949637, 48.0650509], [8.1949846, 48.0649113], [8.1947479, 48.0648955], [8.194727, 48.065035], [8.1949637, 48.0650509]]};1
+619;29a;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1906054, 48.0640019], [8.1906757, 48.0638444], [8.1904337, 48.0637962], [8.1903634, 48.0639537], [8.1906054, 48.0640019]]};1
+620;28;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1933765, 48.0648206], [8.1934364, 48.0646805], [8.1932171, 48.0646386], [8.1931572, 48.0647787], [8.1933765, 48.0648206]]};1
+621;27;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1942537, 48.065016], [8.1943894, 48.0649113], [8.1942507, 48.0648309], [8.1941149, 48.0649356], [8.1942537, 48.065016]]};1
+622;18;Luisenstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2027942, 48.0598334], [8.2029794, 48.0598589], [8.20303, 48.0596947], [8.2031187, 48.0597069], [8.2031561, 48.0595857], [8.2028862, 48.0595486], [8.2028765, 48.0595802], [8.2027784, 48.0595667], [8.2027206, 48.0597543], [8.2028146, 48.0597673], [8.2027942, 48.0598334]]};1
+624;45;Bismarckstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2028107, 48.0573635], [8.202999, 48.057002], [8.2032648, 48.0570638], [8.2030764, 48.0574253], [8.2028107, 48.0573635]]};1
+919;19;Luisenstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2007161, 48.0594325], [8.200869, 48.0593079], [8.2009032, 48.0593267], [8.2009857, 48.0592604], [8.2008783, 48.0592091], [8.2006491, 48.0593966], [8.2007161, 48.0594325]]};1
+922;1b;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2016121, 48.0567037], [8.2016824, 48.0566349], [8.2015797, 48.0565881], [8.2015095, 48.0566569], [8.2016121, 48.0567037]]};1
+923;17a;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.198936, 48.059421], [8.1990845, 48.0594739], [8.1991672, 48.0593703], [8.1990187, 48.0593174], [8.198936, 48.059421]]};1
+924;22;Luisenstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.201999, 48.0595362], [8.2022069, 48.0595539], [8.2022298, 48.0594331], [8.2020219, 48.0594154], [8.201999, 48.0595362]]};1
+930;43;Bismarckstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2026716, 48.0566907], [8.2027574, 48.0567326], [8.2028631, 48.056636], [8.2027773, 48.0565941], [8.2026716, 48.0566907]]};1
+937;19;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.198639, 48.0592269], [8.1987809, 48.0590747], [8.198663, 48.0590256], [8.1985211, 48.0591778], [8.198639, 48.0592269]]};1
+947;8;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2014674, 48.0571202], [8.2015795, 48.0570843], [8.2015343, 48.0570214], [8.2014223, 48.0570572], [8.2014674, 48.0571202]]};1
+953;9;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2013158, 48.0572013], [8.2014068, 48.057167], [8.2013568, 48.0571078], [8.2012658, 48.0571421], [8.2013158, 48.0572013]]};1
+955;3;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2022912, 48.0567677], [8.2023896, 48.0567065], [8.2022636, 48.056616], [8.2021652, 48.0566772], [8.2022912, 48.0567677]]};1
+956;1;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2025033, 48.056447], [8.2026529, 48.0563857], [8.2025539, 48.0562776], [8.2024043, 48.0563389], [8.2025033, 48.056447]]};1
+958;4;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2019762, 48.0569096], [8.2021045, 48.0568098], [8.2020189, 48.0567606], [8.2018905, 48.0568604], [8.2019762, 48.0569096]]};1
+964;3a;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2026237, 48.056887], [8.2026881, 48.0568242], [8.2025746, 48.0567723], [8.2025103, 48.0568351], [8.2026237, 48.056887]]};1
+967;1a;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.2017311, 48.0566242], [8.2018898, 48.0564199], [8.2017777, 48.056381], [8.2017018, 48.0564788], [8.2016328, 48.0564548], [8.20155, 48.0565613], [8.2017311, 48.0566242]]};1
+1391;5;Rabenstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1786389, 48.0616143], [8.1787355, 48.0617105], [8.1788972, 48.061638], [8.1788872, 48.0616279], [8.1790822, 48.0615405], [8.1790298, 48.0614883], [8.1788367, 48.0615749], [8.1788025, 48.0615409], [8.1786389, 48.0616143]]};1
+1392;7;Rabenstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1764578, 48.0628842], [8.1762892, 48.0629891], [8.1764637, 48.0631144], [8.1766323, 48.0630095], [8.1764578, 48.0628842]]};1
+1401;22;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1963883, 48.0618449], [8.1964392, 48.0617851], [8.1965988, 48.0618356], [8.196576, 48.0618719], [8.1965514, 48.0618649], [8.1965304, 48.0618883], [8.1965532, 48.0618953], [8.1964757, 48.061996], [8.1964476, 48.0620069], [8.1964103, 48.062003], [8.1963936, 48.0619926], [8.1963846, 48.0619692], [8.196462, 48.0618731], [8.1963883, 48.0618449]]};1
+1402;23;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1965723, 48.0625682], [8.1967003, 48.0626097], [8.1966502, 48.0626787], [8.1965222, 48.0626372], [8.1965723, 48.0625682]]};1
+1537;21/1;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1982979, 48.0617438], [8.1982405, 48.0618057], [8.1983639, 48.0618568], [8.1984213, 48.0617949], [8.1982979, 48.0617438]]};1
+1538;21;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1982979, 48.0617438], [8.1984213, 48.0617949], [8.1984735, 48.0617386], [8.1983501, 48.0616875], [8.1982979, 48.0617438]]};1
+1539;20;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1966859, 48.0609891], [8.1967806, 48.0610161], [8.1968583, 48.0608942], [8.1967637, 48.0608672], [8.1966859, 48.0609891]]};1
+1540;20a;Katzensteigstraße;78120;Furtwangen im Schwarzwald;1;{'type': 'LineString', 'coordinates': [[8.1976917, 48.0609658], [8.1976443, 48.0610281], [8.1977972, 48.06108], [8.1978446, 48.0610178], [8.1976917, 48.0609658]]};1

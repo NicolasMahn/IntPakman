@@ -13,13 +13,14 @@ MAX_ITERS = np.inf
 RANDOM_STATE = 42
 MAXIMIZE = False
 
-def get_tsp_result_without_prio(dist_list: list, length: int, state=True, fitness=False, curve=False):
 
+def get_tsp_result_without_prio(dist_list: list, length: int, state=True, fitness=False, curve=False):
     prio_list = dict()
     for i in range(length):
         prio_list[i] = 0
 
     return get_tsp_result(dist_list, prio_list, state=state, fitness=fitness, curve=curve)
+
 
 def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, curve=False):
     """
@@ -28,20 +29,20 @@ def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, 
     param:prio_list a dict of all priorities of destinations
     """
 
-    #print(prio_list)
+    # print(prio_list)
 
     problem_fit = mltulip.TSPOpt(length=len(prio_list),
-                                   maximize=MAXIMIZE,
-                                   distances=dist_list,
-                                   weights=prio_list)
+                                 maximize=MAXIMIZE,
+                                 distances=dist_list,
+                                 weights=prio_list)
 
     if curve:
         best_state, best_fitness, fitness_curve = mltulip.genetic_alg(problem_fit,
-                                                                        pop_size=POP_SIZE,
-                                                                        mutation_prob=MUTATION_PROB,
-                                                                        max_attempts=MAX_ATTEMPTS,
-                                                                        max_iters=MAX_ITERS, curve=True,
-                                                                        random_state=RANDOM_STATE)
+                                                                      pop_size=POP_SIZE,
+                                                                      mutation_prob=MUTATION_PROB,
+                                                                      max_attempts=MAX_ATTEMPTS,
+                                                                      max_iters=MAX_ITERS, curve=True,
+                                                                      random_state=RANDOM_STATE)
         if fitness and state:
             return best_state, best_fitness, fitness_curve
         elif fitness:
@@ -51,11 +52,11 @@ def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, 
 
     else:
         best_state, best_fitness = mltulip.genetic_alg(problem_fit,
-                                                         pop_size=POP_SIZE,
-                                                         mutation_prob=MUTATION_PROB,
-                                                         max_attempts=MAX_ATTEMPTS,
-                                                         max_iters=MAX_ITERS,
-                                                         random_state=RANDOM_STATE)
+                                                       pop_size=POP_SIZE,
+                                                       mutation_prob=MUTATION_PROB,
+                                                       max_attempts=MAX_ATTEMPTS,
+                                                       max_iters=MAX_ITERS,
+                                                       random_state=RANDOM_STATE)
         if fitness and state:
             return best_state, best_fitness
         elif fitness:

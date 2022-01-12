@@ -1,9 +1,9 @@
 import json
-from util import Cleric
+import util
 
 
 def read_map(map):
-    data = Cleric.read_json(map)
+    data = util.read_json(map)
     features = data["features"]
     return features
 
@@ -71,10 +71,10 @@ def main():
         id_+=1
 
     # # juste to make test2.js and centers.geojson
-    # Cleric.write_json(center_geojson, '../map_sorter/map_data/centers.geojson')
-    # Cleric.write("var line2 = "  + str({"type": "FeatureCollection", "features": center_geojson}), '../map_sorter/leaflet_test/test2.js')
+    # util.write_json(center_geojson, '../map_sorter/map_data/centers.geojson')
+    # util.write("var line2 = "  + str({"type": "FeatureCollection", "features": center_geojson}), '../map_sorter/leaflet_test/test2.js')
 
-    Cleric.write_semicolon_csv(addresses, '../data/adresses.csv')
+    util.write_semicolon_csv(addresses, '../data/adresses.csv')
 
 
 
@@ -111,7 +111,7 @@ def main():
 
 # def get_streets(map):
 #
-#     street_attributes = Cleric.read_csv('../map_sorter/map_data/street_attributes.csv')[0]
+#     street_attributes = util.read_csv('../map_sorter/map_data/street_attributes.csv')[0]
 #
 #     #test = []
 #     streets = {}
@@ -139,8 +139,8 @@ def main():
 #     #  only needed to generate all_streets.geojson file and test.js
 #     # test_geojson = {"type": "FeatureCollection",
 #     #                 "features": test}
-#     # Cleric.write_json(streets, '../map_sorter/map_data/all_streets.geojson')
-#     # Cleric.write("var line3 = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test3.js')
+#     # util.write_json(streets, '../map_sorter/map_data/all_streets.geojson')
+#     # util.write("var line3 = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test3.js')
 #
 #     return streets
 
@@ -148,7 +148,7 @@ def main():
 
 def get_addr(map):
 
-    addr_attributes = Cleric.read_csv('../map_sorter/map_data/addr_attributes.csv')
+    addr_attributes = util.read_csv('../map_sorter/map_data/addr_attributes.csv')
     print(addr_attributes)
 
     addr = []
@@ -167,8 +167,8 @@ def get_addr(map):
 
     test_geojson = {"type": "FeatureCollection",
                     "features": addr}
-    Cleric.write_json(test_geojson, '../map_sorter/map_data/all_addr.geojson')
-    Cleric.write("var line = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test.js')
+    util.write_json(test_geojson, '../map_sorter/map_data/all_addr.geojson')
+    util.write("var line = " + str(json.dumps(test_geojson)), '../map_sorter/leaflet_test/test.js')
 
     return addr
 
