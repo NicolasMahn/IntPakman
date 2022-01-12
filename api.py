@@ -23,7 +23,7 @@ def trigger_route_computation():
     distance = True
     prio = True
     evaluate = False
-    if 'post_station_id' and 'district' in request.args:
+    if 'post_station_id' and 'district' and 'date' in request.args:
         if 'distance' in request.args:
             distance = str2bool(request.args.get('distance'))
         if 'prio' in request.args:
@@ -31,7 +31,7 @@ def trigger_route_computation():
         if 'evaluate' in request.args:
             evaluate =str2bool(request.args.get('evaluate'))
         get_route.get_optimal_route(int(request.args.get('post_station_id')), int(request.args.get('district')),
-                                    distance, prio, evaluate)
+                                    str(request.args.get('date')), distance, prio, evaluate)
         #asyncio.set_event_loop(asyncio.new_event_loop())
         #loop = asyncio.get_event_loop()
         #loop.run_until_complete(execute_trigger(int(request.args.get('post_station_id')), int(request.args.get('district'))))

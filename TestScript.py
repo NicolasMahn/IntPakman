@@ -3,13 +3,15 @@ from sklearn.tree import DecisionTreeClassifier
 import pandas as pd
 import Neo4j.GetAddessesWithPackages as loader
 import Neo4j.GetPostStation as ploader
-import Neo4j.GetDistances as dloader
+import Neo4j.Get_post_station_with_params as dloader
 
 import Neo4j.GetAllPackages as ploader
 
 
-data = dloader.get_distance_between_all()
+data = dloader.get_post_station(1)
 print(data)
+
+
 
 '''
 def load_model(model_path, model):

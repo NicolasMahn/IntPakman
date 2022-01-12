@@ -1,8 +1,8 @@
-import Neo4j.GetDistances as db_loader_distances
-import Neo4j.GetAddessesWithPackages as db_loader_addresses
-import Neo4j.GetPrioStatusPackages as db_loader_prio
-import Neo4j.GetAllPackages as db_loader_packages
-import Neo4j.GetPostStation as db_loader_ps
+import Neo4j.Get_distances_with_params as db_loader_distances
+import Neo4j.Get_addesses_with_packages_with_params as db_loader_addresses
+import Neo4j.Get_prio_status_packages_with_params as db_loader_prio
+import Neo4j.Get_all_packages_with_params as db_loader_packages
+import Neo4j.Get_post_station_with_params as db_loader_ps
 import travelling_salesman.Travelling_Salesman as TSP
 from collections import Counter
 import numpy as np
@@ -11,6 +11,7 @@ import webbrowser
 from pymongo import MongoClient
 import pymongo as mongo
 from datetime import date
+
 
 def fix_values_in_list(input, number_of_knots):
     for item in input:
@@ -101,19 +102,24 @@ def create_final_list_duration(input):
             final_list.append(element)
     return final_list
 
+
 def change_keys_back(result, key_dict_back):
     for i in range(len(result)):
         result[i] = str(key_dict_back.get(str(result[i])))
     return result
 
 
-def get_final_input_list_and_key_dict(distance: bool):
+def get_final_input_list_and_key_dict(distance: bool, post_station_id: int, district: int):
     """
-    Gets data from DB and executes data preparation steps needed to transform input into readable list for tsp.
+    Gets data from DB and executes data preparation steps needed to transform input into readable list for tsp. Can
+    either use distance or duration as parameter for distance.
+    :param distance: if True, uses distance as parameter, if False uses duration as parameter in the list for tsp
+    :param district: id of the district
+    :param post_station_id: id of the post station
     :return: list that contains list-elements with data like this: [[knot 1, knot 2, distance]], returns key_dict and
     key_dict_back
     """
-    data = db_loader_distances.get_distance_between_all()
+    data = db_loader_distances.get_distance_between_all(post_station_id, district)
 
     number_of_knots = 1
     key_dict = {'0': '0'}
@@ -193,13 +199,16 @@ def create_final_prio_dict(input):
     return final_prio_dict
 
 
-def get_prio_list(key_dict):
+def get_prio_list(key_dict, post_station_id: int, district: int, date: str):
     """
     Gets data from DB and executes data preparation steps needed to transform input into readable prio list for tsp.
+    :param date: date of the packages that should be used
+    :param district: id of the district
+    :param post_station_id: id of the post station
     :param key_dict: dict with address id as key and new id als value / created before for final_list
     :return:list containing list-elements like: [[knot, prio]]
     """
-    data = db_loader_prio.get_prio_status_packages()
+    data = db_loader_prio.get_prio_status_packages(post_station_id, district, date)
 
     data_with_changed_keys = change_keys_prio(data, key_dict)
     data_cleand_from_duplicates = clean_data_from_duplicate_addresses(data_with_changed_keys)
@@ -222,23 +231,28 @@ def rearange_route(final_result):
     return route_list
 
 
-def process_result(best_state, best_fitness, key_dict_back, post_station):
+def process_result(best_state, best_fitness, key_dict_back, post_station, post_station_id: int, district: int,
+                   date: str):
     """
     Gets the result of the tsp algorithm and changes the keys back to the address ids from the DB. Rearranges the route
     so it always starts at the Post-Station (0) and gets the address information from the DB to match the route address
     ids with the address information from the DB. Returns the final route.
+    :param date: date of the packages that should be used
+    :param district: id of the district
+    :param post_station_id: id of the post station
+    :param post_station: Address information of post station
     :param best_state:
     :param best_fitness:
     :param key_dict_back: dict with new id  as key and address id als value / created before for final_list
     :return: final route starting at the Post-Station, tpye: [0, 1, 3, 2...]
     """
     final_result = change_keys_back(best_state, key_dict_back)
-    route = final_result#.tolist()
+    route = final_result  # .tolist()
     # route = rearange_route(final_result_list)
 
     print('The optimal route is: ' + str(route))
 
-    address_data = db_loader_addresses.get_addresses_with_packages()
+    address_data = db_loader_addresses.get_addresses_with_packages(post_station_id, district, date)
     route_addresses = [post_station]
     for item in route:
         for ad in address_data:
@@ -249,14 +263,18 @@ def process_result(best_state, best_fitness, key_dict_back, post_station):
     return route, route_addresses
 
 
-def match_packages_to_route(route, post_station):
+def match_packages_to_route(route, post_station, post_station_id: int, district: int, date: str):
     """
     Loads package data from db and matches the address and package data equivalent to the order of the route list
     (input) to the dict.
+    :param date: date of the packages that should be used
+    :param district: id of the district
+    :param post_station_id: id of the post station
+    :param post_station: Address information of post station
     :param route: final route starting at the Post-Station, tpye: [0, 1, 3, 2...]
     :return: final route information: containing all package and address data in a dict
     """
-    package_data = db_loader_packages.get_all_packages()
+    package_data = db_loader_packages.get_all_packages(post_station_id, district, date)
     final_route_information = [post_station]
 
     for id in route:
@@ -295,7 +313,7 @@ def route_into_pd_dataframe(route):
         if i > 0:
             routeDF.loc[i] = [item["sendungsnummer"], item["street"], item["house_number"], item["post_code"],
                               item["city"], item["district"], item["length_cm"], item["width_cm"], item["height_cm"],
-                              item["weight_in_g"], item["fragile"], item["perishable"], "", #item["date"],
+                              item["weight_in_g"], item["fragile"], item["perishable"], "",  # item["date"],
                               item["geojson_geometry"], item["a_id"]]
         else:
             routeDF.loc[i] = ["", item["street"], item["house_number"], item["post_code"], item["city"],
@@ -304,13 +322,15 @@ def route_into_pd_dataframe(route):
     return routeDF
 
 
-def evaluate_route(route):
+def evaluate_route(route, post_station_id: int, district: int):
     """
     Calculates the distance and the duration of the route and returns them.
+    :param district: id of the district
+    :param post_station_id: id of the post station
     :param route: containing all package and address data in a dict
     :return: total_distance and total_duration as int
     """
-    distance_data = db_loader_distances.get_distance_between_all()
+    distance_data = db_loader_distances.get_distance_between_all(post_station_id, district)
     total_distance = 0
     total_duration = 0
     first = True
@@ -352,26 +372,26 @@ def evaluate_route(route):
     print('Total duration: ' + str(total_duration) + ' min')
 
 
-def save_route_in_mongo_db(final_route_information, poststation, district):
+def save_route_in_mongo_db(final_route_information, post_station_id, district):
     """
     Creates dict with key informationa and adds final_route_information as data. Saves the dict into a MongoDB database.
+    :param post_station_id: id of the post station
     :param final_route_information:  containing all package and address data
-    :param poststation: poststation id
     :param district: district identifier
     """
-    #route_df = route_into_pd_dataframe(final_route_information)
-    #input_data = route_df.to_json(orient='records', force_ascii=False)
-    #input_dict = eval(input_data)
-    final_dict = {"post_station": poststation,
+    # route_df = route_into_pd_dataframe(final_route_information)
+    # input_data = route_df.to_json(orient='records', force_ascii=False)
+    # input_dict = eval(input_data)
+    final_dict = {"post_station": post_station_id,
                   "district": district,
                   "date": str(date.today()),
                   "route_data": final_route_information}
 
     # to test on local MongoDB instance
-    #client = MongoClient(
+    # client = MongoClient(
     #    "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false")
-    #db = client.IntPakMan
-    #collection = db['route']
+    # db = client.IntPakMan
+    # collection = db['route']
 
     client = MongoClient(
         "mongodb+srv://intpakman:veryhard@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority")
@@ -381,10 +401,11 @@ def save_route_in_mongo_db(final_route_information, poststation, district):
     print('[LOG]: Successfully stored route information in DB')
 
 
-def get_optimal_route(post_station_id: int, district: int, distance=True, prio=True, evaluate=False):
+def get_optimal_route(post_station_id: int, district: int, date: str, distance=True, prio=True, evaluate=False):
     """
     Runs the necessary methods to get the optimal route for the packages in the db. Saves the result in a MongoDB
     database.
+    :param date: date of the packages that should be used
     :param distance: if true uses distance for tsp, if false uses duration for tsp
     :param evaluate: if true runs evaluation on computed route, if false not
     :param post_station_id: id of the post station
@@ -392,8 +413,9 @@ def get_optimal_route(post_station_id: int, district: int, distance=True, prio=T
     :param prio: if set to True, runs the get_optimal_route with prio list, else without
     :return: prints optimal route with all information about packages and addresses to the console
     """
-    final_list, key_dict, key_dict_back, number_of_knots = get_final_input_list_and_key_dict(distance)
-    post_station = db_loader_ps.get_post_station()
+    final_list, key_dict, key_dict_back, number_of_knots = get_final_input_list_and_key_dict(distance, post_station_id,
+                                                                                             district)
+    post_station = db_loader_ps.get_post_station(post_station_id)
     print(post_station[0]['s'])
     # print(final_list)
     final_route_information = np.NAN
@@ -405,27 +427,27 @@ def get_optimal_route(post_station_id: int, district: int, distance=True, prio=T
         print(best_state)
         print(best_fitness)
 
-        route, route_addresses = process_result(best_state, best_fitness, key_dict_back, post_station[0]['s'])
+        route, route_addresses = process_result(best_state, best_fitness, key_dict_back, post_station[0]['s'],
+                                                post_station_id, district, date)
 
-        final_route_information = match_packages_to_route(route, post_station[0]['s'])
+        final_route_information = match_packages_to_route(route, post_station[0]['s'],
+                                                          post_station_id, district, date)
 
     if prio:
-        final_prio_list = get_prio_list(key_dict)
+        final_prio_list = get_prio_list(key_dict, post_station_id, district, date)
         print(final_prio_list)
         best_state, best_fitness = TSP.get_tsp_result(final_list, final_prio_list, fitness=True)
         print('TSP with prio and distance = ' + str(distance) + ' :')
         print(best_state)
         print(best_fitness)
 
-        route, route_addresses = process_result(best_state, best_fitness, key_dict_back, post_station[0]['s'])
+        route, route_addresses = process_result(best_state, best_fitness, key_dict_back, post_station[0]['s'],
+                                                post_station_id, district, date)
 
-        final_route_information = match_packages_to_route(route, post_station[0]['s'])
+        final_route_information = match_packages_to_route(route, post_station[0]['s'],
+                                                          post_station_id, district, date)
 
         save_route_in_mongo_db(final_route_information, post_station_id, district)
 
     if evaluate:
-        evaluate_route(final_route_information)
-
-
-#get_optimal_route(1, 1, show_in_browser=False, prio=False, evaluate=True)
-#get_optimal_route(1, 1, show_in_browser=False, evaluate=True)
+        evaluate_route(final_route_information, post_station_id, district)
