@@ -29,18 +29,33 @@ export namespace Routenplaner {
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            get_route(_request, _response);
+        let poststation:string|string[]  = url.query["poststation"];
+        let district:string|string[] = url.query["district"];
+            get_route( _response,Number(poststation),Number(district));
 
     }
 
-    async function get_route(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+    async function get_route(_response: Http.ServerResponse, _poststation:number,_district:number): Promise<void> {
         let results: Mongo.Cursor = collection.find();
         let routes: string[] = await results.toArray();
-        let route = routes[routes.length-1];
-        let addresses:string[] = Object(route)["route_data"];  
-        _response.writeHead(200,{'Content-Type':'application/json'}) 
-        _response.write(JSON.stringify(addresses));
+        let final_routes:string[] = [];
+
+        for(let element of routes){
+            if(Object(element)["district"] ===_district && Object(element)["post_station"]===_poststation){
+                final_routes.push(element);
+            }
+        }
+        if(typeof final_routes[0]!='undefined' && final_routes[0]){
+            let addresses:string[] = Object(final_routes[0])["route_data"];  
+            _response.writeHead(200,{'Content-Type':'application/json'}) 
+            _response.write(JSON.stringify(addresses));
+                _response.end();
+        }
+        else{
+            _response.writeHead(400,{'Content-Type':'application/json'})  
+            _response.write("No matching Data found :(");
             _response.end();
+        }
 
     }
 }

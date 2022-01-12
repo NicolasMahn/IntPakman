@@ -11,25 +11,47 @@ var Routenplaner;
     window.addEventListener("load", handleLoad);
     let liste;
     let karte;
+    let anzeigen;
     function handleLoad(_event) {
         return __awaiter(this, void 0, void 0, function* () {
             liste = document.getElementById("liste");
             karte = document.getElementById("karte");
-            liste.addEventListener("click", show_optimal_route);
+            anzeigen = document.getElementById("anzeigen");
+            liste.addEventListener("click", get_input);
             karte.addEventListener("click", show_route_on_map);
+            anzeigen.addEventListener("click", get_input);
         });
     }
-    function show_optimal_route() {
+    function get_input() {
+        let formData = new FormData(document.forms[0]);
+        let numbers = [];
+        for (let entry of formData) {
+            numbers.push(Number(entry[1]));
+        }
+        console.log(numbers);
+        show_optimal_route(numbers);
+    }
+    function show_optimal_route(numbers) {
         return __awaiter(this, void 0, void 0, function* () {
             liste.style.backgroundColor = "#FFCC00";
             karte.style.backgroundColor = "gray";
-            let response = yield fetch("http://localhost:5001");
-            let responseText = yield JSON.parse(yield response.text());
-            let table_array = [];
-            for (let array of responseText) {
-                table_array.push(array);
+            let district = numbers[1];
+            let poststation = numbers[0];
+            let response = yield fetch("http://localhost:5001?district=" + district + "&poststation=" + poststation);
+            let statuscode = response.status;
+            if (statuscode === 200) {
+                let responseText = yield JSON.parse(yield response.text());
+                let table_array = [];
+                for (let array of responseText) {
+                    table_array.push(array);
+                }
+                generate_table(table_array);
             }
-            generate_table(table_array);
+            else {
+                alert(yield response.text());
+                let table = document.querySelector("table");
+                table.hidden = true;
+            }
         });
     }
     function show_route_on_map() {

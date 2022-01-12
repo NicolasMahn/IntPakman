@@ -13,12 +13,14 @@
         <h1 id="title">IntPakMan Routenplaner</h1>
     </div>
     <div id="filters">
-        <label for="station">Zustellstation: </label>
-        <input type="text" name="station" id="station"><br>
-        <label for="bezirk">Bezirk: </label>
-        <input type="text" name="bezirk" id="bezirk"><br>
-        <label for="anzeigen"></label>
-        <input type="button" value="anzeigen" id="anzeigen">
+    <form method="get">
+            <label for="station">Zustellstation: </label>
+            <input type="number" name="station" id="station"><br>
+            <label for="bezirk">Bezirk: </label>
+            <input type="number" name="bezirk" id="bezirk"><br>
+            <label for="anzeigen"></label>
+            <input type="button" value="anzeigen" id="anzeigen">
+        </form>
     </div>
     <hr>
     <div id="wrap-buttons">

@@ -36,17 +36,31 @@ var Routenplaner;
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         let url = Url.parse(_request.url, true);
-        get_route(_request, _response);
+        let poststation = url.query["poststation"];
+        let district = url.query["district"];
+        get_route(_response, Number(poststation), Number(district));
     }
-    function get_route(_request, _response) {
+    function get_route(_response, _poststation, _district) {
         return __awaiter(this, void 0, void 0, function* () {
             let results = collection.find();
             let routes = yield results.toArray();
-            let route = routes[routes.length - 1];
-            let addresses = Object(route)["route_data"];
-            _response.writeHead(200, { 'Content-Type': 'application/json' });
-            _response.write(JSON.stringify(addresses));
-            _response.end();
+            let final_routes = [];
+            for (let element of routes) {
+                if (Object(element)["district"] === _district && Object(element)["post_station"] === _poststation) {
+                    final_routes.push(element);
+                }
+            }
+            if (typeof final_routes[0] != 'undefined' && final_routes[0]) {
+                let addresses = Object(final_routes[0])["route_data"];
+                _response.writeHead(200, { 'Content-Type': 'application/json' });
+                _response.write(JSON.stringify(addresses));
+                _response.end();
+            }
+            else {
+                _response.writeHead(400, { 'Content-Type': 'application/json' });
+                _response.write("No matching Data found :(");
+                _response.end();
+            }
         });
     }
 })(Routenplaner = exports.Routenplaner || (exports.Routenplaner = {}));
