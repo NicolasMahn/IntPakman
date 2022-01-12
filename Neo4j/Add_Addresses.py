@@ -46,7 +46,7 @@ class AddAddresses:
             post_station_id = str(addresses.loc[i, "post_station_id"])
 
             matchQuery = """MATCH (p:PostStation), (a:Address)
-                            WHERE p.post_station_id=$post_station_id AND a.post_station_id=$post_station_id
+                            WHERE p.id=$post_station_id AND a.post_station_id=$post_station_id
                             CREATE (a)-[r:PART_OF]->(p)"""
 
             tx.run(matchQuery, post_station_id=post_station_id)
