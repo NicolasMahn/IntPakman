@@ -53,11 +53,11 @@ class AddAddresses:
 
 
 def load_data(path_data):
-    return pd.read_csv(path_data, sep=',')
+    return pd.read_csv(path_data, sep=';')
 
 
 def add_address_to_db(path_data):
     connector = AddAddresses("bolt://192.52.37.239:7687", "neo4j", "test")
     addresses = load_data(path_data)
     connector.neo_transaction_create(addresses)
-    connector.neo_transaction_match(addresses)
+    #connector.neo_transaction_match(addresses)

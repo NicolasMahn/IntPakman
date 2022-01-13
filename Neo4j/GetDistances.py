@@ -18,8 +18,8 @@ class GetDistances:
 
     @staticmethod
     def _get_distance_station_addresses(tx):
-        query = 'MATCH (s:PostStation)-[r:DISTANCE_TO]->(a:Address) WHERE s.id="1" AND a.id="9" RETURN s.id,a.id,r.distance,r.duration'
-        #query = 'MATCH (s:PostStation)-[r:DISTANCE_TO]->(a:Address) RETURN s.id,a.id,r.distance,r.duration'
+        #query = 'MATCH (s:PostStation)-[r:DISTANCE_TO]->(a:Address) WHERE s.id="1" AND a.id="9" RETURN s.id,a.id,r.distance,r.duration'
+        query = 'MATCH (s:PostStation)-[r:DISTANCE_TO]->(a:Address) RETURN s.id,a.id,r.distance,r.duration'
         result = tx.run(query)
         values = []
         for record in result:

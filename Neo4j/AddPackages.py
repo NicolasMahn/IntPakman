@@ -3,11 +3,10 @@ import pandas as pd
 import pickle
 from sklearn.tree import DecisionTreeClassifier
 
-model = DecisionTreeClassifier()
-
 
 def load_model(model_path, model):
     model = pickle.load(open(model_path, 'rb'))
+    return model
 
 
 class AddPackages:
@@ -18,11 +17,11 @@ class AddPackages:
     def close(self):
         self.driver.close()
 
-    def neo_transaction_create(self, packages):
+    def neo_transaction_create(self, packages, model):
         with self.driver.session() as session:
             # Write transactions allow the driver to handle retries and transient errors
             session.write_transaction(
-                self._create_package, packages)
+                self._create_package, packages, model)
 
 
     def neo_transaction_match(self, packages):
@@ -33,7 +32,7 @@ class AddPackages:
 
 
     @staticmethod
-    def _create_package(tx, packages):
+    def _create_package(tx, packages, model):
         for i in range(len(packages)):
             pred_data = pd.DataFrame(columns=["length_cm", "width_cm", "height_cm", "weight_in_g"])
             pred_data.loc[0] = [
@@ -94,6 +93,7 @@ def load_data(path_data):
 def add_packages_to_db(path_data, path_model):
     connector = AddPackages("bolt://192.52.37.239:7687", "neo4j", "test")
     packages = load_data(path_data)
-    load_model(path_model)
-    connector.neo_transaction_create(packages)
+    model = DecisionTreeClassifier()
+    model = load_model(path_model, model)
+    connector.neo_transaction_create(packages, model)
     connector.neo_transaction_match(packages)

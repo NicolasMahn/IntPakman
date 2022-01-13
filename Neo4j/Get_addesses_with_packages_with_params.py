@@ -19,7 +19,7 @@ class GetAddressesWithPackages:
     @staticmethod
     def _get_addresses(tx, post_station_id, district, date):
         query = """MATCH (n:Address)<-[:DELIVERED_TO]-(p:Package) 
-                   WHERE n.district=$district 
+                   WHERE n.district=$district AND n.post_station_id=$post_station_id AND p.date=$date 
                    WITH DISTINCT n RETURN n"""
                    # AND n.post_station_id=$post_station_id AND p.date=$date
         result = tx.run(query, post_station_id=post_station_id, district=district, date=date)

@@ -20,7 +20,7 @@ def fix_values_in_list(input, number_of_knots):
             number_of_knots += 1
         if item.get('r.distance') == str(0):  # distance is not allowed to be 0
             item['r.distance'] = str(1)
-        if item.get('r.duration') == str(0):  # distance is not allowed to be 0
+        if item.get('r.duration') == str(0):  # duration is not allowed to be 0
             item['r.duration'] = str(1)
     return input, number_of_knots
 
@@ -109,7 +109,7 @@ def change_keys_back(result, key_dict_back):
     return result
 
 
-def get_final_input_list_and_key_dict(distance: bool, post_station_id: int, district: int):
+def get_final_input_list_and_key_dict(distance: bool, post_station_id: int, district: int, date: str):
     """
     Gets data from DB and executes data preparation steps needed to transform input into readable list for tsp. Can
     either use distance or duration as parameter for distance.
@@ -119,7 +119,7 @@ def get_final_input_list_and_key_dict(distance: bool, post_station_id: int, dist
     :return: list that contains list-elements with data like this: [[knot 1, knot 2, distance]], returns key_dict and
     key_dict_back
     """
-    data = db_loader_distances.get_distance_between_all(post_station_id, district)
+    data = db_loader_distances.get_distance_between_all(post_station_id, district, date)
 
     number_of_knots = 1
     key_dict = {'0': '0'}
@@ -322,7 +322,7 @@ def route_into_pd_dataframe(route):
     return routeDF
 
 
-def evaluate_route(route, post_station_id: int, district: int):
+def evaluate_route(route, post_station_id: int, district: int, date: str):
     """
     Calculates the distance and the duration of the route and returns them.
     :param district: id of the district
@@ -330,7 +330,7 @@ def evaluate_route(route, post_station_id: int, district: int):
     :param route: containing all package and address data in a dict
     :return: total_distance and total_duration as int
     """
-    distance_data = db_loader_distances.get_distance_between_all(post_station_id, district)
+    distance_data = db_loader_distances.get_distance_between_all(post_station_id, district, date)
     total_distance = 0
     total_duration = 0
     first = True
@@ -414,7 +414,7 @@ def get_optimal_route(post_station_id: int, district: int, date: str, distance=T
     :return: prints optimal route with all information about packages and addresses to the console
     """
     final_list, key_dict, key_dict_back, number_of_knots = get_final_input_list_and_key_dict(distance, post_station_id,
-                                                                                             district)
+                                                                                             district, date)
     post_station = db_loader_ps.get_post_station(post_station_id)
     print(post_station[0]['s'])
     # print(final_list)
@@ -450,4 +450,4 @@ def get_optimal_route(post_station_id: int, district: int, date: str, distance=T
         save_route_in_mongo_db(final_route_information, post_station_id, district)
 
     if evaluate:
-        evaluate_route(final_route_information, post_station_id, district)
+        evaluate_route(final_route_information, post_station_id, district, date)
