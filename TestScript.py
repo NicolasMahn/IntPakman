@@ -7,14 +7,22 @@ import Neo4j.Get_distances_with_params as dloader
 import data_gen.Generator_Packages_V2 as d_gen
 import Neo4j.GetAllPackages as ploader
 import Neo4j.AddPackages as db
+import Neo4j.Add_Addresses as add_ad
+import Neo4j.Get_all_addesses_with_params as get_ad
 
+
+
+#add_ad.add_address_to_db('data/district2.csv')
+
+data = get_ad.get_all_addresses(1, 2)
+print(data)
 
 #data = dloader.get_distance_station_addresses(1, 1, "2022-01-01") #"2022-01-01"
 #print(data)
 #print(len(data))
 
 #d_gen.generate_random_package_data(35, "2022-01-02", "C://Users/leonr/Documents/Git/IntPakman/data/package_data/d1_2022-01-02.csv")
-db.add_packages_to_db('data/package_data/d1_2022-01-02.csv', 'Models/model_Classifier_without_volue_V2')
+#db.add_packages_to_db('data/package_data/d1_2022-01-02.csv', 'Models/model_Classifier_without_volue_V2')
 
 
 '''

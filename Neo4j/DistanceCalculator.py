@@ -78,8 +78,8 @@ class DistanceCalculator:
 
 if __name__ == "__main__":
     connector = DistanceCalculator("bolt://192.52.37.239:7687", "neo4j", "test")
-    addresses = address_loader.get_all_addresses(1, 1)
+    addresses = address_loader.get_all_addresses(1, 2)
     connector.add_relationship(addresses)
-    addresses = address_loader.get_all_addresses(1, 1)
+    addresses = address_loader.get_all_addresses(1, 2)
     station = station_loader.get_post_station(1)
     connector.add_relationship_station(addresses, station)

@@ -10,7 +10,6 @@ import pandas as pd
 import webbrowser
 from pymongo import MongoClient
 import pymongo as mongo
-from datetime import date
 
 
 def fix_values_in_list(input, number_of_knots):
@@ -372,9 +371,10 @@ def evaluate_route(route, post_station_id: int, district: int, date: str):
     print('Total duration: ' + str(total_duration) + ' min')
 
 
-def save_route_in_mongo_db(final_route_information, post_station_id, district):
+def save_route_in_mongo_db(final_route_information, post_station_id, district, date):
     """
     Creates dict with key informationa and adds final_route_information as data. Saves the dict into a MongoDB database.
+    :param date: date of the packages that should be used
     :param post_station_id: id of the post station
     :param final_route_information:  containing all package and address data
     :param district: district identifier
@@ -384,7 +384,7 @@ def save_route_in_mongo_db(final_route_information, post_station_id, district):
     # input_dict = eval(input_data)
     final_dict = {"post_station": post_station_id,
                   "district": district,
-                  "date": str(date.today()),
+                  "date": date,
                   "route_data": final_route_information}
 
     # to test on local MongoDB instance
@@ -447,7 +447,7 @@ def get_optimal_route(post_station_id: int, district: int, date: str, distance=T
         final_route_information = match_packages_to_route(route, post_station[0]['s'],
                                                           post_station_id, district, date)
 
-        save_route_in_mongo_db(final_route_information, post_station_id, district)
+        save_route_in_mongo_db(final_route_information, post_station_id, district, date)
 
     if evaluate:
         evaluate_route(final_route_information, post_station_id, district, date)
