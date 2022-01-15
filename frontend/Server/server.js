@@ -38,15 +38,16 @@ var Routenplaner;
         let url = Url.parse(_request.url, true);
         let poststation = url.query["poststation"];
         let district = url.query["district"];
-        get_route(_response, Number(poststation), Number(district));
+        let date = url.query["date"];
+        get_route(_response, Number(poststation), Number(district), date);
     }
-    function get_route(_response, _poststation, _district) {
+    function get_route(_response, _poststation, _district, _date) {
         return __awaiter(this, void 0, void 0, function* () {
             let results = collection.find();
             let routes = yield results.toArray();
             let final_routes = [];
             for (let element of routes) {
-                if (Object(element)["district"] === _district && Object(element)["post_station"] === _poststation) {
+                if (Object(element)["district"] === _district && Object(element)["post_station"] === _poststation && Object(element)["date"] === _date) {
                     final_routes.push(element);
                 }
             }

@@ -13,20 +13,21 @@ namespace Routenplaner {
     }
     function get_input(){
         let formData:FormData = new FormData(document.forms[0]);
-        let numbers:number[] = [];
+        let numbers:any[] = [];
         for (let entry of formData) {
-            numbers.push(Number(entry[1]));
+            numbers.push(entry[1]);
         }
         console.log(numbers);
         show_optimal_route(numbers);
     }
 
-    async function show_optimal_route(numbers:number[]): Promise<void> {
+    async function show_optimal_route(numbers:any[]): Promise<void> {
         liste.style.backgroundColor = "#FFCC00";
         karte.style.backgroundColor = "gray";
-        let district:number = numbers[1];
         let poststation:number = numbers[0];
-        let response: Response = await fetch("http://localhost:5001?district="+district+"&poststation="+poststation);
+        let district:number = numbers[1];
+        let date:string = numbers[2];
+        let response: Response = await fetch("http://localhost:5001?district="+district+"&poststation="+poststation+"&date="+date);
        let statuscode = response.status;
        if(statuscode===200){
            let responseText: any = await JSON.parse(await response.text());

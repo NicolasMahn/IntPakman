@@ -31,17 +31,18 @@ export namespace Routenplaner {
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
         let poststation:string|string[]  = url.query["poststation"];
         let district:string|string[] = url.query["district"];
-            get_route( _response,Number(poststation),Number(district));
+        let date:string|string[] = url.query["date"];
+            get_route( _response,Number(poststation),Number(district), date);
 
     }
 
-    async function get_route(_response: Http.ServerResponse, _poststation:number,_district:number): Promise<void> {
+    async function get_route(_response: Http.ServerResponse, _poststation:number,_district:number,_date:string|string[]): Promise<void> {
         let results: Mongo.Cursor = collection.find();
         let routes: string[] = await results.toArray();
         let final_routes:string[] = [];
 
         for(let element of routes){
-            if(Object(element)["district"] ===_district && Object(element)["post_station"]===_poststation){
+            if(Object(element)["district"] ===_district && Object(element)["post_station"]===_poststation && Object(element)["date"]===_date){
                 final_routes.push(element);
             }
         }

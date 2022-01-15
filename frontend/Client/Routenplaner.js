@@ -26,7 +26,7 @@ var Routenplaner;
         let formData = new FormData(document.forms[0]);
         let numbers = [];
         for (let entry of formData) {
-            numbers.push(Number(entry[1]));
+            numbers.push(entry[1]);
         }
         console.log(numbers);
         show_optimal_route(numbers);
@@ -35,9 +35,10 @@ var Routenplaner;
         return __awaiter(this, void 0, void 0, function* () {
             liste.style.backgroundColor = "#FFCC00";
             karte.style.backgroundColor = "gray";
-            let district = numbers[1];
             let poststation = numbers[0];
-            let response = yield fetch("http://localhost:5001?district=" + district + "&poststation=" + poststation);
+            let district = numbers[1];
+            let date = numbers[2];
+            let response = yield fetch("http://localhost:5001?district=" + district + "&poststation=" + poststation + "&date=" + date);
             let statuscode = response.status;
             if (statuscode === 200) {
                 let responseText = yield JSON.parse(yield response.text());
