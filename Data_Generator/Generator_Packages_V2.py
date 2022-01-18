@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-adresses = pd.read_csv('data/district1.csv', sep=';')
+adresses = pd.read_csv('data/address_data_furtwangen/district1.csv', sep=';')
 
 """
 Declare range of values for the features weight, length, width and height

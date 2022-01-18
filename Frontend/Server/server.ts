@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 export namespace Routenplaner {
 
     let collection: Mongo.Collection;
-    let databaseUrl: string = "mongodb+srv://frontend:simple@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority";
+    let databaseUrl: string = "mongodb+srv://Frontend:simple@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority";
 
     start_server(5001);
     connect_to_database(databaseUrl);

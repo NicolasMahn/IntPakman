@@ -1,7 +1,7 @@
 import six
 import sys
 
-from travelling_salesman import mltulip
+from Route_Computation import mltulip
 import numpy as np
 
 sys.modules['sklearn.externals.six'] = six

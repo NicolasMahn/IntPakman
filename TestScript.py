@@ -1,7 +1,7 @@
 import Neo4j.GetAddessesWithPackages as loader
 import Neo4j.GetPostStation as ploader
 import Neo4j.Get_distances_with_params as dloader
-import data_gen.Generator_Packages_V2 as d_gen
+import Data_Generator.Generator_Packages_V2 as d_gen
 import Neo4j.GetAllPackages as ploader
 import Neo4j.AddPackages as db
 import Neo4j.Add_Addresses as add_ad
@@ -9,7 +9,7 @@ import Neo4j.Get_all_addesses_with_params as get_ad
 
 
 
-#add_ad.add_address_to_db('data/district4.csv')
+#add_ad.add_address_to_db('data/address_data_furtwangen/district4.csv')
 
 #data = get_ad.get_all_addresses(1, 2)
 #print(data)

@@ -3,7 +3,7 @@ import Neo4j.Get_addesses_with_packages_with_params as db_loader_addresses
 import Neo4j.Get_prio_status_packages_with_params as db_loader_prio
 import Neo4j.Get_all_packages_with_params as db_loader_packages
 import Neo4j.Get_post_station_with_params as db_loader_ps
-import travelling_salesman.Travelling_Salesman as TSP
+import Route_Computation.Travelling_Salesman as TSP
 from collections import Counter
 import numpy as np
 import pandas as pd
