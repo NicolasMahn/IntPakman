@@ -1,0 +1,36 @@
+Sendungsnummer,length_cm,width_cm,height_cm,weight_in_g,fragile,perishable,house_number,street,post_code,city,date
+1,58,155,179,12830,1,1,6,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+2,16,207,2,1920,0,0,3,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+3,244,189,27,1010,0,0,20,Fohrenstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+4,102,22,98,11170,0,0,22,Friedrichstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+5,37,18,66,2150,0,0,22,Friedrichstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+6,166,59,38,1060,0,0,22,Friedrichstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+7,11,54,39,1750,0,0,9,Vorderschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+8,84,9,26,1120,0,0,9,Vorderschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+9,265,46,197,420,0,1,1/3,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+10,62,130,74,1510,0,0,1/3,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+11,217,49,28,180,0,0,2,Vorderschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+12,83,216,89,1090,1,0,2,Vorderschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+13,85,273,133,1670,0,1,2,Vorderschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+14,16,168,27,550,0,1,3,Triberger Straße,78120,Furtwangen im Schwarzwald,2022-01-04
+15,175,80,66,210,0,0,1/1,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+16,173,117,78,17870,0,0,3b,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+17,32,137,34,4820,0,0,3b,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+18,12,129,48,13270,0,0,3,Triberger Straße,78120,Furtwangen im Schwarzwald,2022-01-04
+19,24,100,87,4690,0,0,3,Triberger Straße,78120,Furtwangen im Schwarzwald,2022-01-04
+20,36,134,136,3870,0,0,2a,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+21,23,31,126,870,0,0,5a,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+22,51,145,4,70,0,0,3,In der Wanne,78120,Furtwangen im Schwarzwald,2022-01-04
+23,32,14,2,2750,0,0,43,Friedrichstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+24,46,108,32,190,0,0,9,Triberger Straße,78120,Furtwangen im Schwarzwald,2022-01-04
+25,228,75,129,3570,0,1,7,Vorderschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+26,78,73,217,930,0,0,3,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+27,64,46,44,680,0,0,2,Hinterschützenbach,78120,Furtwangen im Schwarzwald,2022-01-04
+28,134,154,33,1760,0,0,26,Friedrichstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+29,76,73,139,3890,1,0,26,Fohrenstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+30,149,134,42,9550,0,0,13,Triberger Straße,78120,Furtwangen im Schwarzwald,2022-01-04
+31,11,43,32,3740,0,1,18,Friedrichstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+32,96,221,23,710,0,1,13,Triberger Straße,78120,Furtwangen im Schwarzwald,2022-01-04
+33,45,16,101,1290,0,0,6,Wendelhofstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+34,151,69,138,1580,0,0,6,Wendelhofstraße,78120,Furtwangen im Schwarzwald,2022-01-04
+35,126,104,41,1830,0,0,6,Wendelhofstraße,78120,Furtwangen im Schwarzwald,2022-01-04

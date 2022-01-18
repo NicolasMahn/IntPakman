@@ -58,7 +58,7 @@ def evalute_model(model, Xtest, ytest):
     plt.xlabel('False positive rate')
     plt.ylabel('True positive rate')
     plt.show()
-    # plt.savefig('C:/Users/leonr/Desktop/ROC1.png')
+    #plt.savefig('data/plots/ROC.png')
 
 
 def train_model(data):
@@ -73,7 +73,7 @@ def train_model(data):
 
     # Classification
     model = DecisionTreeClassifier()
-    Xtrain, Xtest, ytrain, ytest = train_test_split(x_data1, y_data, test_size=0.2, random_state=42)
+    Xtrain, Xtest, ytrain, ytest = train_test_split(x_data2, y_data, test_size=0.2, random_state=42)
 
     model.fit(Xtrain, ytrain)
     evalute_model(model, Xtest, ytest)
@@ -105,7 +105,7 @@ def run_machine_learning(path_data, path_plots, path_model, visualize=False, sav
         save_model(model, path_model)
 
 
-data_path = '../data/random_package_data_V2.csv'
-plots_path = '../data/plots/'
-model_path = '../Models/model_Classifier_without_volue_V2'
-#run_machine_learning(data_path, plots_path, model_path)
+data_path = '../data/package_data/training_data_2022.csv'
+plots_path = '../data/plots/simple_2022'
+model_path = '../Models/model_Classifier_simple_V1'
+run_machine_learning(data_path, plots_path, model_path)
