@@ -14,7 +14,7 @@ const Mongo = require("mongodb");
 var Routenplaner;
 (function (Routenplaner) {
     let collection;
-    let databaseUrl = "mongodb+srv://Frontend:simple@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb+srv://frontend:simple@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority";
     start_server(5001);
     connect_to_database(databaseUrl);
     function start_server(_port) {
