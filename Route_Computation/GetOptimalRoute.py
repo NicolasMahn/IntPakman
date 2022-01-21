@@ -368,7 +368,7 @@ def evaluate_route(route, post_station_id: int, district: int, date: str):
                 total_duration += int(item.get("r.duration"))
 
     print('Total distance: ' + str(total_distance) + ' meter')
-    print('Total duration: ' + str(total_duration) + ' min')
+    print('Total duration: ' + str(total_duration) + ' seconds, ' + str(total_duration/60) + ' min')
 
 
 def save_route_in_mongo_db(final_route_information, post_station_id, district, date):
@@ -401,10 +401,12 @@ def save_route_in_mongo_db(final_route_information, post_station_id, district, d
     print('[LOG]: Successfully stored route information in DB')
 
 
-def get_optimal_route(post_station_id: int, district: int, date: str, distance=True, prio=True, evaluate=False):
+def get_optimal_route(post_station_id: int, district: int, date: str, distance=True, prio=True, evaluate=False,
+                      curve=False):
     """
     Runs the necessary methods to get the optimal route for the packages in the db. Saves the result in a MongoDB
     database.
+    :param curve: If ste to True, prints the fitness curve of tsp to console
     :param date: date of the packages that should be used
     :param distance: if true uses distance for tsp, if false uses duration for tsp
     :param evaluate: if true runs evaluation on computed route, if false not
@@ -419,10 +421,12 @@ def get_optimal_route(post_station_id: int, district: int, date: str, distance=T
     print(post_station[0]['s'])
     # print(final_list)
     final_route_information = np.NAN
+    fitness_curve = np.NAN
 
     # TSP without prio
     if not prio:
-        best_state, best_fitness = TSP.get_tsp_result_without_prio(final_list, number_of_knots, fitness=True)
+        best_state, best_fitness, fitness_curve = TSP.get_tsp_result_without_prio(final_list, number_of_knots, fitness=True,
+                                                                          curve=True)
         print('TSP without prio and distance = ' + str(distance) + ' :')
         print(best_state)
         print(best_fitness)
@@ -436,7 +440,7 @@ def get_optimal_route(post_station_id: int, district: int, date: str, distance=T
     if prio:
         final_prio_list = get_prio_list(key_dict, post_station_id, district, date)
         print(final_prio_list)
-        best_state, best_fitness = TSP.get_tsp_result(final_list, final_prio_list, fitness=True)
+        best_state, best_fitness, fitness_curve = TSP.get_tsp_result(final_list, final_prio_list, fitness=True, curve=True)
         print('TSP with prio and distance = ' + str(distance) + ' :')
         print(best_state)
         print(best_fitness)
@@ -451,3 +455,7 @@ def get_optimal_route(post_station_id: int, district: int, date: str, distance=T
 
     if evaluate:
         evaluate_route(final_route_information, post_station_id, district, date)
+
+    if curve:
+        print('Curve fitness:')
+        print(fitness_curve)
