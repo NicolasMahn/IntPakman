@@ -6,7 +6,7 @@ import numpy as np
 
 sys.modules['sklearn.externals.six'] = six
 
-POP_SIZE = 1000
+POP_SIZE = 100
 MUTATION_PROB = 0.2
 MAX_ATTEMPTS = 200
 MAX_ITERS = np.inf
