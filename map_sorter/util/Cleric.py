@@ -8,7 +8,7 @@ def read_json(directory):
     return data
 
 def read_csv(directory):
-    read_comma_csv(directory)
+    return read_comma_csv(directory)
 
 def read_comma_csv(directory):
     f = open(directory, 'r', encoding='UTF8')
