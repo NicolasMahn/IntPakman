@@ -15,11 +15,16 @@ async def execute_trigger(post_station_id, district):
 
 
 def str2bool(v):
-  return str(v).lower() in ("yes", "true", "t", "1")
+    return str(v).lower() in ("yes", "true", "t", "1")
 
 
 @app.route('/compute-route', methods=['GET', 'POST'])
 def trigger_route_computation():
+    """
+    API to trigger route computation. Uses the parameters (some are optional and are initialized with default values) to
+    call the get_optimal_route Method from the GetOptimalRoute.py script.
+    :return: Returns Success if method-call was successful, else returns error message
+    """
     distance = True
     prio = True
     evaluate = False
@@ -64,6 +69,11 @@ def check_input_package(data):
 
 @app.route('/add-package', methods=['POST'])
 def add_package_data():
+    """
+    Takes package data as json object. Checks if the json object has all necessary fields and adds the package data to
+    the Neo4j graphdatabase. 
+    :return: Returns Success if method-call was successful, else returns error message
+    """
     data = request.get_json()
     if check_input_package(data):
         try:
@@ -96,6 +106,11 @@ def check_input_address(data):
 
 @app.route('/add-address', methods=['POST'])
 def add_address_to_db():
+    """
+    Takes address data as json object. Checks if the json object has all necessary fields and adds the address data to
+    the Neo4j graphdatabase.
+    :return: Returns Success if method-call was successful, else returns error message
+    """
     data = request.get_json()
     if check_input_address(data):
         try:
