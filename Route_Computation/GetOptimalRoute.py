@@ -14,9 +14,10 @@ import pymongo as mongo
 
 def fix_values_in_list(input, number_of_knots):
     for item in input:
-        if item.get('s.id') == str(1):
-            item['s.id'] = str(0)
-            number_of_knots += 1
+        if 's.id' in item:
+            if item.get('s.id') != str(0):
+                item['s.id'] = str(0)
+                number_of_knots += 1
         if item.get('r.distance') == str(0):  # distance is not allowed to be 0
             item['r.distance'] = str(1)
         if item.get('r.duration') == str(0):  # duration is not allowed to be 0
@@ -32,7 +33,8 @@ def create_key_dict(input, key_dict, key_dict_back):
     :param input: data from db query
     :param key_dict: empty, needs to be created
     :param key_dict_back: empty, needs to be created
-    :return: inpunt (unchanged), created key_dict, created key_dict_back
+    :return: inpunt (unchanged), created key_dict: {'0': '0', '949': '1',...},
+                                 created key_dict_back {'0': '0', '1': '949',...}
     """
     counter = 1
     for item in input:
@@ -112,6 +114,7 @@ def get_final_input_list_and_key_dict(distance: bool, post_station_id: int, dist
     """
     Gets data from DB and executes data preparation steps needed to transform input into readable list for tsp. Can
     either use distance or duration as parameter for distance.
+    :param date: date of the packages that should be used
     :param distance: if True, uses distance as parameter, if False uses duration as parameter in the list for tsp
     :param district: id of the district
     :param post_station_id: id of the post station
@@ -143,8 +146,8 @@ def change_keys_prio(input, key_dict):
 
 def clean_data_from_duplicate_addresses(input):
     """
-    Removes duplicated addresses that recieve more than one package and returns prio 1 if any package has that prio,
-    otherwise return prio 0 for this address.
+    Removes duplicates of addresses that receive more than one package and returns prio 1 if any package of that address
+    is a prio package, otherwise returns prio 0 for this address.
     :param input: data from DB with changed keys
     :return: list with dict-elements like {"a.id":id, "p.prio":prio}
     """
@@ -210,8 +213,8 @@ def get_prio_list(key_dict, post_station_id: int, district: int, date: str):
     data = db_loader_prio.get_prio_status_packages(post_station_id, district, date)
 
     data_with_changed_keys = change_keys_prio(data, key_dict)
-    data_cleand_from_duplicates = clean_data_from_duplicate_addresses(data_with_changed_keys)
-    final_prio_dict = create_final_prio_dict(data_cleand_from_duplicates)
+    data_cleaned_from_duplicates = clean_data_from_duplicate_addresses(data_with_changed_keys)
+    final_prio_dict = create_final_prio_dict(data_cleaned_from_duplicates)
     return final_prio_dict
 
 
@@ -243,11 +246,9 @@ def process_result(best_state, best_fitness, key_dict_back, post_station, post_s
     :param best_state:
     :param best_fitness:
     :param key_dict_back: dict with new id  as key and address id als value / created before for final_list
-    :return: final route starting at the Post-Station, tpye: [0, 1, 3, 2...]
+    :return: final route starting at the Post-Station, tpye: [0, 4, 9, 2...]
     """
-    final_result = change_keys_back(best_state, key_dict_back)
-    route = final_result  # .tolist()
-    # route = rearange_route(final_result_list)
+    route = change_keys_back(best_state, key_dict_back)
 
     print('The optimal route is: ' + str(route))
 
@@ -271,7 +272,7 @@ def match_packages_to_route(route, post_station, post_station_id: int, district:
     :param post_station_id: id of the post station
     :param post_station: Address information of post station
     :param route: final route starting at the Post-Station, tpye: [0, 1, 3, 2...]
-    :return: final route information: containing all package and address data in a dict
+    :return: final route information: list of dicts containing all package and address data in the dict
     """
     package_data = db_loader_packages.get_all_packages(post_station_id, district, date)
     final_route_information = [post_station]
@@ -379,9 +380,7 @@ def save_route_in_mongo_db(final_route_information, post_station_id, district, d
     :param final_route_information:  containing all package and address data
     :param district: district identifier
     """
-    # route_df = route_into_pd_dataframe(final_route_information)
-    # input_data = route_df.to_json(orient='records', force_ascii=False)
-    # input_dict = eval(input_data)
+
     final_dict = {"post_station": post_station_id,
                   "district": district,
                   "date": date,
