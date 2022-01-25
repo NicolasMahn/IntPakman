@@ -424,8 +424,8 @@ def get_optimal_route(post_station_id: int, district: int, date: str, distance=T
 
     # TSP without prio
     if not prio:
-        best_state, best_fitness, fitness_curve = TSP.get_tsp_result_without_prio(final_list, number_of_knots, fitness=True,
-                                                                          curve=True)
+        best_state, best_fitness, fitness_curve = TSP.get_tsp_result_without_prio(final_list, number_of_knots,
+                                                                                  fitness=True, curve=True)
         print('TSP without prio and distance = ' + str(distance) + ' :')
         print(best_state)
         print(best_fitness)
@@ -439,7 +439,8 @@ def get_optimal_route(post_station_id: int, district: int, date: str, distance=T
     if prio:
         final_prio_list = get_prio_list(key_dict, post_station_id, district, date)
         print(final_prio_list)
-        best_state, best_fitness, fitness_curve = TSP.get_tsp_result(final_list, final_prio_list, fitness=True, curve=True)
+        best_state, best_fitness, fitness_curve = TSP.get_tsp_result(final_list, final_prio_list, fitness=True,
+                                                                     curve=True)
         print('TSP with prio and distance = ' + str(distance) + ' :')
         print(best_state)
         print(best_fitness)
