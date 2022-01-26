@@ -1,8 +1,7 @@
 """ Functions to implement the randomized optimization and search algorithms.
 """
 
-# Author: Nicolas Mahn
-# Inspiration/Source: mlrose by Genevieve Hayes
+# Source: mlrose by Genevieve Hayes
 # License: BSD 3 clause
 
 

@@ -7,7 +7,7 @@ import numpy as np
 sys.modules['sklearn.externals.six'] = six
 
 POP_SIZE = 300
-MUTATION_PROB = 0.2
+MUTATION_PROB = 0.02
 MAX_ATTEMPTS = 200
 MAX_ITERS = np.inf
 RANDOM_STATE = 42
@@ -29,7 +29,8 @@ def get_tsp_result(dist_list: list, prio_list: dict, state=True, fitness=False, 
     param:prio_list a dict of all priorities of destinations
     """
 
-    # print(prio_list)
+    #print(prio_list)
+    #print(dist_list)
 
     problem_fit = mltulip.TSPOpt(length=len(prio_list),
                                  maximize=MAXIMIZE,

@@ -120,6 +120,12 @@ class OptProb:
             pop_fitness = [0 if x == 0 else sum_fitness / x for x in pop_fitness]
             self.mate_probs = pop_fitness / np.sum(pop_fitness)
 
+        # if np.sum(pop_fitness) == 0:
+        #     self.mate_probs = np.ones(len(pop_fitness)) \
+        #                       / len(pop_fitness)
+        # else:
+        #     self.mate_probs = pop_fitness/np.sum(pop_fitness)
+
     def get_fitness(self):
         """ Return the fitness of the current state vector.
 

@@ -9,6 +9,7 @@ from sklearn.metrics import mutual_info_score
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import minimum_spanning_tree, depth_first_tree
 from .fitness import TravellingSales
+import random
 
 
 class TSPOpt:
@@ -145,6 +146,7 @@ class TSPOpt:
     def eval_mate_probs(self):
         """
         Calculate the probability of each member of the population reproducing.
+        Adapted by: Nicolas Mahn
         """
         pop_fitness = np.copy(self.pop_fitness)
         sum_fitness = np.sum(pop_fitness)
@@ -248,6 +250,7 @@ class TSPOpt:
 
     def random(self):
         """Return a random state vector starting with 0.
+            Adapted by: Nicolas Mahn
 
         Returns
         -------
@@ -292,6 +295,7 @@ class TSPOpt:
 
     def reproduce(self, parent_1, parent_2, mutation_prob=0.1):
         """Create child state vector from two parent state vectors.
+            Adapted by: Nicolas Mahn
 
         Parameters
         ----------
@@ -325,6 +329,67 @@ class TSPOpt:
             unvisited = \
                 [node for node in parent_2 if node not in parent_1[0:_n + 1]]
             child[_n + 1:] = unvisited
+
+
+
+            # parts = []
+            # p1 = 0
+            # leng = len(parent_1)
+            # first = True
+            # special = False
+            # while(p1 < leng):
+            #     p2 = list(parent_2).index(parent_1[p1])
+            #     part = [parent_1[p1]]
+            #     j = 1
+            #     p = True
+            #     pm = True
+            #     mp = True
+            #     m = True
+            #     while(True):
+            #         if p and p2+j >= len(parent_2):
+            #             p = False
+            #             mp = False
+            #             special = True
+            #         if p1+j >= len(parent_1):
+            #             break
+            #         if p and parent_1[p1+j] == parent_2[p2+j]:
+            #             part.append(parent_1[p1+j])
+            #             pm = False
+            #             mp = False
+            #             m = False
+            #         elif pm and parent_1[p1+j] == parent_2[p2-j]:
+            #             part.append(parent_1[p1+j])
+            #             p = False
+            #             mp = False
+            #             m = False
+            #         elif first and mp and parent_1[p1-j] == parent_2[p2+j]:
+            #             part.append(parent_1[p1-j])
+            #             leng -= 1
+            #             p = False
+            #             pm = False
+            #             m = False
+            #         elif first and m and parent_1[p1-j] == parent_2[p2-j]:
+            #             part.append(parent_1[p1-j])
+            #             leng -= 1
+            #             p = False
+            #             pm = False
+            #             mp = False
+            #         else:
+            #             break
+            #         j += 1
+            #     first = False
+            #     if p or pm or special:
+            #         p1 += j
+            #     else:
+            #         p1 += 1
+            #     parts.append(part)
+            # first = parts[0]
+            # del parts[0]
+            # random.shuffle(parts)
+            # parts = [first] + parts
+            # child = [item for part in parts for item in part]
+
+
         elif np.random.randint(2) == 0:
             child = np.copy(parent_1)
         else:

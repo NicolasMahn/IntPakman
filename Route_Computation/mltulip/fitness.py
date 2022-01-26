@@ -5,6 +5,7 @@
 # License: BSD 3 clause
 
 import numpy as np
+import statistics
 
 
 class TravellingSales:
@@ -15,6 +16,7 @@ class TravellingSales:
     the final node in the state vector and the first node in the state vector
     during the return leg of the tour). Each node must be visited exactly
     once for a tour to be considered valid.
+    Adapted by: Nicolas Mahn
 
     Parameters
     ----------
@@ -33,9 +35,10 @@ class TravellingSales:
         argument is ignored if coords is not :code:`None`.
 
     weights:... TODO
+    prio_importance:
     """
 
-    def __init__(self, coords=None, distances=None, weights=None):
+    def __init__(self, coords=None, distances=None, weights=None, prio_importance=25):
 
         if coords is None and distances is None:
             raise Exception("""At least one of coords and distances must be"""
@@ -74,25 +77,23 @@ class TravellingSales:
         self.distances = distances
         self.path_list = path_list
         self.dist_list = dist_list
+        self.prio_importance = prio_importance
 
     def evaluate(self, state):
         """Evaluate the fitness of a state vector.
-
+            Adapted by: Nicolas Mahn
         Parameters
         ----------
         state: array
             State array for evaluation. Each integer between 0 and
             (len(state) - 1), inclusive must appear exactly once in the array.
 
-        TODO: Prio imortance!
         Returns
         -------
         fitness: float
             Value of fitness function. Returns :code:`np.inf` if travel between
             two consecutive nodes on the tour is not possible.
         """
-
-        PRIO_IMPORTANCE = 25
 
         if self.is_coords and len(state) != len(self.coords):
             raise Exception("""state must have the same length as coords.""")
@@ -118,7 +119,7 @@ class TravellingSales:
 
                 fitness += np.linalg.norm(np.array(self.coords[node1]) - np.array(self.coords[node2])) - \
                            ((self.weights[state[i]] * \
-                             (sum(self.dist_list) / (len(self.dist_list) * PRIO_IMPORTANCE)) * \
+                             (sum(self.dist_list) / (len(self.dist_list) * self.prio_importance)) * \
                              (len(state) - 1)) / (i + 1))
 
             # Calculate length of final leg
@@ -127,7 +128,7 @@ class TravellingSales:
 
             fitness += np.linalg.norm(np.array(self.coords[node1]) - np.array(self.coords[node2])) - \
                        self.weights[state[i]] * \
-                       (sum(self.dist_list) / (len(self.dist_list) * PRIO_IMPORTANCE))
+                       (sum(self.dist_list) / (len(self.dist_list) * self.prio_importance))
 
 
         else:
@@ -140,7 +141,7 @@ class TravellingSales:
                 if path in self.path_list:
                     fitness += self.dist_list[self.path_list.index(path)] - \
                                ((self.weights[state[i]] * \
-                                 (sum(self.dist_list) / (len(self.dist_list) * PRIO_IMPORTANCE)) * \
+                                 (sum(self.dist_list) / (len(self.dist_list) * self.prio_importance)) * \
                                  (len(state) - 1)) / (i + 1))
                 else:
                     fitness += np.inf
@@ -154,7 +155,7 @@ class TravellingSales:
             if path in self.path_list:
                 fitness += self.dist_list[self.path_list.index(path)] - \
                            self.weights[state[-1]] * \
-                           (sum(self.dist_list) / (len(self.dist_list) * PRIO_IMPORTANCE))
+                           (sum(self.dist_list) / (len(self.dist_list) * self.prio_importance))
             else:
                 fitness += np.inf
 
