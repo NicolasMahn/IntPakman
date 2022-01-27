@@ -44,7 +44,8 @@ class TSPOpt:
         assumed that travel between the two nodes is not possible. This
         argument is ignored if fitness_fn or coords is not :code:`None`.
 
-    weights: TODO
+    weights: list of pairs, default: None
+        List giving the weight, of all vektors
     """
 
     def __init__(self, length, fitness_fn=None, maximize=False, coords=None,

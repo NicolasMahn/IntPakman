@@ -1,6 +1,4 @@
 import sys
-
-
 sys.path.append('C:\\Users/nicol/PycharmProjects/IntPakman/Route_Computation')
 import Travelling_Salesman
 

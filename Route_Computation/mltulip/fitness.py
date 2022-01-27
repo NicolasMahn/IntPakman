@@ -34,8 +34,12 @@ class TravellingSales:
         assumed that travel between the two nodes is not possible. This
         argument is ignored if coords is not :code:`None`.
 
-    weights:... TODO
-    prio_importance:
+    weights: list of pairs, default: None
+        List giving the weight, of all vektors
+
+    prio_importance: this is a heuristic attribut with which the importance
+        of the priority is addapted. A higher prio_importance reults in a lower
+        Priority or rather a lower weighted Priority.
     """
 
     def __init__(self, coords=None, distances=None, weights=None, prio_importance=25):
