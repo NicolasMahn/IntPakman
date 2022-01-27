@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase
+import Neo4j.DB_Connection as con
 
 
 class GetAddressesWithPackages:
@@ -28,5 +29,5 @@ class GetAddressesWithPackages:
 
 
 def get_addresses_with_packages():
-    connector = GetAddressesWithPackages("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = GetAddressesWithPackages(con.get_uri(), con.get_user(), con.get_password())
     return connector.neo_transaction()

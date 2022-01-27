@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase
-import pandas as pd
+import Neo4j.DB_Connection as con
 
 
 class AddAddress:
@@ -51,6 +51,6 @@ class AddAddress:
 
 
 def add_address_to_db(data):
-    connector = AddAddress("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = AddAddress(con.get_uri(), con.get_user(), con.get_password())
     connector.neo_transaction_create(data)
     connector.neo_transaction_match(data)

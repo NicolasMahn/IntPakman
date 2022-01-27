@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase
+import Neo4j.DB_Connection as con
 import requests, json
 import Neo4j.Get_all_addesses_with_params as address_loader
 import Neo4j.Get_post_station_with_params as station_loader
@@ -77,7 +78,7 @@ class DistanceCalculator:
 
 
 if __name__ == "__main__":
-    connector = DistanceCalculator("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = DistanceCalculator(con.get_uri(), con.get_user(), con.get_password())
     addresses = address_loader.get_all_addresses(1, 2)
     connector.add_relationship(addresses)
     addresses = address_loader.get_all_addresses(1, 2)

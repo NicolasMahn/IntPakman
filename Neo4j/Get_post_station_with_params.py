@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase
+import Neo4j.DB_Connection as con
 
 
 class GetPostStation:
@@ -30,5 +31,5 @@ class GetPostStation:
 
 
 def get_post_station(post_station_id: int):
-    connector = GetPostStation("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = GetPostStation(con.get_uri(), con.get_user(), con.get_password())
     return connector.neo_transaction(str(post_station_id))

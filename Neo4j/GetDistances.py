@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase
+import Neo4j.DB_Connection as con
 
 
 class GetDistances:
@@ -47,12 +48,12 @@ class GetDistances:
 
 
 def get_distance_station_addresses():
-    connector = GetDistances("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = GetDistances(con.get_uri(), con.get_user(), con.get_password())
     return connector.neo_transaction_station_addresses()
 
 
 def get_distance_addresses_addresses():
-    connector = GetDistances("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = GetDistances(con.get_uri(), con.get_user(), con.get_password())
     return connector.neo_transaction_addresses_addresses()
 
 

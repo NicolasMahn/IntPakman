@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase
+import Neo4j.DB_Connection as con
 
 
 class GetPrioStatusPackages:
@@ -30,5 +31,5 @@ class GetPrioStatusPackages:
 
 
 def get_prio_status_packages(post_station_id: int, district: int, date: str):
-    connector = GetPrioStatusPackages("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = GetPrioStatusPackages(con.get_uri(), con.get_user(), con.get_password())
     return connector.neo_transaction(str(post_station_id), str(district), date)

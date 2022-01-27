@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase
+import Neo4j.DB_Connection as con
 import pandas as pd
 import pickle
 from sklearn.tree import DecisionTreeClassifier
@@ -91,7 +92,7 @@ def load_data(path_data):
 
 
 def add_packages_to_db(path_data, path_model):
-    connector = AddPackages("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = AddPackages(con.get_uri(), con.get_user(), con.get_password())
     packages = load_data(path_data)
     model = DecisionTreeClassifier()
     model = load_model(path_model, model)

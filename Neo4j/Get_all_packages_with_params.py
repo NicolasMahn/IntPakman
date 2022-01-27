@@ -1,4 +1,5 @@
 from neo4j import GraphDatabase
+import Neo4j.DB_Connection as con
 
 
 class GetAllPackages:
@@ -30,5 +31,5 @@ class GetAllPackages:
 
 
 def get_all_packages(post_station_id: int, district: int, date: str):
-    connector = GetAllPackages("bolt://192.52.37.239:7687", "neo4j", "test")
+    connector = GetAllPackages(con.get_uri(), con.get_user(), con.get_password())
     return connector.neo_transaction(str(post_station_id), str(district), date)
