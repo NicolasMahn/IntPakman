@@ -1,4 +1,16 @@
 # Intelligentes Paketmanagement
+Das Ziel dieses Projektes ist es, ein System zu entwickeln, welches eine sortierte
+Reihenfolge von Paketen ermittelt, woraus schließlich eine optimale Route entsteht.
+Die Route soll unter anderem eine Priorisierung von beispielsweise sehr schweren
+oder sehr großen Paketen zulassen.
+In diesem Projekt wwerden Pakete auf Basis von Adressdaten und synthetisch
+generierten Paketdaten mithilfe von Machine Learning priorisiert und sortiert, 
+sodass sich eine optimale Route ergibt. Der oder die Paketzusteller*in
+spart damit einiges an Zeit bei der Beladung und der Auslieferung der Pakete.
+Dies zeigt, dass sich die Effizienz von Paketzusteller*innen durch die automati-
+sierte Sortierung und Priorisierung der Pakete erheblich steigern lässt. Auf dieser
+Grundlage ist es empfehlenswert, Machine Learning im Bereich der Paketzustellung
+einzusetzen, um Arbeitszeiten und dadurch entstehende Kosten zu sparen.
 
 ## Create Python Environment
 This chapter describes the necesseray steps, so all of the developers have the same python environment:
