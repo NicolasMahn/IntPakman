@@ -30,7 +30,7 @@ This chapter describes the necesseray steps, so all of the developers have the s
 3. start Docker	
 * Under the Directory Neo4j execute following command `docker-compose up -d`  
 * Neo4j should be running now. You can test the connection under http://localhost:7687	
-* Replace the Connection String in init.py unter Neo4j with your own Connection-String
+* Replace the Connection String in init.py under Neo4j with your own Connection-String
 
 4. Sign in with your [MongoDB-Account](https://account.mongodb.com/account/login)
 * Create shared Cluster with Database and Collection -> [View Documentation](https://docs.atlas.mongodb.com/getting-started/)
@@ -38,7 +38,10 @@ This chapter describes the necesseray steps, so all of the developers have the s
 * Under the Directory Route_Computation replace MongoDB-Connnection String with your own Connection-String 	
 and replace the default params with your own Credentials.
 * The same procedure applies to the server.ts file unter frontend/Server.
-	
+
+5. Run `python api.py` in the root-Directory
+6. Api should now be accessible at http://localhost:5000
+7. Route Computation can now be triggered at http://localhost:5000/compute-route?post_station_id=value&district=value&date=value
 ### Pip usage
 * you can view the list of installed packages via pip list
 * it is important that all developers work with the same pip packages. The easiest way to do this is with a requirements file.
