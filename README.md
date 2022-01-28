@@ -5,8 +5,8 @@ In diesem Projekt werden Pakete auf Basis von Adressdaten und synthetisch generi
 
 Dies zeigt, dass sich die Effizienz von Paketzusteller:innen durch die automati sierte Sortierung und Priorisierung der Pakete erheblich steigern lässt. Auf dieser Grundlage ist es empfehlenswert, Machine Learning im Bereich der Paketzustellung einzusetzen, um Arbeitszeiten und dadurch entstehende Kosten zu sparen.
 
-## Create Python Environment
-This chapter describes the necesseray steps, so all of the developers have the same python environment:
+## Installation guide
+This chapter describes the necesseray steps which are required to install the software and get it running:
 
 ### Requirements:
 This project was build with the following tools in the specified versions:
