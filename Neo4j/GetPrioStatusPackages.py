@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase
-import Neo4j.DB_Connection as con
+import Passwords as con
 
 
 class GetPrioStatusPackages:

@@ -1,5 +1,5 @@
 from neo4j import GraphDatabase
-import Neo4j.DB_Connection as con
+import Passwords as con
 import requests, json
 import Neo4j.Get_all_addesses_with_params as address_loader
 import Neo4j.Get_post_station_with_params as station_loader
@@ -15,7 +15,7 @@ def calculate_distance(node_a, node_b):
     city_origin = node_a["city"]
     city_destination = node_b["city"]
 
-    api_key = "AIzaSyBZ_8OLOi5gI_IYgjJnVHF9iDn0CJRx9Xs"
+    api_key = con.get_api_key()
     url = "https://maps.googleapis.com/maps/api/distancematrix/json?"
     source = house_number_origin + "+" + street_origin + "+" + post_code_origin + "+" + city_origin
     dest = post_code_destination + "+" + street_destination + "+" + house_number_destination + "+" + city_destination

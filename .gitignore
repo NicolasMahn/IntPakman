@@ -1,4 +1,5 @@
 .idea
+Passwords.py
 venv
 data/databases/graph.db/
 
