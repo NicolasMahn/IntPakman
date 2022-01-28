@@ -12,3 +12,7 @@ def get_password():
 
 def get_api_key():
     return "AIzaSyBZ_8OLOi5gI_IYgjJnVHF9iDn0CJRx9Xs"
+
+
+def get_mongodb_connection_string():
+    return "mongodb+srv://frontend:simple@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority"
