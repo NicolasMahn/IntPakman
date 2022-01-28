@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import webbrowser
 from pymongo import MongoClient
+import Passwords as credentials
 import pymongo as mongo
 
 
@@ -386,14 +387,8 @@ def save_route_in_mongo_db(final_route_information, post_station_id, district, d
                   "date": date,
                   "route_data": final_route_information}
 
-    # to test on local MongoDB instance
-    # client = MongoClient(
-    #    "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false")
-    # db = client.IntPakMan
-    # collection = db['route']
-
-    client = MongoClient(
-        "mongodb+srv://intpakman:veryhard@cluster0.lalug.mongodb.net/routenplaner?retryWrites=true&w=majority")
+    connection_string = credentials.get_mongodb_connection_string()
+    client = MongoClient(connection_string)
     db = client.routenplaner
     collection = db['routen']
     collection.insert_one(final_dict)
