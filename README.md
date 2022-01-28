@@ -40,6 +40,12 @@ This project was build with the following tools in the specified versions:
     * Copy Connection String
     * In the `Passwords.py` add antoher method `def get_mongodb_connection_string()` which returns your Connection-String 
     * Replace the Connection-String under `frontend/Server` in the `server.ts` with your own Connection-String
-5. Open terminal and run `python api.py` in the root-Directory
-6. Api should now be accessible at `http://localhost:5000`
-7. Route Computation can now be triggered at `http://localhost:5000/compute-route?post_station_id=value&district=value&date=value`
+5. API 
+* Open terminal and run `python api.py` in the root-Directory
+* Api should now be accessible at `http://localhost:5000`
+* Route Computation can now be triggered at `http://localhost:5000/compute-route?post_station_id=value&district=value&date=value`
+* Package (`http://localhost:5000/add-package`) and Addressdata (`http://localhost:5000/add-address`) can also be send to the API as JSON-Objects
+6. Frontend
+* In the terminal go to the directory `frontend/Server` and execute the command `npm start`
+* Now navigate to the directory `frontend/Client` and open the `index.html`
+* Your standard-browser should open with the frontend
